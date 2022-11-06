@@ -2,14 +2,14 @@ import('tailwindcss').Config
 
 module.exports = {
   content: [
-    './shopify/config/*.json',
-    './shopify/layout/*.liquid',
-    './shopify/assets/*.liquid',
-    './shopify/sections/*.liquid',
-    './shopify/snippets/*.liquid',
-    './shopify/templates/*.liquid',
-    './shopify/templates/*.json',
-    './shopify/templates/customers/*.liquid',
+    './royal-coats/config/*.json',
+    './royal-coats/layout/*.liquid',
+    './royal-coats/assets/*.liquid',
+    './royal-coats/sections/*.liquid',
+    './royal-coats/snippets/*.liquid',
+    './royal-coats/templates/*.liquid',
+    './royal-coats/templates/*.json',
+    './royal-coats/templates/customers/*.liquid',
     "./src/**/*.{ts,tsx}"
 ],
   theme: {

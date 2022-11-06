@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":["../../src/index.ts"],"sourcesContent":["console.log(\"React WORKING\")"],"names":[],"mappings":"AAAA,QAAQ,IAAI,eAAe"}
+{"version":3,"file":"index.js","sources":["../../src/index.ts"],"sourcesContent":["import App from \"./App\"\r\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n//   App\r\n})\r\n"],"names":[],"mappings":"AAGA,OAAO,iBAAiB,mBAAoB,IAAM,CAElD,CAAC"}

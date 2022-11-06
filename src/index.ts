@@ -1,1 +1,6 @@
-console.log("React WORKING")
+import App from "./App"
+
+
+window.addEventListener('DOMContentLoaded', () => {
+//   App
+})

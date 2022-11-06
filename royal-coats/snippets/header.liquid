@@ -1,53 +1,66 @@
-<div class="flex justify-around items-center  bg-green-700 h-20 ">
-   
-    
-    <header class=" flex  ">
-        <h1 class="break-words uppercase text-2xl tracking-widest">
-            {{shop.name}}
+<div class="flex bg-gray-300 h-20 px-5 ">
+
+    <div class="leftHeader flex-1 / flex justify-start items-center /">
+
+        <h1 class=" flex ">
+            <h1 class="break-words titleHeader uppercase  tracking-widest">
+                {{shop.name}}
+            </h1>
+
         </h1>
+        <div class="leftMenus flex">
+            {% for link in linklists.main-menu.links %}
+            <a class="leftItem itemListHeader" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
 
-    </header>
-    <style>
-        li.items{
-            padding-left: 10px;
-        }
-        
-    </style>
-     <ul class="pr-4" >
+        </div>
+    </div>
+
+    <div class="rightHeader flex-1 / flex justify-end items-center /">
+
+        <div class="rightMenus flex">
+            {% for link in linklists.right-header.links %}
+            <a class="itemListHeader" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+
+        </div>
+
+        <ul id="" class="">
             <div class="flex ">
-                {% for link in linklists.main-menu.links %}
-                {% assign child_list_handle = link.title | handleize %}
-                {% if linklists[child_list_handle].links != blank %}
-                <li class="items pl-2.5 hover:underline hover:bg-grey-900"> <a href="{{ link.url }}"> {{ link.title }} </a> </li>
-                [{% for childlink in linklists[child_list_handle].links %}
-                <li class="items pl-2.5 hover:underline hover:bg-grey-900"> <a href="{{ childlink.url }}">{{ childlink.title | escape }} </a> </li>
-                {% endfor %}]
-                {% else %}
-                <li class="items pl-2.5 hover:underline hover:bg-grey-900"> <a href="{{ link.url }}">{{ link.title }}</a> </li>
-                {% endif %}
-                {% endfor %}
-                <li class="items pl-2.5 hover:underline hover:bg-grey-900">
-                     <a href="/cart">cart</a> </li>
-             </div>
-                
-     </ul>
-     
-    
-      <form action="/search" class="flex">
-            <button type="submit"> Search</button>
-            <input class="p-0.5 m-3 rounded bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-grenn-500 dark:focus:border-green-500" type="text" name="q">
-       
-        </form>
+                <li class="items ">
+                    <a href="/cart">cart</a>
+                </li>
+            </div>
 
-            {% if shop.customer_accounts_enabled %}
-            {% if customer %}
-            <a href="/account">account</a>
-            {{ 'log out'  | customer_logout_link }}
-            {% else %}
-            {{ 'log in ' | customer_login_link }}
-            {{ 'register' | customer_register_link }}
-            {% endif %}
-            {% endif %}
-   
+        </ul>
+
+
+        <form action="/search" class="flex h-16 w-16 items-center">
+            <button type="submit" class="w-8 h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                    stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+            </button>
+
+            {%- comment -%} <input
+                class="p-0.5 m-3  rounded bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-grenn-500 dark:focus:border-green-500"
+                type="text" name="q"> {%- endcomment -%}
+
+        </form>
+    </div>
+
+
+    {% if shop.customer_accounts_enabled %}
+    {% if customer %}
+    <a href="/account">account</a>
+    {{ 'log out' | customer_logout_link }}
+    {% else %}
+    {{ 'log in ' | customer_login_link }}
+    {{ 'register' | customer_register_link }}
+    {% endif %}
+    {% endif %}
+
 
 </div>

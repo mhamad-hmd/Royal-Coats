@@ -1,2 +1,2 @@
-console.log("React WORKING");
+window.addEventListener("DOMContentLoaded",()=>{});
 //# sourceMappingURL=index.js.map
