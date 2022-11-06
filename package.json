@@ -1,0 +1,33 @@
+{
+    "name": "theme-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "vite",
+        "build": "vite build --watch --mode development"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^18.7.6",
+        "@vitejs/plugin-react": "^2.2.0",
+        "@vitejs/plugin-react-refresh": "^1.3.6",
+        "autoprefixer": "^10.4.12",
+        "postcss": "^8.4.17",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.54.4",
+        "sass-loader": "^12.1.0",
+        "tailwindcss": "^3.1.8",
+        "vite": "^3.2.2",
+        "vite-plugin-dts": "^1.6.6"
+    },
+    "dependencies": {
+        "mix-tailwindcss": "^1.3.0",
+        "node-sass": "^7.0.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "zustand": "^4.0.0"
+    }
+}

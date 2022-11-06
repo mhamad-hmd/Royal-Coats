@@ -1,0 +1,53 @@
+<div class="flex justify-around items-center  bg-green-700 h-20 ">
+   
+    
+    <header class=" flex  ">
+        <h1 class="break-words uppercase text-2xl tracking-widest">
+            {{shop.name}}
+        </h1>
+
+    </header>
+    <style>
+        li.items{
+            padding-left: 10px;
+        }
+        
+    </style>
+     <ul class="pr-4" >
+            <div class="flex ">
+                {% for link in linklists.main-menu.links %}
+                {% assign child_list_handle = link.title | handleize %}
+                {% if linklists[child_list_handle].links != blank %}
+                <li class="items pl-2.5 hover:underline hover:bg-grey-900"> <a href="{{ link.url }}"> {{ link.title }} </a> </li>
+                [{% for childlink in linklists[child_list_handle].links %}
+                <li class="items pl-2.5 hover:underline hover:bg-grey-900"> <a href="{{ childlink.url }}">{{ childlink.title | escape }} </a> </li>
+                {% endfor %}]
+                {% else %}
+                <li class="items pl-2.5 hover:underline hover:bg-grey-900"> <a href="{{ link.url }}">{{ link.title }}</a> </li>
+                {% endif %}
+                {% endfor %}
+                <li class="items pl-2.5 hover:underline hover:bg-grey-900">
+                     <a href="/cart">cart</a> </li>
+             </div>
+                
+     </ul>
+     
+    
+      <form action="/search" class="flex">
+            <button type="submit"> Search</button>
+            <input class="p-0.5 m-3 rounded bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-grenn-500 dark:focus:border-green-500" type="text" name="q">
+       
+        </form>
+
+            {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+            <a href="/account">account</a>
+            {{ 'log out'  | customer_logout_link }}
+            {% else %}
+            {{ 'log in ' | customer_login_link }}
+            {{ 'register' | customer_register_link }}
+            {% endif %}
+            {% endif %}
+   
+
+</div>
