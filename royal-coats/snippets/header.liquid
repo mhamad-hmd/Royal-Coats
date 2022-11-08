@@ -1,16 +1,24 @@
-<div class="flex bg-gray-300 h-20 px-5 ">
+<div class="flex headerContainer h-20 px-5 ">
 
-    <div class="leftHeader flex-1 / flex justify-start items-center /">
+    <div class="leftHeader flex-1 / flex justify-start items-center / ">
 
-        <h1 class=" flex ">
+        <div class="w-fit relative">
             <h1 class="break-words titleHeader uppercase  tracking-widest">
                 {{shop.name}}
             </h1>
+            <span class="swordSvg">
+                <svg width="56" height="43" viewBox="0 0 56 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M55.1422 0.00242665C38.5664 7.23725 23.6944 15.9492 9.20864 26.9139C12.3437 25.1846 15.7256 24.19 19.4593 23.8938C24.8695 18.0961 31.3959 14.3061 37.9693 13.3721C33.6768 20.689 27.7414 26.3525 21.3483 29.5139C19.2515 33.6122 16.7958 36.7019 14.1373 39.2348C28.5595 28.1992 42.5091 15.9807 55.1422 0.00242665ZM14.5742 27.843L14.5626 27.8819C10.2606 33.1087 5.74323 36.01 1.13034 38.1047C-0.225243 41.1845 0.625932 42.7641 2.84356 42.8683C7.11235 37.7738 11.4865 34.5975 16.2757 32.6457C16.9332 30.4333 16.4263 28.3935 14.5742 27.843Z"
+                        fill="#C8CBCD" />
+                </svg>
+            </span>
+        </div>
 
-        </h1>
+
         <div class="leftMenus flex">
             {% for link in linklists.main-menu.links %}
-            <a class="leftItem itemListHeader" href="{{ link.url }}">{{ link.title }}</a>
+            <a class="leftItem itemListHeader headerItems" href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
 
         </div>
@@ -20,14 +28,14 @@
 
         <div class="rightMenus flex">
             {% for link in linklists.right-header.links %}
-            <a class="itemListHeader" href="{{ link.url }}">{{ link.title }}</a>
+            <a class="itemListHeader headerItems" href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
 
         </div>
 
         <ul id="" class="">
             <div class="flex ">
-                <li class="items ">
+                <li class="items headerItems ">
                     <a href="/cart">cart</a>
                 </li>
             </div>
@@ -35,8 +43,9 @@
         </ul>
 
 
+
         <form action="/search" class="flex h-16 w-16 items-center">
-            <button type="submit" class="w-8 h-8">
+            <button type="submit" class="w-8 h-8 headerItems">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round"

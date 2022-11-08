@@ -1,0 +1,37 @@
+@use "./utilities" as v;
+
+.headerContainer {
+    background: rgba(148, 145, 145, 40%);
+}
+
+.leftHeader,
+.leftMenus,
+.rightHeader,
+.rightMenus {
+    gap: 13px;
+}
+
+.titleHeader {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: v.$scndFont;
+    color: v.$third-color2;
+    position: relative;
+    z-index: 10;
+}
+
+.headerItems{
+    color: v.$secondary-color2;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.swordSvg {
+    color: v.$main-color3;
+    position: absolute;
+    top: -3%;
+    left: 39%;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}

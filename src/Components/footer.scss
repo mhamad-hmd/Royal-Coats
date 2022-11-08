@@ -1,0 +1,50 @@
+@use "./utilities" as v;
+
+
+.footerContainer{
+    height: 50vh;
+    background-color: v.$main-color3;
+}
+
+.subscribeFooter{
+    background: transparent;
+    border: 1px v.$main-second solid;
+    border-radius: 5px  ;
+    padding-left: 10px;
+    font-size: 17px;
+    height: 35px;
+
+}
+
+.subscribeBtnFooter{
+    background-color:v.$main-second ;
+    height: 35px;
+    padding:0px 10px;
+    border-radius: 0px 20px 20px 0px;
+    border: 1px v.$main-second solid ;
+    position: absolute;
+    left: 80%;
+
+}
+
+.signupMessage{
+    font-size: 24px;
+    color: v.$main-second;
+}
+
+.socialIcon{
+    height: 60px;
+    width: 60px;
+    transition: .5s ease-out;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialIcon:hover{
+    transform: scale(110%);
+    background-color: v.$main-second;
+}
+
