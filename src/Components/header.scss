@@ -1,7 +1,7 @@
 @use "./utilities" as v;
 
 .headerContainer {
-    background: rgba(148, 145, 145, 40%);
+    background: rgba(148, 145, 145, 10%);
 }
 
 .leftHeader,
@@ -24,6 +24,7 @@
     color: v.$secondary-color2;
     font-size: 18px;
     font-weight: 500;
+    letter-spacing: 2px;
 }
 
 .swordSvg {
@@ -34,4 +35,8 @@
     width: 50px;
     height: 50px;
     z-index: 1;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }

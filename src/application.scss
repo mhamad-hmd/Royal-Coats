@@ -1,6 +1,7 @@
 @use './Components/utilities' as v;
 @forward "./Components/header.scss";
 @forward "./Components/footer.scss";
+@forward "./Components/heroImage.scss";
 
 @tailwind base;
 @tailwind components;
@@ -15,5 +16,11 @@ body{
     min-height: 100vh;
     font-family: v.$mainFont ;
     background-color: v.$main-color2;
+    display: flex;
+    flex-direction: column;
 }
+#main{
+    flex: 1;
+}
+
 

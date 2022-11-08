@@ -43,8 +43,25 @@
     align-items: center;
 }
 
-.socialIcon:hover{
+.socialIcon svg{
+    transition: .5s ease-out;
+}
+
+.socialIcon:hover svg{
     transform: scale(110%);
+
+}
+
+.socialIcon:hover{
     background-color: v.$main-second;
+}
+
+.footerItem{
+    color: v.$secondary-color2;
+    font-size: 18px;
+}
+
+.footerIcon{
+    color: v.$main-second;
 }
 
