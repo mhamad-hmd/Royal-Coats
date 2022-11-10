@@ -1,44 +1,37 @@
 @use "./utilities" as v;
 
 .featureTitle {
-    grid-column: span 12;
-    grid-row: span 1;
     text-align: center;
-}
-
-.cardWrapper {
-    grid-column: span 3;
-    margin: auto;
+    height: fit-content;
 }
 
 .featureContainer {
-    width: 100%;
-    height: 100vh;
+    margin: 5em 0px;
+    height: fit-content;
     display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    gap: 50px;
 }
 
 .featureCardContainer {
-    grid-column: span 12;
-    grid-row: span 3;
+    margin: auto;
     background-color: aqua;
-    height: 100%;
+    height: fit-content;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .cardWrapper {
-    grid-column: span 3;
-    background-color: brown;
+    background-color: beige;
+    max-height: 355px;
     height: 100%;
-    width: 100%;
 }
 
 .cardImg {
-    height: 100px;
-    width: 100px;
-    background-color: gray;
+    width: 100%;
+    height: 250px;
+}
+
+.cardInfo {
+    height: auto;
 }
