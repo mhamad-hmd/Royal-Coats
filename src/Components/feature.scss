@@ -1,0 +1,44 @@
+@use "./utilities" as v;
+
+.featureTitle {
+    grid-column: span 12;
+    grid-row: span 1;
+    text-align: center;
+}
+
+.cardWrapper {
+    grid-column: span 3;
+    margin: auto;
+}
+
+.featureContainer {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.featureCardContainer {
+    grid-column: span 12;
+    grid-row: span 3;
+    background-color: aqua;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.cardWrapper {
+    grid-column: span 3;
+    background-color: brown;
+    height: 100%;
+    width: 100%;
+}
+
+.cardImg {
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+}

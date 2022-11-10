@@ -1,7 +1,8 @@
 @use "./utilities" as v;
 
-.headerContainer {
-    background: rgba(148, 145, 145, 10%);
+
+.headerContainer{
+    z-index: 999;
 }
 
 .leftHeader,

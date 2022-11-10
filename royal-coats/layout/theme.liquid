@@ -15,12 +15,11 @@
 
 <body>
 
-    {% render 'header' %}
-    <main role="main">
-    {% render {{ content_for_layout }}-%} 
-    {%- section 'hero-section' -%}
-     </main  
-    {% render 'footer' %}
+  {% render 'header' %}
+  <main role="main" class="w-full">
+    {{ content_for_layout }}
+  </main>
+  {% render 'footer' %}
   {{ 'index.js' | asset_url | script_tag }}
 </body>
 
