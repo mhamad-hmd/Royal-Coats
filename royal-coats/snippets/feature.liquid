@@ -1,34 +1,13 @@
 <div class="featureContainer ">
-    <h1 class="featureTitle">Title</h1>
-    <div class="featureCardContainer ">
+    <h1 class="featureTitle">Coat Collections</h1>
+    <div id="featureCardContainer" class="featureCardContainer ">
+        {%- for item in collections -%}
         <div class="cardWrapper">
-            <img class="cardImg" src="" alt="">
+            <img class="cardImg" src="{{item.image | img_url: 'master'}}" alt="">
             <div class="cardInfo">
-                <h2 class="cardTitle">Card title</h2>
-                <p class="cardDescription">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis </p>
+                <h2 class="cardTitle">{{item.title}}</h2>
             </div>
         </div>
-        <div class="cardWrapper">
-            <img class="cardImg" src="" alt="">
-            <div class="cardInfo">
-                <h2 class="cardTitle">Card title</h2>
-                <p class="cardDescription">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis </p>
-            </div>
-        </div>
-        <div class="cardWrapper">
-            <img class="cardImg" src="" alt="">
-            <div class="cardInfo">
-                <h2 class="cardTitle">Card title</h2>
-                <p class="cardDescription">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis </p>
-            </div>
-        </div>
-        <div class="cardWrapper">
-            <img class="cardImg" src="" alt="">
-            <div class="cardInfo">
-                <h2 class="cardTitle">Card title</h2>
-                <p class="cardDescription">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis </p>
-            </div>
-        </div>
-
+        {%- endfor -%}
     </div>
 </div>
