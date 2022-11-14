@@ -21,15 +21,15 @@ const SwordAnimation = () => {
     const bdyPage = document.getElementById('main')
     const onBlurElements = document.querySelectorAll(".onBlur")
     
+    console.log(swordSvgPlace)
+
     let home = false
     let swordDegree;
     let reset = true;
 
 const animate = (target:any) => {
     swordPath!.style.fill = "rgb(180, 177, 177)"
-    swordSpan.style.top = `${target.top}px`;
-    swordSpan.style.right = `${target.right}px`;
-    swordSpan.style.bottom = `${target.bottom}px`;
+    swordSpan.style.top = `38.5625px`;
     swordSpan.style.left = `${target.left}px`;
     swordSpan.style.width = `14px`;
 
@@ -46,6 +46,9 @@ const animate = (target:any) => {
 
     home = true
     reset=false;
+    setTimeout(()=>{bdyPage!.style.position = "static"},300) 
+    
+
 }
 
     setTimeout(()=>{animate(swordSvgPlace)},1000) 
@@ -59,7 +62,6 @@ bdyPage!.addEventListener("mousemove", (e) => {
       let radianDegrees = Math.atan2(e.pageX - mouseX, e.pageY - mouseY);
       let rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 180;
       swordDegree = rotationDegrees;
-      console.log(rotationDegrees, swordDegree)
       if(home){
           swordSvg.style.transform = `rotate(${rotationDegrees + 7200}deg)`;
       }

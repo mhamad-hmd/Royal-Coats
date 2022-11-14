@@ -4,36 +4,33 @@
     font-size: 3rem;
     text-align: center;
     margin: 2em 0px 0em 0px;
+    z-index: 15;
+    color: v.$secondary-color2;
 }
 
 .featureContainer {
     display: grid;
-    gap: 50px;
-
+    gap: 5rem;
+    overflow: hidden;
     
 }
 
-.featureCardContainer.active {
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-  } 
-
-.featureCardContainer::-webkit-scrollbar {
-    display: none;
+.featureContainer{
+    background-color: v.$third-color3;
 }
+
 
 .featureCardContainer {
     width: 100%;
     display: flex;
-    gap: 1em;
-    overflow-x: hidden;
     white-space: nowrap;
-    transition: all .5s ease;
-    border-radius:4px;
-    padding: 2rem;
-    margin: 1em;
+    transition: all .8s ease-in-out;
+    transform: translateX(-17.8vw);
 
 }
+
+
+
 
 .cardWrapper {
     background-color: transparent;
@@ -42,36 +39,41 @@
     display: flex;
     justify-content: start;
     align-items: self-end;
-    transition: all .5s ease-in-out;
-
+    width: 48%;
+    flex-basis: 48%;
+    transition: all .6s ease-in-out;
+    z-index: 5;
+    
 }
 
-
-.cardWrapper:hover {
-   transform: translateY(-10px);
-}
 
 
 .cardImg {
     transition: all .5s ease-in-out;
-    width: 450px;
-    height: 450px;
+    width: 750px;
+    height: 550px;
     object-fit: cover;
-    filter: blur(0px);
-    border-radius: 10px;
-    box-shadow: 1px 2px 3px rgb(63, 63, 63.5,.5),  1.5px 2px 4px rgb(63, 63, 63,.6);
 }
 
 .cardInfo{
     position: absolute;
     background-color: #B4B1B180;
     margin-bottom: 2em;
-    border-radius: 4px;
 }
 
 .cardTitle{
     font-size: 2rem;
-    margin: 0 1em;
+    margin: 0em 1em;
+}
+.cardBtns{
+    z-index: 11;
 }
 
+.cardBtnsSvg path{
+    fill: v.$secondary-color2;
+}
+
+.cardMain{
+    z-index: 20;
+}
 

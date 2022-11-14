@@ -15,7 +15,6 @@ const App = () => {
 const Test = () => {
     useEffect(() => {
 
-        console.log('REACT WORKS')
     })
     return(
         <div className=''>

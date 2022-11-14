@@ -44,6 +44,8 @@
     height: auto;
 }
 
+
+
 .swordSvgPlace{
     color: v.$main-color3;
     position: absolute;
@@ -54,18 +56,19 @@
     transition: all .5s ease;
 }
 
+
+
 .swordSvg {
     color: v.$main-color3;
     position: absolute;
-    top: -3%;
-    left: 39%;
+    top: 25%;
+    left: 48%;
     height: 50px;
     z-index: 1;
     transition: all .5s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    inset: 250% 45%;
     width: 90px;
     
 }

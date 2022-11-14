@@ -1,34 +1,53 @@
 import React from 'react'
 
 const Feature = () => {
-    
+  const righBtn = document.getElementById('cardBtnRight');
+  const leftBtn = document.getElementById('cardBtnLeft');
+  const featureCardContainer = document.getElementById('featureCardContainer');
+  let translateCount = -17.8;
+  let translateBy = 47.2;
+  let mainChild = 1;
 
-const slider = document.querySelector('.featureCardContainer') as HTMLElement;
-let isDown = false;
-let startX;
-let scrollLeft;
 
-slider!.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider!.classList.add('active');
-  startX = e.pageX - slider!.offsetLeft;
-  scrollLeft = slider!.scrollLeft;
-});
-slider!.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider!.classList.remove('active');
-});
-slider!.addEventListener('mouseup', () => {
-  isDown = false;
-  slider!.classList.remove('active');
-});
-slider!.addEventListener('mousemove', (e:any) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider!.offsetLeft;
-  const walk = (x - startX) * 3; //scroll-fast
-  slider!.scrollLeft = scrollLeft - walk;
-});
+  righBtn!.onclick = () => {
+    if ((mainChild + 1) < featureCardContainer!.childNodes.length) {
+      mainChild++
+      translateCount = translateCount - translateBy;
+      featureCardContainer!.style.transform = `translateX(${translateCount}vw)`;
+      mainComponent()
+      console.log(mainChild)
+    }
+  }
+
+
+  leftBtn!.onclick = () => {
+    if (mainChild > 0) {
+      mainChild--
+      translateCount = translateCount + translateBy;
+      featureCardContainer!.style.transform = `translateX(${translateCount}vw)`;
+      mainComponent()
+      console.log(mainChild)
+    }
+
+  }
+
+  const mainComponent = () => {
+    featureCardContainer!.childNodes.forEach((child: any, i) => {
+      if (i === mainChild) {
+        child.style.transform = 'scale(101%)'
+        child.style.filter = 'blur(0px)'
+        child.classList.add("cardMain")
+      }
+      else {
+        child.style.transform = 'scale(80%)'
+        child.style.filter = 'blur(2px)'
+
+      }
+
+    })
+  }
+
+  mainComponent()
 }
 
 export default Feature()
