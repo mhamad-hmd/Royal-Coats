@@ -2,7 +2,7 @@
 @forward "./Components/header.scss";
 @forward "./Components/footer.scss";
 @forward "./Components/heroImage.scss";
-@forward "./Components/feature.scss";
+@forward "./Components//feature/feature.scss";
 
 @tailwind base;
 @tailwind components;
@@ -29,6 +29,11 @@ body{
 }
 #main{
     flex: 1;
+}
+
+.onBlur{
+    filter: blur(2px);
+    transition: all .5s ease-in-out;
 }
 
 

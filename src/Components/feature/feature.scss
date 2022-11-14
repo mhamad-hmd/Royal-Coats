@@ -1,21 +1,21 @@
-@use "./utilities" as v;
+@use "../utilities.scss" as v;
 
 .featureTitle {
     font-size: 3rem;
     text-align: center;
+    margin: 2em 0px 0em 0px;
 }
 
 .featureContainer {
     display: grid;
-    margin: 5em 2em;
     gap: 50px;
+
     
 }
 
 .featureCardContainer.active {
     cursor: grabbing;
     cursor: -webkit-grabbing;
-    transform: scale(.9);
   } 
 
 .featureCardContainer::-webkit-scrollbar {
@@ -26,12 +26,12 @@
     width: 100%;
     display: flex;
     gap: 1em;
-    overflow-y: hidden;
-    overflow-x: scroll;
+    overflow-x: hidden;
     white-space: nowrap;
     transition: all .5s ease;
     border-radius:4px;
-    padding: 1rem;
+    padding: 2rem;
+    margin: 1em;
 
 }
 

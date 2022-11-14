@@ -14,40 +14,57 @@ import ReactDOM from 'react-dom/client'
 
 const SwordAnimation = () => {
 
-    const titleHeader = document.getElementById('titleHeader')!.getBoundingClientRect()
-    const swordSpan = document.getElementById('swordSvg')!;
+    const swordSvg = document.getElementById('swordSvg')!;
+    const swordSpan = document.getElementById('swordSpan')!;
     const swordSvgPlace = document.getElementById('swordSvgPlace')!.getBoundingClientRect();
-    const shopNow = document.getElementById('shopNow')!.getBoundingClientRect();
-    const learnMore = document.getElementById('learnMore')!.getBoundingClientRect();
-    const cart = document.getElementById('cart')!.getBoundingClientRect();
-
-    console.log("btn:",learnMore, " sword:",swordSvgPlace)
+    const swordPath = document.getElementById('swordPath');
+    const bdyPage = document.getElementById('main')
+    const onBlurElements = document.querySelectorAll(".onBlur")
     
+    let home = false
+    let swordDegree;
+    let reset = true;
+
 const animate = (target:any) => {
+    swordPath!.style.fill = "rgb(180, 177, 177)"
     swordSpan.style.top = `${target.top}px`;
     swordSpan.style.right = `${target.right}px`;
     swordSpan.style.bottom = `${target.bottom}px`;
     swordSpan.style.left = `${target.left}px`;
-}
+    swordSpan.style.width = `14px`;
 
-    animate(swordSvgPlace)
-   
-    function getAngle (x1, y1, x2, y2) {
-        var distY = Math.abs(y2-y1); //opposite
-        var distX = Math.abs(x2-x1); //adjacent
-        var dist = Math.sqrt((distY*distY)+(distX*distX)); //hypotenuse, 
-           //don't know if there is a built in JS function to do the square of a number
-        var val = distY/dist;
-        var aSine = Math.asin(val);
-        return aSine*(180/Math.PI); //return angle in degrees
+    if(reset){
+        
+        onBlurElements.forEach((item:any) => {
+            item.style.filter = "blur(0px)"
+        })
+    }
+    else{
+    swordSpan.style.rotate = `${swordDegree + 8640}deg`;
+
     }
 
-    const rotateTo = getAngle(swordSvgPlace.x, swordSvgPlace.y, cart.x, cart.y )
+    home = true
+    reset=false;
+}
+
+    setTimeout(()=>{animate(swordSvgPlace)},1000) 
 
 
-console.log(getAngle(screenX, screenY, cart.x, cart.y ))
-swordSpan.style.rotate =  `${rotateTo}deg`
+
+bdyPage!.addEventListener("mousemove", (e) => {
+
+      let mouseX = swordSpan.getBoundingClientRect().right;
+      let mouseY = swordSpan.getBoundingClientRect().top;
+      let radianDegrees = Math.atan2(e.pageX - mouseX, e.pageY - mouseY);
+      let rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 180;
+      swordDegree = rotationDegrees;
+      console.log(rotationDegrees, swordDegree)
+      if(home){
+          swordSvg.style.transform = `rotate(${rotationDegrees + 7200}deg)`;
+      }
+    });
 
 }
 
-export default SwordAnimation()
+export default SwordAnimation();

@@ -1,6 +1,6 @@
 <div class="featureContainer ">
     <h1 class="featureTitle">Coat Collections</h1>
-    <div id="featureCardContainer" class="featureCardContainer ">
+    <div id="featureCardContainer" class="featureCardContainer onBlur">
         {%- for item in collections -%}
         <div class="cardWrapper">
             <img class="cardImg" src="{{item.image | img_url: 'master'}}" alt="">

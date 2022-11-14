@@ -13,7 +13,9 @@
   {{ 'application.css' | asset_url | stylesheet_tag }}
 </head>
 
-<body>
+<body id="main">
+
+  
 
   {% render 'header' %}
   <main role="main" class="w-full">
@@ -21,6 +23,7 @@
   </main>
   {% render 'footer' %}
   {{ 'index.js' | asset_url | script_tag }}
+
 </body>
 
 </html>
