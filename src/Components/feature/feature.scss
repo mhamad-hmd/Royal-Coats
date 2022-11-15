@@ -24,7 +24,7 @@
     width: 100%;
     display: flex;
     white-space: nowrap;
-    transform: translateX(-45%);
+    transform: translateX(-30%);
     transition: all 1s ease-in-out;
     gap: 20%;
 }
@@ -45,8 +45,8 @@
     display: flex;
     justify-content: center;
     align-items: self-end;
-    width: 50%;
-    flex-basis: 50%;
+    width: 40%;
+    flex-basis: 40%;
     transition: all 1s ease-in-out;
     z-index: 5;
     overflow: hidden;
@@ -59,7 +59,7 @@
 .cardImg {
     transition: all 5s ease-in-out;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -78,10 +78,13 @@
     z-index: 31;
     align-self: flex-end;
     margin: 5em 5em 1em 5em;
+    padding-top:1em ;
 }
 
-.cardBtnsSvg path{
+.cardBtnsPath{
     fill: v.$third-color3;
+    color: v.$third-color3;
+    -webkit-text-stroke-color: v.$third-color3;
 }
 
 .cardMain{
