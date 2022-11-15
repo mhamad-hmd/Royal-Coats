@@ -5,7 +5,7 @@
     text-align: center;
     margin: 2em 0px 0em 0px;
     z-index: 15;
-    color: v.$secondary-color2;
+    letter-spacing: 6px;
 }
 
 .featureContainer {
@@ -16,7 +16,7 @@
 }
 
 .featureContainer{
-    background-color: v.$third-color3;
+    background-color: v.$secondary-color3;
 }
 
 
@@ -24,12 +24,18 @@
     width: 100%;
     display: flex;
     white-space: nowrap;
-    transition: all .8s ease-in-out;
-    transform: translateX(-17.8vw);
+    transform: translateX(-45%);
+    transition: all 1s ease-in-out;
+    gap: 20%;
+}
+.featureCardwrapper{
+    transition: all 1s ease-in-out;
 
 }
 
-
+.featureCardContainer :nth-child(1){
+    margin-left: 0 !important;
+}
 
 
 .cardWrapper {
@@ -37,21 +43,23 @@
     flex-shrink: 0;
     position: relative;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: self-end;
-    width: 48%;
-    flex-basis: 48%;
-    transition: all .6s ease-in-out;
+    width: 50%;
+    flex-basis: 50%;
+    transition: all 1s ease-in-out;
     z-index: 5;
+    overflow: hidden;
     
+
 }
 
 
 
 .cardImg {
-    transition: all .5s ease-in-out;
-    width: 750px;
-    height: 550px;
+    transition: all 5s ease-in-out;
+    width: 100%;
+    height: 70vh;
     object-fit: cover;
 }
 
@@ -59,6 +67,7 @@
     position: absolute;
     background-color: #B4B1B180;
     margin-bottom: 2em;
+    left:1px;
 }
 
 .cardTitle{
@@ -66,11 +75,13 @@
     margin: 0em 1em;
 }
 .cardBtns{
-    z-index: 11;
+    z-index: 31;
+    align-self: flex-end;
+    margin: 5em 5em 1em 5em;
 }
 
 .cardBtnsSvg path{
-    fill: v.$secondary-color2;
+    fill: v.$third-color3;
 }
 
 .cardMain{

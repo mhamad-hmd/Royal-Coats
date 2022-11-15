@@ -20,6 +20,19 @@
     flex-wrap: wrap;
 }
 
+.swordSvgFooter{
+    left: 40%;
+    position: absolute;
+    top: 1%;
+    
+}
+
+.swordSvgFooter svg path{
+    fill:  v.$main-second;
+    transition: all .7s ease-in-out;
+}
+
+
 .subscribeBtnFooter{
     background-color:v.$main-second ;
     height: 35px;
