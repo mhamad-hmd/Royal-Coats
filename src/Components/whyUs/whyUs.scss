@@ -56,11 +56,30 @@
 .reasonTitle{
     color: v.$secondary-color2;
     font-size: 2em;
-    z-index: 20;
+    transform: translateX(50%);
+    text-align: center;
+    width: 100%;
+    transition: all 1s ease-in-out;
+    margin-bottom: 1em;
 }
 
 .whyUsTitle{
-    font-size: 2em;
+    font-size: 4em;
     color: v.$secondary-color2;
 }
+
+.reasonsContainer :nth-child(even){
+    .reasonInfo{
+            align-self: flex-start;
+    }
+    .reasonImg{
+        right: 80%;
+        left:auto;
+        
+    }
+    .reasonTitle{
+        transform: translateX(-40%);
+    }
+}
+
 

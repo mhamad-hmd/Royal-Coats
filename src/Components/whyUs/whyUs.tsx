@@ -14,10 +14,9 @@ const whyUs = () => {
 }
 
 const WhyUsReact = () => {
-    const reasonImg = document.getElementById('reasonImg');
-    const reasonInfo = document.getElementById('reasonInfo');
+    const reasonsContainer = document.getElementById('reasonsContainer');
     const ref = useRef<HTMLHeadingElement>(null);
-    const onScreen = useOnScreen(ref, "-50px");
+    const onScreen = useOnScreen(ref, "-300px");
     console.log(onScreen)
     
     function useOnScreen(ref, rootMargin = "0px") {
@@ -45,8 +44,22 @@ const WhyUsReact = () => {
 
       useEffect(() => {
           if(onScreen){
-            reasonInfo!.style.width = "100%"
-            reasonImg!.style.left = "0%"
+            reasonsContainer!.childNodes.forEach((child:any, i:number) => {
+              console.log(i)
+              console.log(child)
+              if(i % 2 == 0){
+                document.getElementById(`reasonImg${i}`)!.style.left = "0%";
+                document.getElementById(`reasonInfo${i}`)!.style.width = "100%";
+                document.getElementById(`reasonTitle${i}`)!.style.transform = 'translateX(0%)';
+              }
+              else if(i % 2 != 0){
+                document.getElementById(`reasonImg${i}`)!.style.right = "0%";
+                document.getElementById(`reasonInfo${i}`)!.style.width = "100%";
+                document.getElementById(`reasonTitle${i}`)!.style.transform = 'translateX(0%)';
+              }
+
+            })
+
           }
       },[onScreen])
 
@@ -54,7 +67,7 @@ const WhyUsReact = () => {
 
 
   return (
-    <h1 className='whyUsTitle' ref={ref}>WHY US</h1>
+    <h1 className='whyUsTitle' ref={ref}>Why Us</h1>
   )
 }
 
