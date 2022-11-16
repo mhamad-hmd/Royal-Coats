@@ -21,7 +21,6 @@ const SwordAnimation = () => {
     const bdyPage = document.getElementById('main')
     const onBlurElements = document.querySelectorAll(".onBlur")
     
-    console.log(swordSvgPlace)
 
     let home = false
     let swordDegree;
@@ -46,7 +45,6 @@ const animate = (target:any) => {
 
     home = true
     reset=false;
-    setTimeout(()=>{bdyPage!.style.position = "static"},300) 
     
 
 }

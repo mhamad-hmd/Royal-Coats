@@ -3,14 +3,14 @@
 .featureTitle {
     font-size: 3rem;
     text-align: center;
-    margin: 2em 0px 0em 0px;
+    margin: 1em 0px 0em 0px;
     z-index: 15;
     letter-spacing: 6px;
 }
 
 .featureContainer {
     display: grid;
-    gap: 5rem;
+    gap: 4rem;
     overflow: hidden;
     
 }
@@ -24,9 +24,9 @@
     width: 100%;
     display: flex;
     white-space: nowrap;
-    transform: translateX(-30%);
+    transform: translateX(-25%);
     transition: all 1s ease-in-out;
-    gap: 20%;
+    gap: 15%;
 }
 .featureCardwrapper{
     transition: all 1s ease-in-out;

@@ -1,0 +1,66 @@
+@use "../utilities.scss" as v;
+
+.whyUsContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: v.$third-color2;
+    overflow-x: hidden;
+}
+
+.reasonsContainer{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reasons{
+    width: 90%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+.reasonInfo{
+    width: 1%;  
+    align-self: flex-end;
+    height: 160px;
+    background-color:#815B21;
+    box-shadow: -8px -8px 14px rgba(255, 255, 255, 0.1), 8px 8px 13px rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
+    z-index: 10;
+}
+
+
+.reasonImg{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    transition: all 1s ease-in-out;
+    z-index: 15;
+    left: 80%;
+}
+
+.reasonTitle{
+    color: v.$secondary-color2;
+    font-size: 2em;
+    z-index: 20;
+}
+
+.whyUsTitle{
+    font-size: 2em;
+    color: v.$secondary-color2;
+}
+

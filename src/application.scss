@@ -1,8 +1,10 @@
 @use './Components/utilities' as v;
+
 @forward "./Components/header.scss";
 @forward "./Components/footer.scss";
 @forward "./Components/heroImage.scss";
-@forward "./Components//feature/feature.scss";
+@forward "./Components/whyUs/whyUs.scss";
+@forward "./Components/feature/feature.scss";
 
 @tailwind base;
 @tailwind components;
@@ -26,6 +28,7 @@ body{
     background-color: v.$main-color2;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     }
 #main{
     flex: 1;

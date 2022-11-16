@@ -6,8 +6,8 @@ const Feature = () => {
   const featureCardContainer = document.getElementById('featureCardContainer');
   const featureCardwrapper = document.getElementById('featureCardwrapper');
   const cardImg = document.getElementById('cardImg');
-  let translateCount = -30;
-  let translateBy = 60;
+  let translateCount = -25;
+  let translateBy = 55;
   let mainChild = 1;
 
 
@@ -17,7 +17,6 @@ const Feature = () => {
       translateCount = translateCount - translateBy;
       featureCardContainer!.style.transform = `translateX(${translateCount}%)`;
       mainComponent()
-      console.log(mainChild)
     }
   }
 
@@ -28,7 +27,6 @@ const Feature = () => {
       translateCount = translateCount + translateBy;
       featureCardContainer!.style.transform = `translateX(${translateCount}%)`;
       mainComponent()
-      console.log(mainChild)
     }
 
   }
@@ -38,7 +36,6 @@ const Feature = () => {
   const mainComponent = () => {
     featureCardContainer!.childNodes.forEach((child: any, i) => {
       const childImg = document.getElementById(`cardImg${i + 1}`);
-      console.log(childImg)
       if (i === mainChild) {
         child.style.transform = 'scale(100%)'
         childImg!.style.transform = 'scale(110%)'
