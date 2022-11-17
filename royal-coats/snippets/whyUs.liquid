@@ -1,10 +1,17 @@
 <div class="whyUsContainer">
     <div id="WhyUsTitle" class="WhyUsTitlecontainer"></div>
     <div id="reasonsContainer" class="reasonsContainer">
-        <div class="reasons">
-            <h1 id="reasonTitle0" class="reasonTitle">Reason 1</h1>
-            <img id="reasonImg0" class="reasonImg" src="../assets/testImg.png" alt="">
-            <div id="reasonInfo0" class="reasonInfo">sss</div>
+        {%- for block in section.blocks -%}
+        <div class="                                                                                                ">
+            <h1 id="reasonTitle{{forloop.index}}" class="reasonTitle">{{block.settings.blockTitle}}</h1>
+            <div class="reasonInfoContainer">
+                <img id="reasonImg{{forloop.index}}" class="reasonImg"
+                    src="{{block.settings.blockImage | img_url: 'master' }}" alt="">
+                <div id="reasonInfo{{forloop.index}}" class="reasonInfo">
+                    <p>{{block.settings.blockParagraph}}</p>
+                </div>
+            </div>
         </div>
+        {%- endfor -%}
     </div>
 </div>

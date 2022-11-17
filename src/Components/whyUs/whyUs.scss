@@ -9,6 +9,8 @@
     align-items: center;
     background: v.$third-color2;
     overflow-x: hidden;
+    gap: 1em;
+    padding: 2em 0em;
 }
 
 .reasonsContainer{
@@ -18,11 +20,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2em;
+
 }
 
 .reasons{
     width: 90%;
-    height: 300px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,36 +35,48 @@
 }
 
 
+.reasonInfoContainer{
+    display: flex;
+    justify-content: flex-end;
+}
 
 .reasonInfo{
-    width: 1%;  
-    align-self: flex-end;
+    width: 0%;  
+    align-self: center;
+    justify-self: flex-end;
     height: 160px;
     background-color:#815B21;
     box-shadow: -8px -8px 14px rgba(255, 255, 255, 0.1), 8px 8px 13px rgba(0, 0, 0, 0.11);
-    border-radius: 10px;
-    transition: all 1s ease-in-out;
+    border-radius: 0px 10px 10px 0px;
+    transition: all 1.5s ease-in-out;
     z-index: 10;
+    overflow: hidden;
+    p{
+        min-width: 500px;
+        margin-inline: 1em;
+        color: v.$secondary-color2;
+    }
+    
 }
 
 
 .reasonImg{
     height: 300px;
     width: 300px;
-    position: absolute;
-    transition: all 1s ease-in-out;
+    transition: all 1.5s ease-in-out;
     z-index: 15;
-    left: 80%;
+    border-radius: 5px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .reasonTitle{
     color: v.$secondary-color2;
     font-size: 2em;
-    transform: translateX(50%);
+    transform: translateX(40%);
     text-align: center;
     width: 100%;
-    transition: all 1s ease-in-out;
-    margin-bottom: 1em;
+    transition: all 1.5s ease-in-out;
 }
 
 .whyUsTitle{
@@ -69,17 +85,16 @@
 }
 
 .reasonsContainer :nth-child(even){
-    .reasonInfo{
-            align-self: flex-start;
-    }
-    .reasonImg{
-        right: 80%;
-        left:auto;
-        
+    .reasonInfoContainer{
+        flex-direction: row-reverse;
+        .reasonInfo{
+            border-radius: 10px 0px 0px 10px
+        }
     }
     .reasonTitle{
         transform: translateX(-40%);
     }
+    
 }
 
 

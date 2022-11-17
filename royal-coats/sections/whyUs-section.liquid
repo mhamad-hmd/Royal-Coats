@@ -1,15 +1,39 @@
 {%- render 'whyUs' -%}
 
 {%- schema -%}
-{
-"name": "Why Us",
-"settings": [
-{
-"type": "image_picker",
-"id": "hero-image",
-"label": "Hero Image"
-}
-]
+  {
+    "name": "Why Us",
+    "max_blocks": 5,
+    "settings": [
+      {
+        "type": "text",
+        "id": "Title",
+        "label": "Section Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Reasons Slider",
+        "type": "ReasonsSlider",
+        "settings": [
+          {
+            "id": "blockImage",
+            "type": "image_picker",
+            "label": "choose an image"
+          }, {
+            "id": "blockTitle",
+            "type": "text",
+            "label": "Title",
+            "default": "Title"
+          }, {
+            "id": "blockParagraph",
+            "type": "textarea",
+            "label": "text",
+            "default": "text"
+          }
+        ]
 
-}
+      }
+    ]
+  }
 {%- endschema -%}

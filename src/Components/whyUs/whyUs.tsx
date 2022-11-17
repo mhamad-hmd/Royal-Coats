@@ -17,7 +17,6 @@ const WhyUsReact = () => {
     const reasonsContainer = document.getElementById('reasonsContainer');
     const ref = useRef<HTMLHeadingElement>(null);
     const onScreen = useOnScreen(ref, "-300px");
-    console.log(onScreen)
     
     function useOnScreen(ref, rootMargin = "0px") {
         // State and setter for storing whether element is visible
@@ -45,17 +44,13 @@ const WhyUsReact = () => {
       useEffect(() => {
           if(onScreen){
             reasonsContainer!.childNodes.forEach((child:any, i:number) => {
-              console.log(i)
-              console.log(child)
               if(i % 2 == 0){
-                document.getElementById(`reasonImg${i}`)!.style.left = "0%";
-                document.getElementById(`reasonInfo${i}`)!.style.width = "100%";
-                document.getElementById(`reasonTitle${i}`)!.style.transform = 'translateX(0%)';
+                document.getElementById(`reasonInfo${i + 1}`)!.style.width = "100%";
+                document.getElementById(`reasonTitle${i + 1}`)!.style.transform = 'translateX(0%)';
               }
               else if(i % 2 != 0){
-                document.getElementById(`reasonImg${i}`)!.style.right = "0%";
-                document.getElementById(`reasonInfo${i}`)!.style.width = "100%";
-                document.getElementById(`reasonTitle${i}`)!.style.transform = 'translateX(0%)';
+                document.getElementById(`reasonInfo${i + 1}`)!.style.width = "100%";
+                document.getElementById(`reasonTitle${i + 1}`)!.style.transform = 'translateX(0%)';
               }
 
             })

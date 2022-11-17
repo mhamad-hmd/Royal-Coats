@@ -1,6 +1,6 @@
 @use './Components/utilities' as v;
 
-@forward "./Components/header.scss";
+@forward "./Components/header/header.scss";
 @forward "./Components/footer.scss";
 @forward "./Components/heroImage.scss";
 @forward "./Components/whyUs/whyUs.scss";
@@ -34,9 +34,6 @@ body{
     flex: 1;
 }
 
-.onBlur{
-    filter: blur(2px);
-}
 
 
 h1{
