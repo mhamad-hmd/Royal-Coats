@@ -16,12 +16,15 @@ const Header = () => {
             headerContainer!.style.background = "rgba(180, 177, 177, 0)"
             announcement!.style.display = "flex"
             swordPath!.style.fill = "rgb(180, 177, 177)"
+            searchBarWrapper!.style.background = "rgba(180, 177, 177, 0)"
+
            }
            else{
             announcement!.style.display = "none"
             headerContainer!.style.position = "fixed"
             headerContainer!.style.background = "rgba(180, 177, 177, 100)"
             swordPath!.style.fill = "rgb(102, 104, 106)"
+            searchBarWrapper!.style.background = "rgba(180, 177, 177, 100)"
 
         }
         }

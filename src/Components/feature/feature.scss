@@ -25,11 +25,11 @@
     display: flex;
     white-space: nowrap;
     transform: translateX(-25%);
-    transition: all 1s ease-in-out;
+    transition: all .8s ease-in-out;
     gap: 15%;
 }
 .featureCardwrapper{
-    transition: all 1s ease-in-out;
+    transition: all .8s ease-in-out;
 
 }
 
@@ -47,7 +47,7 @@
     align-items: self-end;
     width: 40%;
     flex-basis: 40%;
-    transition: all 1s ease-in-out;
+    transition: all .8s ease-in-out;
     z-index: 5;
     overflow: hidden;
     
