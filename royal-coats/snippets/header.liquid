@@ -48,8 +48,8 @@
 
 
 
-            <form action="/search" class="flex h-16 w-16 items-center">
-                <button type="submit" class="w-8 h-8 headerItems">
+            <div class="flex h-16 w-16 items-center">
+                <button id="searchIcon" type="submit" class="w-8 h-8 headerItems">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                         stroke="currentColor" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round"
@@ -57,11 +57,8 @@
                     </svg>
                 </button>
 
-                {%- comment -%} <input
-                    class="p-0.5 m-3  rounded bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-grenn-500 dark:focus:border-green-500"
-                    type="text" name="q"> {%- endcomment -%}
 
-            </form>
+            </div>
         </div>
 
 
@@ -76,5 +73,12 @@
         {% endif %}
 
 
+    </div>
+
+    <div class="searchBarContainer">
+        <form id="searchBarWrapper" class="searchBarWrapper collapseHeader" action="/search" method="get" role="search">
+            <input class="headerSearchBar" type="search" name="q" value="{{ search.terms | escape }}">
+            <button class="headerSearchSubmitBtn" type="submit">search</button>
+        </form>
     </div>
 </div>

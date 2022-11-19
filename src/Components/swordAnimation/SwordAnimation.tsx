@@ -13,9 +13,9 @@ const SwordAnimation = () => {
 
         let mouseX = swordSpan.getBoundingClientRect().right;
         let mouseY = swordSpan.getBoundingClientRect().top;
-        let radianDegrees = Math.atan2(e.pageX - mouseX, e.pageY - mouseY);
+        let radianDegrees = Math.atan2(e.clientX - mouseX, e.clientY - mouseY);
         let rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 180;
-        swordSvg.style.transform = `rotate(${rotationDegrees}deg)`;
+        swordSvg.style.transform = `rotate(${rotationDegrees + 1080}deg)`;
     });
 
 }
