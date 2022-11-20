@@ -100,8 +100,8 @@ textarea:focus, input:focus{
     max-width: 900px;
     width: 70%;
     height: 50%;
-    border-radius: 15px 0px 0px 15px;
-    padding: 1em;
+    border-radius: 10px 0px 0px 10px;
+    padding: 0em 1em;
 }
 
 .headerSearchSubmitBtn{
@@ -115,17 +115,78 @@ textarea:focus, input:focus{
     letter-spacing: 1px;
 }
 
-.collapseHeader{
+.collapseNode{
     transform: translateY(-100%);
+    pointer-events: none;
+
 }
-.showHeader{
+.showNode{
     transform: translateY(0%);
+    pointer-events: auto;
+
 }
 
 
 
 // -------------------SearchBar------------------------------------
 
+
+.itemListHeader{
+    position: relative;
+}
+
+.itemListHeader::after{
+    content: "";
+    width: 0%;
+    background-color: #fff;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    transition: all .300s ease-in-out;
+    transition-delay: 400ms;
+}
+
+.itemListHeaderContainer:hover > .itemListHeader:after{
+    width: 100%;
+    transition-delay: 0ms;
+
+}
+
+.headerSubMenuContainer{
+    position: absolute;
+    top: 100%;
+    overflow-y: hidden;
+    visibility: collapse;
+
+}
+
+.headerSubMenuWrapper{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    transition:  all .4s ease-in-out;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.subItem{
+    background-color: white;
+    color: v.$third-color2;
+    letter-spacing: normal;
+    padding: .6em .2em ;
+}
+
+.itemListHeaderContainer:hover > .headerSubMenuContainer  { 
+    visibility: visible;
+    .headerSubMenuWrapper{
+    transform: translateY(0%);
+    pointer-events: auto;
+    transition-delay: 300ms;
+    }
+}
 
 
 
