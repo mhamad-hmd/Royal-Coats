@@ -16,7 +16,6 @@ const Header = () => {
 
     window!.onscroll = () => {
         if (window.scrollY == 0) {
-            headerContainer!.style.position = "absolute"
             headerContainer!.style.background = "rgba(180, 177, 177, 0)"
             announcement!.style.display = "flex"
             swordPath!.style.fill = "rgb(180, 177, 177)"
