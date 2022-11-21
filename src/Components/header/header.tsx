@@ -12,7 +12,7 @@ const Header = () => {
     const headerSubMenuWrapper = document.getElementById('headerSubMenuWrapper2')
     
     let showHeader = 0;
-
+    let lastScrollTop = 0
 
     window!.onscroll = () => {
         if (window.scrollY == 0) {
@@ -24,12 +24,19 @@ const Header = () => {
         }
         else {
             announcement!.style.display = "none"
-            headerContainer!.style.position = "fixed"
             headerContainer!.style.background = "rgba(180, 177, 177, 100)"
             swordPath!.style.fill = "rgb(102, 104, 106)"
             searchBarWrapper!.style.background = "rgba(180, 177, 177, 100)"
 
         }
+
+        const st = window.pageYOffset
+        if(st > lastScrollTop){
+
+        } else if(st < lastScrollTop){
+            console.log("scrolling Up")
+        }
+        lastScrollTop = st <= 0 ? 0 : st
     }
 
     const hideNode = (element, parentElement, status) => {
@@ -64,22 +71,6 @@ const Header = () => {
     }
     document.addEventListener('click', (e) => handleClickOutsideSearchBar(e))
 
-
-    // itemListHeader!.onmouseover = () => {
-    //     hideNode(headerSubMenuWrapper, headerSubMenuContainer, 'show')
-    //     console.log(headerSubMenuWrapper!.onmouseleave && itemListHeader!.onmouseleave)
-
-    // }
-
-    // itemListHeader!.onmouseout = () => {
-    //     mousenList
-    // }
-
-    // headerSubMenuWrapper!.onmouseout = (e) => {
-    //     if(headerSubMenuWrapper!.onmouseout && itemListHeader!.onmouseover){
-    //         hideNode(headerSubMenuWrapper, headerSubMenuContainer, 'hide')
-    //     }
-    // }
 
 
 

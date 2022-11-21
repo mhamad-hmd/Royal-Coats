@@ -2,7 +2,6 @@
 
 
 .footerContainer{
-    height: 50vh;
     background-color: v.$main-color3;
 }
 
@@ -18,6 +17,7 @@
 
 .footerWrapper{
     flex-wrap: wrap;
+    overflow: hidden;
 }
 
 .swordSvgFooter{

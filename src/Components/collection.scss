@@ -1,0 +1,46 @@
+@use "./utilities.scss" as v;
+
+
+
+
+.collectionImg{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 40vh;
+    filter: brightness(.5);
+}
+
+.productsContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productCard{
+    max-width: 350px;
+    height: 450px;
+    width: 100%;
+    @media (min-width: v.$md) and (min-width: v.$lg) {
+        height: 350px;
+    }
+    @media (max-width:v.$md) {
+        height: 300px;
+    }
+   
+
+}
+
+
+
+.ProductCardImg{
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+
+.productCardInfo{
+    height: 30%;
+}

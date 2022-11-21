@@ -1,33 +1,48 @@
+<div class="collectionContainer">
 
-<select id="sort-by">
-  {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
-  {% for option in collection.sort_options %}
-    <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+
+  <img class="collectionImg" src="{{collection.featured_image | img_url: 'master'}}" alt="">
+
+  <h1>{{ collection.title }}</h1>
+
+  <select id="sort-by">
+    {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+
+    {% for option in collection.sort_options %}
+    <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected" {% endif %}>
       {{ option.name }}
     </option>
-  {% endfor %}
-</select>
+    {% endfor %}
+  </select>
 
-{% paginate collection.products by 4   %}
-  <h1>{{ collection.title }}</h1>
-  {% for product in collection.products %}
-    <div>
-      <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-      {{ product.price | money }}
-      {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
-      <a href="{{ product.url | within: collection }}">
-        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+  {% paginate collection.products by 4 %}
+  <div class="productsContainer">
+
+    {% for product in collection.products %}
+    <div class="productCard">
+      <a class="ProductCardImgContainer" href="{{ product.url | within: collection }}">
+        <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
+          alt="{{ product.featured_image.alt | escape }}">
       </a>
+      <div class="productCardInfo">
+        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+        {{ product.price | money }}
+        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+      </div>
     </div>
-  {% else %}
-    <p>no matches</p>
-  {% endfor %}
-  {% if paginate.pages > 1 %}
-    {{ paginate | default_pagination }}
-  {% endif %}
-{% endpaginate %}
 
+    {% else %}
+    <p>no matches</p>
+    {% endfor %}
+  </div>
+
+  {% if paginate.pages > 1 %}
+  {{ paginate | default_pagination }}
+  {% endif %}
+  {% endpaginate %}
+
+</div>
 <script>
   Shopify.queryParams = {};
 
@@ -45,7 +60,7 @@
   }
 
   // Update sort_by query parameter on select change
-  document.querySelector('#sort-by').addEventListener('change', function(e) {
+  document.querySelector('#sort-by').addEventListener('change', function (e) {
     var value = e.target.value;
 
     Shopify.queryParams.sort_by = value;
