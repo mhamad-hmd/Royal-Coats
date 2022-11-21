@@ -1,7 +1,7 @@
 <div id="headerContainer" class="headerContainer / md:flex xs:hidden flex-col  w-full ">
     {%- render 'announcement' -%}
 
-    <div class="onBlur flex headerWrapper h-20 px-5   w-full">
+    <div id="headerWrapper" class="onBlur flex headerWrapper h-20 px-5   w-full">
 
         <div class="firstHeader  / flex justify-start items-center / ">
             <div class="w-fit relative  ">
@@ -27,7 +27,7 @@
                         href="{{ link.url }}">
                         <span class="itemListHeader itemListHeaderLinks">{{ link.title }}</span>
                     </a>
-                    
+
                     <div id="headerSubMenuContainer{{forloop.index}}" class="headerSubMenuContainer ">
                         <div id="headerSubMenuWrapper{{forloop.index}}" class="headerSubMenuWrapper ">
                             {%- for childLink in link.links -%}
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     {%- else -%}
-                        <a id="itemListHeader{{forloop.index}}" class="leftItem itemListHeaderWrapper headerItems"
+                    <a id="itemListHeader{{forloop.index}}" class="leftItem itemListHeaderWrapper headerItems"
                         href="{{ link.url }}">
                         <span class="itemListHeader">{{ link.title }}</span>
                     </a>

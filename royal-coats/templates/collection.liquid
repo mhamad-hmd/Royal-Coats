@@ -1,10 +1,8 @@
 <div class="collectionContainer">
 
-
-
   <img class="collectionImg" src="{{collection.featured_image | img_url: 'master'}}" alt="">
 
-  <h1>{{ collection.title }}</h1>
+  <h1 class="collectionTitle">{{ collection.title }}</h1>
 
   <select id="sort-by">
     {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
@@ -16,25 +14,26 @@
     {% endfor %}
   </select>
 
-  {% paginate collection.products by 4 %}
+  {% paginate collection.products by 9 %}
   <div class="productsContainer">
+    <div class="productWrapper">
 
-    {% for product in collection.products %}
-    <div class="productCard">
-      <a class="ProductCardImgContainer" href="{{ product.url | within: collection }}">
-        <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
-          alt="{{ product.featured_image.alt | escape }}">
-      </a>
-      <div class="productCardInfo">
-        <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        {{ product.price | money }}
-        {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+      {% for product in collection.products %}
+      <div class="productCardContainer">
+        <a href="{{ product.url | within: collection }}" class="productCard">
+          <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
+            alt="{{ product.featured_image.alt | escape }}">
+          <div class="productCardInfo">
+            <h1 class="productCardTitle">{{ product.title }}</h1>
+            <span class="productCardPrice">{{ product.price | money }}</span>
+            {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+          </div>
+        </a>
       </div>
+      {% else %}
+      <p>no matches</p>
+      {% endfor %}
     </div>
-
-    {% else %}
-    <p>no matches</p>
-    {% endfor %}
   </div>
 
   {% if paginate.pages > 1 %}
