@@ -3,13 +3,13 @@
 
 
 
-.collectionImg{
+.collectionMedia{
     object-fit: cover;
     object-position: center;
     width: 100%;
-    height: 40vh;
-    filter: brightness(.7);
+    height: 60vh;
 }
+
 
 .productsContainer{
     width: 100%;
@@ -22,7 +22,7 @@
 
 .collectionTitle{
     font-size: 3em;
-    margin: 2em 0em 1em 1em;
+    margin: 1.3em 0em 0em 1em;
 }
 
 .productWrapper{
@@ -75,3 +75,45 @@
     color: v.$third-color3;
 }
 
+
+.filterWrapper{
+    max-width: 1200px;
+    margin-bottom: 1em;
+}
+
+select{
+    background: transparent;
+    margin-right: 2em !important;
+
+}
+.collectionFilter option{
+    background: v.$secondary-color2;
+}
+
+.paginate{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6em;
+    margin: 1em .5em;
+}
+
+.page{
+    border: 1px v.$third-color2 solid ;
+    background-color: v.$main-second;
+    color: v.$third-color2;
+    padding: .3em .5em;
+    
+}
+
+.current{
+    background-color: v.$third-color2;
+    color: v.$main-second;
+}
+
+.next, .prev{
+    color: v.$third-color2; 
+    font-weight: 600;
+
+}

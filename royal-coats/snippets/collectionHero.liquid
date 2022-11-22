@@ -1,0 +1,16 @@
+<div class="collectionMediaWrapper">
+
+  <video class="collectionMedia" loop preload="" autoplay muted>
+    
+    {%- for block in section.blocks -%}
+
+      {%- if collection.handle == "women-collection" -%}
+        <source src="{{block.settings.womenVideo}}" type="video/mp4">
+      {%- elsif collection.handle == "men-collection" -%}
+        <source src="{{block.settings.menVideo}}" type="video/mp4">
+      {%- endif -%}
+    {%- endfor -%}
+
+  </video>
+
+</div>

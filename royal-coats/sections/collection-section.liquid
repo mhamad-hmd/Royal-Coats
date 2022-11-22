@@ -1,0 +1,32 @@
+{%- render 'collectionHero' -%}
+
+{%- schema -%}
+  {
+    "name": "Sections video",
+    "blocks": [
+      {
+        "name": "Womens Video",
+        "type": "womensVideo",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "url",
+            "id": "womenVideo",
+            "label": "women Video Link"
+          }
+        ]
+      }, {
+        "name": "mens Video",
+        "type": "mensVideo",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "url",
+            "id": "menVideo",
+            "label": "men Video Link"
+          }
+        ]
+      }
+    ]
+  }
+{%- endschema -%}

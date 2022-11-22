@@ -34,7 +34,6 @@
     font-size: 32px;
     font-weight: 600;
     font-family: v.$scndFont;
-    color: v.$third-color2;
     position: relative;
     z-index: 10;
     cursor: pointer;
@@ -46,7 +45,7 @@
 }
 
 .navUp{
-    top: -20% !important;
+    top: -28% !important;
 }
 .annUp{
     top: -3%;
@@ -71,7 +70,16 @@
     height: auto;
 }
 
+// .headerFont{
+//     color:v.$main-second;
+//     path{
+//         fill:v.$main-second;
+//     }
+// }
 
+.searchIconFill{
+    fill: none !important;
+}
 
 
 
