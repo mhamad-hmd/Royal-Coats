@@ -22,11 +22,11 @@
 
 .collectionTitle{
     font-size: 3em;
-    margin: 1.3em 0em 0em 1em;
+    margin-top: 1.3em ;
 }
 
 .productWrapper{
-    flex-basis: 83.3%;
+    flex-basis: 100%;
     display: flex;
     flex-wrap: wrap ;
 }
@@ -35,10 +35,10 @@
     @media (min-width: v.$lg){
         flex-basis: 33.3%;
     } 
-    @media (min-width: v.$md) and (max-width: v.$lg) {
+    @media (min-width: v.$sm) and (max-width: v.$lg) {
         flex-basis: 50%;
     }
-    @media (max-width:v.$md) {
+    @media (max-width:v.$sm) {
         flex-basis: 100%;
     }
 
@@ -71,19 +71,25 @@
     color: v.$third-color3;
 }
 
+.collectionInfo{
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
 .productCardPrice{
     color: v.$third-color3;
 }
 
 
 .filterWrapper{
-    max-width: 1200px;
-    margin-bottom: 1em;
+    margin: auto;
 }
 
 select{
     background: transparent;
-    margin-right: 2em !important;
 
 }
 .collectionFilter option{

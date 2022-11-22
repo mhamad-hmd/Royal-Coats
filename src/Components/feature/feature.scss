@@ -8,11 +8,12 @@
     letter-spacing: 6px;
 }
 
-.featureContainer {
+.featureWrapper {
     display: grid;
     gap: 4rem;
     overflow: hidden;
-    
+    max-width: 1280px;
+    margin: auto;
 }
 
 .featureContainer{
@@ -24,7 +25,7 @@
     width: 100%;
     display: flex;
     white-space: nowrap;
-    transform: translateX(-25%);
+    transform: translateX(-55%);
     transition: all .8s ease-in-out;
     gap: 15%;
 }
@@ -45,11 +46,11 @@
     display: flex;
     justify-content: center;
     align-items: self-end;
-    width: 40%;
-    flex-basis: 40%;
+    flex-basis: 60%;
     transition: all .8s ease-in-out;
     z-index: 5;
     overflow: hidden;
+    transition-delay: 200ms;
     
 
 }

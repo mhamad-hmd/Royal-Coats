@@ -1,55 +1,58 @@
 <div class="collectionContainer">
 
   {%- comment -%}
-    <img class="collectionImg" src="{{collection.featured_image | img_url: 'master'}}" alt="">
+  <img class="collectionImg" src="{{collection.featured_image | img_url: 'master'}}" alt="">
   {%- endcomment -%}
 
 
-      {%- section 'collection-section' -%}
+  {%- section 'collection-section' -%}
 
+  <div class="collectionInfo">
 
-  <h1 class="collectionTitle">{{ collection.title }}</h1>
+    <h1 class="collectionTitle">{{ collection.title }}</h1>
 
-  <div class="filterWrapper w-full / flex justify-end">
-    <select class="collectionFilter" id="sort-by">
-      {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+    <div class="filterWrapper w-full / flex justify-end">
+      <select class="collectionFilter" id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
-      {% for option in collection.sort_options %}
-        <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected"{% endif %}>
+        {% for option in collection.sort_options %}
+        <option value="{{ option.value }}" {% if option.value==sort_by %}selected="selected" {% endif %}>
           {{ option.name }}
         </option>
-      {% endfor %}
-    </select>
-  </div>
+        {% endfor %}
+      </select>
+    </div>
 
-  {% paginate collection.products by 9 %}
+    {% paginate collection.products by 9 %}
     <div class="productsContainer">
       <div class="productWrapper my-5">
 
         {% for product in collection.products %}
-          <div class="productCardContainer">
-            <a href="{{ product.url | within: collection }}" class="productCard">
-              <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
-              <div class="productCardInfo">
-                <h1 class="productCardTitle">{{ product.title }}</h1>
-                <span class="productCardPrice">{{ product.price | money }}</span>
-                {% unless product.available %}<br><strong>sold out</strong>
-                {% endunless %}
-              </div>
-            </a>
-          </div>
+        <div class="productCardContainer">
+          <a href="{{ product.url | within: collection }}" class="productCard">
+            <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
+              alt="{{ product.featured_image.alt | escape }}">
+            <div class="productCardInfo">
+              <h1 class="productCardTitle">{{ product.title }}</h1>
+              <span class="productCardPrice">{{ product.price | money }}</span>
+              {% unless product.available %}<br><strong>sold out</strong>
+              {% endunless %}
+            </div>
+          </a>
+        </div>
         {% else %}
-          <p>no matches</p>
+        <p>no matches</p>
         {% endfor %}
       </div>
     </div>
 
     {% if paginate.pages > 1 %}
-      <div class="paginate">
-        {{ paginate | default_pagination }}
-      </div>
+    <div class="paginate">
+      {{ paginate | default_pagination }}
+    </div>
     {% endif %}
-  {% endpaginate %}
+    {% endpaginate %}
+  </div>
 
 </div>
 <script>
@@ -68,7 +71,7 @@
   }
 
   // Update sort_by query parameter on select change
-  document.querySelector('#sort-by').addEventListener('change', function(e) {
+  document.querySelector('#sort-by').addEventListener('change', function (e) {
     var value = e.target.value;
 
     Shopify.queryParams.sort_by = value;

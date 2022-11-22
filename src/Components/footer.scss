@@ -2,12 +2,12 @@
 
 
 .footerContainer{
-    background-color: v.$main-color3;
+    background-color: v.$secondary-color2;
 }
 
 .subscribeFooter{
     background: transparent;
-    border: 1px v.$main-second solid;
+    border: 1px v.$third-color2 solid;
     border-radius: 5px  ;
     padding-left: 10px;
     font-size: 17px;
@@ -28,17 +28,17 @@
 }
 
 .swordSvgFooter svg path{
-    fill:  v.$main-second;
+    fill:  v.$third-color2;
     transition: all .7s ease-in-out;
 }
 
 
 .subscribeBtnFooter{
-    background-color:v.$main-second ;
+    background-color:v.$third-color2 ;
     height: 35px;
     padding:0px 10px;
     border-radius: 0px 20px 20px 0px;
-    border: 1px v.$main-second solid ;
+    border: 1px v.$third-color2 solid ;
     position: absolute;
     left: 80%;
 
@@ -46,7 +46,7 @@
 
 .signupMessage{
     font-size: 24px;
-    color: v.$main-second;
+    color: v.$third-color2;
 }
 
 .socialIcon{
@@ -75,11 +75,11 @@
 }
 
 .footerItem{
-    color: v.$main-second;
+    color: v.$third-color2;
     font-size: 18px;
 }
 
 .footerIcon{
-    color: v.$main-second;
+    color: v.$third-color2;
 }
 

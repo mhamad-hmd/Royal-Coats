@@ -16,13 +16,13 @@ const Header = () => {
         if (window.scrollY == 0) {
             headerContainer!.classList.remove('annUp');
             swordPath!.style.fill = "rgb(180, 177, 177)"
-            searchBarWrapper!.style.background = "rgba(246, 243, 240, 0)"
+            searchBarWrapper!.classList.add('searchTop');
 
         }
         else {
             headerContainer!.classList.add('annUp')
             swordPath!.style.fill = "rgb(102, 104, 106)"
-            searchBarWrapper!.style.background = "rgba(246, 243, 240, 100)"
+            searchBarWrapper!.classList.remove('searchTop');
 
         }
 

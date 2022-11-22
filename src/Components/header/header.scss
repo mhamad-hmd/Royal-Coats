@@ -49,7 +49,7 @@
 }
 .annUp{
     top: -3%;
-    background-color: rgba(246, 243, 240, 100);
+    background-color: v.$secondary-color2;
 }
 
 .headerItems{
@@ -124,8 +124,16 @@ textarea:focus, input:focus{
     width: 100%;
     height: 10vh;
     transition: all .5s ease-in-out;
-    background-attachment: rgb(246, 243, 240,0);
+    background: linear-gradient(180deg, #E2CCA5 49.48%, #815B17 172.16%);
+
 }
+
+.searchTop{
+    background: linear-gradient(180deg, rgba(246, 243, 240, 0) 23.71%, rgba(129, 91, 23, 0) 228.35%);
+
+}
+
+
 
 
 .headerSearchBar{
@@ -148,7 +156,7 @@ textarea:focus, input:focus{
 }
 
 .collapseNode{
-    transform: translateY(-100%);
+    transform: translateY(-110%);
     pointer-events: none;
 
 }
@@ -169,12 +177,12 @@ textarea:focus, input:focus{
 
 .itemListHeader::after{
     content: "";
-    background-color: v.$secondary-color2;
+    background-color: v.$third-color2;
     left: 0;
     bottom: -4px;
     height: 2px;
     position: absolute;
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     right: 0;
     transition: all .300s ease-in-out;
 
