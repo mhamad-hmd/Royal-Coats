@@ -1,0 +1,47 @@
+@use "./utilities" as v;
+
+
+.productContainer{
+    display: flex;
+    flex-basis: 100%;
+    margin-top: 10em;
+}
+
+
+.productImageContainer{
+    flex-basis: 60%;
+    position: relative;
+    overflow: hidden;
+
+}
+.productImagesWrapper{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.productImage{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.productDetailsContainer{
+    flex-basis: 40%;
+    max-width: 340px;
+    margin: 0px auto;
+    color: v.$third-color2;
+    gap: .7em;
+}
+
+
+.productTitle{
+    font-size: 3em;
+    font-family: v.$mainFont;
+    font-style: normal;
+}
+
+.productPrice{
+    font-size: 2em;
+}
+

@@ -15,7 +15,7 @@ const Header = () => {
     window!.onscroll = () => {
         if (window.scrollY == 0) {
             headerContainer!.classList.remove('annUp');
-            swordPath!.style.fill = "rgb(180, 177, 177)"
+            swordPath!.style.fill = "rgb(w)"
             searchBarWrapper!.classList.add('searchTop');
 
         }

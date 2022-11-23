@@ -1,6 +1,64 @@
+<div class="productPageContainer">
+  <div class="productContainer">
+    <div class="productImageContainer">
+      <div class="productImagesWrapper">
+        {%- for image in product.images -%}
+        <img class="productImage " src="{{ image.src | img_url: 'large' }}" alt="">
+        {%- endfor -%}
+      </div>
 
-<img src="{{ product.featured_image.src | img_url: 'large' }}" alt="">
-<h1>
+    </div>
+    <div class="productDetailsContainer / flex flex-col items-start">
+      <h1 class="productTitle text-center">
+        {{product.title}}
+      </h1>
+      <p>{{product.description}}</p>
+      <span class="productPrice">{{product.price | money}}</span>
+      {% form 'product', product %}
+      {% if product.options.size > 0 -%}
+      {% for option in product.options_with_values -%}
+      <div class="flex gap-3">
+
+        <h1>{{ option.name }}:</h1>
+
+          {%- for value in option.values -%}
+          <input  {% if option.selected_value == value %} checked="checked"{% endif %} type="radio" value="{{value}}" data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}" 
+          id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}" >
+          <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">{{ value | escape }}</label>
+          {%- endfor -%}
+
+      </div>
+      {%- endfor %}
+      {%- endif %}
+
+
+      <button type="submit">
+        add to cart
+      </button>
+
+      {% endform %}
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%- comment -%} <h1>
   {{product.title}}
 </h1>
 
@@ -10,20 +68,8 @@
 
 <div>
   {{product.description}}
-</div>
+</div> {%- endcomment -%}
 
-{% form 'product', product %}
+{%- comment -%}
 
-<select name = 'id'>
-  {% for variant in product.variants %}
-  <option value={{variant.id}}>
-    {{variant.title}}
-  </option>
-  {% endfor %}
-</select>
-
-<button type="submit">
-  add to cart
-</button>
-
-{% endform %}
+{%- endcomment -%}
