@@ -9,31 +9,56 @@
 
     </div>
     <div class="productDetailsContainer / flex flex-col items-start">
-      <h1 class="productTitle text-center">
-        {{product.title}}
-      </h1>
-      <p>{{product.description}}</p>
-      <span class="productPrice">{{product.price | money}}</span>
+      <div class="productInfo flex flex-col items-start">
+
+        <h1 class="productTitle text-center">
+          {{product.title}}
+        </h1>
+        <p>{{product.description}}</p>
+        <span class="productPrice">{{product.price | money}}</span>
+      </div>
       {% form 'product', product %}
       {% if product.options.size > 0 -%}
       {% for option in product.options_with_values -%}
       <div class="flex gap-3">
 
-        <h1>{{ option.name }}:</h1>
+        <h1 class="optionTitle">{{ option.name }}:</h1>
 
-          {%- for value in option.values -%}
-          <input  {% if option.selected_value == value %} checked="checked"{% endif %} type="radio" value="{{value}}" data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}" 
-          id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}" >
-          <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">{{ value | escape }}</label>
-          {%- endfor -%}
+        {%- for value in option.values -%}
+
+        <label class=" text-center flex items-center justify-center relative"
+          for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+
+          <input class="{{option.name | handleize}}Input optionInput" type="radio" {% if option.selected_value == value %}
+            checked="checked" {%endif %} value="{{ value }}" data-index="option{{ forloop.index }}"
+            name="{{ option.name | handleize }}"
+            id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+          <span class="{{option.name | handleize }}Label spanLabel " {% if option.name == "Color" %}
+            style="background-color: {{ value | handleize }};" {% endif %}>
+            {% if option.name == "Size" %}
+            {{ value | escape }}
+            {%endif%}
+          </span>
+
+        </label>
+        {%- endfor -%}
 
       </div>
       {%- endfor %}
       {%- endif %}
+      <div class="quantityContainer flex items-center gap-3">
+
+        <h1 class="optionTitle">quantity:</h1>
+        <div class="quantityWrapper">
+          <button type="decrement" class="decrement quantityBtn">-</button>
+          <input class="quantityInput" type="number" name="quantity" value="1">
+          <button type="increment" class="increment quantityBtn">+</button>
+        </div>
+      </div>
 
 
-      <button type="submit">
-        add to cart
+      <button class="productBtn" type="submit" name="add" value="Add to cart">
+        ADD TO CART
       </button>
 
       {% endform %}
@@ -42,13 +67,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
 
 
