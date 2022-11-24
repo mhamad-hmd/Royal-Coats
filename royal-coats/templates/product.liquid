@@ -14,7 +14,7 @@
         <h1 class="productTitle text-center">
           {{product.title}}
         </h1>
-        <p>{{product.description}}</p>
+        {{product.description}}
         <span class="productPrice">{{product.price | money}}</span>
       </div>
       {% form 'product', product %}
@@ -50,14 +50,14 @@
 
         <h1 class="optionTitle">quantity:</h1>
         <div class="quantityWrapper">
-          <button type="decrement" class="decrement quantityBtn">-</button>
-          <input class="quantityInput" type="number" name="quantity" value="1">
-          <button type="increment" class="increment quantityBtn">+</button>
+          <button id="decrement" type="button" data-action="decrement" class="decrement quantityBtn">-</button>
+          <input id="quantityInput" class="quantityInput" min="1" type="number" name="quantity" value="1">
+          <button id="increment" type="button" data-action="increment" class="increment quantityBtn">+</button>
         </div>
       </div>
 
 
-      <button class="productBtn" type="submit" name="add" value="Add to cart">
+      <button  class="productBtn" type="submit" name="add" value="Add to cart">
         ADD TO CART
       </button>
 
