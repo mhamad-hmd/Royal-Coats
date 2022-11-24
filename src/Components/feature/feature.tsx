@@ -7,8 +7,8 @@ const Feature = () => {
   const featureCardContainer = document.getElementById('featureCardContainer');
   const featureCardwrapper = document.getElementById('featureCardwrapper');
   const cardImg = document.getElementById('cardImg');
-  let translateCount = -55;
-  let translateBy = 75;
+  let translateCount = -40;
+  let translateBy = 60;
   let mainChild = 1;
 
 
@@ -48,21 +48,21 @@ const Feature = () => {
           
         }
         
-        else if(i > mainChild) {
+        else {
           child.style.transform = 'scale(85%)'
           child.style.filter = 'blur(3px)'
           child.style.boxShadow = 'rgba(201, 199, 199, 0.603) .5px .5px 40px, rgba(201, 199, 199, 0.603) 0.5px 0.5px 40px'
           childImg!.style.transform = 'scale(100%)'
   
         }
-        else{
-          child.style.boxShadow = 'rgba(201, 199, 199, 0.603) .5px .5px 40px, rgba(201, 199, 199, 0.603) 0.5px 0.5px 40px'
-          child.style.transform = 'scale(110%)'
-          child.style.filter = 'blur(3px)'
-          childImg!.style.transform = 'scale(100%)'
+        // else{
+        //   child.style.boxShadow = 'rgba(201, 199, 199, 0.603) .5px .5px 40px, rgba(201, 199, 199, 0.603) 0.5px 0.5px 40px'
+        //   child.style.transform = 'scale(110%)'
+        //   child.style.filter = 'blur(3px)'
+        //   childImg!.style.transform = 'scale(100%)'
   
   
-        }
+        // }
   
     
   
