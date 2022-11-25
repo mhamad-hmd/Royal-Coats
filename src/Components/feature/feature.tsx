@@ -7,8 +7,8 @@ const Feature = () => {
   const featureCardContainer = document.getElementById('featureCardContainer');
   const featureCardwrapper = document.getElementById('featureCardwrapper');
   const cardImg = document.getElementById('cardImg');
-  let translateCount = -40;
-  let translateBy = 60;
+  let translateCount = 0;
+  let translateBy = 33.3;
   let mainChild = 1;
 
 
