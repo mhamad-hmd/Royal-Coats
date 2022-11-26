@@ -1,19 +1,18 @@
 @use "../utilities.scss" as v;
 
-
 .productContainer {
   display: flex;
   flex-basis: 100%;
   margin-top: 10em;
-  background-color: v.$secondary-color2;
+  margin-bottom: 5em  ;
+  background-color: v.$main-second;
+  gap: 1rem;
 }
-
 
 .productImageContainer {
   flex-basis: 70%;
   position: relative;
   overflow: hidden;
-
 }
 .productImagesWrapper {
   display: flex;
@@ -26,7 +25,6 @@
   object-fit: cover;
 }
 
-
 .productDetailsContainer {
   flex-basis: 30%;
   max-width: 340px;
@@ -34,7 +32,6 @@
   color: v.$third-color2;
   gap: 2rem;
 }
-
 
 .productTitle {
   font-size: 3em;
@@ -46,99 +43,148 @@
   font-size: 2em;
 }
 
-.productInfo{
-    gap: 1rem;
+.productInfo {
+  gap: 1rem;
 }
 
-.shopify-product-form{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    
+.shopify-product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 }
-
-
 
 .optionTitle {
-  font-size: 1.5em;
   font-family: v.$mainFont;
   font-style: normal;
 }
 
-.optionInput{
-    position: absolute;
-    width: 1px;
+.optionInput {
+  position: absolute;
+  width: 1px;
 }
 
 .sizeInput:checked ~ .sizeLabel {
-    background-color: v.$third-color2;
-    color: v.$secondary-color2;
+  background-color: v.$third-color2;
+  color: v.$secondary-color2;
 }
-.sizeLabel{
-    border: 1px solid;
-    padding: 4px 4px;
-    font-size: 1rem;
-}
-
-.colorLabel{
-    padding: .8em;
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.sizeLabel {
+  border: 1px solid;
+  padding: 4px 4px;
+  font-size: 1rem;
 }
 
-.colorInput:checked ~.colorLabel::after{
-    width: auto;
-    opacity: 1;
-    padding: 1em;
+.colorLabel {
+  padding: 0.8em;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.colorLabel::after{
-    content: "";
-    position: absolute;
-    border: 2px v.$third-color2 solid;
-    border-radius: 50%;
-    padding: .6em;
-    width: 1px;
-    opacity: 0;
-    transition: all .3s;
+.colorInput:checked ~ .colorLabel::after {
+  width: auto;
+  opacity: 1;
+  padding: 1em;
 }
 
-.quantityWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px v.$third-color2 solid;
-    border-radius: 25px;
-}
-.quantityBtn{
-    font-size: 2rem;
-    padding: 0rem .8rem;
-}
-
-.quantityInput{
-    max-width: 30px;
-    background-color: transparent;
-    text-align: center;
+.colorLabel::after {
+  content: "";
+  position: absolute;
+  border: 2px v.$third-color2 solid;
+  border-radius: 50%;
+  padding: 0.6em;
+  width: 1px;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
-
-.decrement{
-    border-right: 1px v.$third-color2 solid;
+.quantityWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px v.$third-color2 solid;
+  border-radius: 25px;
 }
-.increment{
-    border-left: 1px v.$third-color2 solid;
+.quantityBtn {
+  font-size: 1.7rem;
+  padding: 0rem 1rem;
 }
 
+.quantityInput {
+  max-width: 30px;
+  background-color: transparent;
+  text-align: center;
+}
 
-.productBtn{
-    background-color: v.$third-color2 !important;
-    color: v.$secondary-color2;
-    border-radius: 3px;
-    padding: 8px 30px;
-    align-self: center;
-    margin-top: 2em;
+.decrement {
+  border-right: 1px v.$third-color2 solid;
+}
+.increment {
+  border-left: 1px v.$third-color2 solid;
+}
+
+.productBtn {
+  background-color: v.$third-color2 !important;
+  color: v.$secondary-color2;
+  border-radius: 3px;
+  padding: 8px 30px;
+  align-self: center;
+  margin-top: 2em;
+}
+
+@media (min-width: v.$md) and (max-width: v.$lg) {
+  .productTitle {
+    font-size: 1.5em;
+  }
+  .productInfo {
+    p {
+      font-size: 14px;
+    }
+  }
+  .quantityBtn {
+    font-size: 1.5rem;
+  }
+
+ 
+  .sizeLabel {
+    font-size: 0.8rem;
+  }
+
+  .shopify-product-form {
+    gap: 1.5rem;
+  }
+
+  .productDetailsContainer {
+    gap: 1em;
+  }
+
+  .productBtn {
+    margin-top: 1rem;
+  }
+  .productPrice{
+   font-size: 1.5rem; 
+   
+  }
+}
+
+@media (max-width: v.$md) {
+  .productTitle {
+    font-size: 2em;
+  }
+  .productDetailsContainer {
+    flex-basis: auto;
+  }
+
+  .productContainer{
+    flex-wrap: wrap;
+  }
+
+  .productImageContainer{
+  margin: auto;    
+  }
+  .productPrice{
+    font-size: 1.5rem;
+  }
 }

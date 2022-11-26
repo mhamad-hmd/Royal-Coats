@@ -2,12 +2,13 @@
 
 
 .footerContainer{
-    background-color: v.$secondary-color2;
+    background-color: v.$third-color2;
+    color: v.$main-second;
 }
 
 .subscribeFooter{
     background: transparent;
-    border: 1px v.$third-color2 solid;
+    border: 1px v.$main-second solid;
     border-radius: 5px  ;
     padding-left: 10px;
     font-size: 17px;
@@ -15,9 +16,13 @@
 
 }
 
-.footerWrapper{
-    flex-wrap: wrap;
-    overflow: hidden;
+// .footerWrapper{
+//     flex-wrap: wrap;
+//     overflow: hidden;
+// }
+
+.titleHeaderFooter {
+    color: v.$secondary-color2 !important;
 }
 
 .swordSvgFooter{
@@ -28,25 +33,28 @@
 }
 
 .swordSvgFooter svg path{
-    fill:  v.$third-color2;
+    fill:  v.$secondary-color2;
     transition: all .7s ease-in-out;
 }
 
-
+.footerLinks{
+    max-width: 460px;
+}
 .subscribeBtnFooter{
-    background-color:v.$third-color2 ;
+    background-color:v.$secondary-color2;
     height: 35px;
     padding:0px 10px;
     border-radius: 0px 20px 20px 0px;
-    border: 1px v.$third-color2 solid ;
+    border: 1px v.$secondary-color2 solid ;
     position: absolute;
     left: 80%;
+    color: v.$third-color2;
 
 }
 
 .signupMessage{
     font-size: 24px;
-    color: v.$third-color2;
+    color: v.$secondary-color2;
 }
 
 .socialIcon{
@@ -71,15 +79,21 @@
 }
 
 .socialIcon:hover{
-    background-color: v.$main-second;
+    background-color: v.$secondary-color2;
 }
 
 .footerItem{
-    color: v.$third-color2;
+    color: v.$secondary-color2;
     font-size: 18px;
 }
 
 .footerIcon{
-    color: v.$third-color2;
+    color: v.$secondary-color2;
 }
 
+
+@media (max-width: v.$md) {
+    .footerWrapper {
+        flex-wrap: wrap;
+    }
+}

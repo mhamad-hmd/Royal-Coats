@@ -20,7 +20,7 @@
       {% form 'product', product %}
       {% if product.options.size > 0 -%}
       {% for option in product.options_with_values -%}
-      <div class="flex gap-3">
+      <div class="flex gap-3 items-center">
 
         <h1 class="optionTitle">{{ option.name }}:</h1>
 
@@ -88,6 +88,6 @@
   {{product.description}}
 </div> {%- endcomment -%}
 
-{%- comment -%}
+{%- comment  -%}
 
 {%- endcomment -%}
