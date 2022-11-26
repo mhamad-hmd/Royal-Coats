@@ -1,0 +1,22 @@
+{%- if product != blank -%}
+{%- assign productPage = product -%}
+{%- endif -%}
+
+{% for product in collection.products %}
+{%- if product.title != productPage.title -%}
+
+
+<div class="productCardContainer">
+    <a href="{{ product.url | within: collection }}" class="productCard">
+        <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
+            alt="{{ product.featured_image.alt | escape }}">
+        <div class="productCardInfo">
+            <h1 class="productCardTitle">{{ product.title }}</h1>
+            <span class="productCardPrice">{{ product.price | money }}</span>
+            {% unless product.available %}<br><strong>sold out</strong>
+            {% endunless %}
+        </div>
+    </a>
+</div>
+{%- endif -%}
+{% endfor %}

@@ -22,7 +22,6 @@
 
 .collectionTitle{
     font-size: 3em;
-    margin-top: 1.3em ;
 }
 
 .productWrapper{
@@ -84,8 +83,10 @@
 }
 
 
-.filterWrapper{
-    margin: auto;
+.titleWrapper{
+    margin: 2em auto 0em;
+    flex-wrap: wrap;
+    gap: 2em;
 }
 
 select{

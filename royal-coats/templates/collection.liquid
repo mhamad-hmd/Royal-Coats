@@ -9,9 +9,9 @@
 
   <div class="collectionInfo">
 
-    <h1 class="collectionTitle">{{ collection.title }}</h1>
 
-    <div class="filterWrapper w-full / flex justify-end">
+    <div class="titleWrapper w-full / flex justify-between">
+      <h1 class="collectionTitle">{{ collection.title }}</h1>
       <select class="collectionFilter" id="sort-by">
         {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
@@ -26,23 +26,8 @@
     {% paginate collection.products by 9 %}
     <div class="productsContainer">
       <div class="productWrapper my-5">
+        {%- render 'collectionCard' -%}
 
-        {% for product in collection.products %}
-        <div class="productCardContainer">
-          <a href="{{ product.url | within: collection }}" class="productCard">
-            <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
-              alt="{{ product.featured_image.alt | escape }}">
-            <div class="productCardInfo">
-              <h1 class="productCardTitle">{{ product.title }}</h1>
-              <span class="productCardPrice">{{ product.price | money }}</span>
-              {% unless product.available %}<br><strong>sold out</strong>
-              {% endunless %}
-            </div>
-          </a>
-        </div>
-        {% else %}
-        <p>no matches</p>
-        {% endfor %}
       </div>
     </div>
 

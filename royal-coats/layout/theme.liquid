@@ -11,6 +11,7 @@
   {{ content_for_header }}
   <!-- Header hook for plugins -->
   {{ 'application.css' | asset_url | stylesheet_tag }}
+  {% render 'judgeme_core' %}
 </head>
 
 <body id="main">

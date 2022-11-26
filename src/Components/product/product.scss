@@ -4,7 +4,7 @@
   display: flex;
   flex-basis: 100%;
   margin-top: 10em;
-  margin-bottom: 5em  ;
+  margin-bottom: 5em;
   background-color: v.$main-second;
   gap: 1rem;
 }
@@ -70,7 +70,7 @@
 }
 .sizeLabel {
   border: 1px solid;
-  padding: 4px 4px;
+  padding: 4px;
   font-size: 1rem;
 }
 
@@ -109,7 +109,7 @@
 }
 .quantityBtn {
   font-size: 1.7rem;
-  padding: 0rem 1rem;
+  padding: 0 1rem;
 }
 
 .quantityInput {
@@ -134,7 +134,31 @@
   margin-top: 2em;
 }
 
-@media (min-width: v.$md) and (max-width: v.$lg) {
+.leftProductBtn, .rightProductBtn{
+  background-color: #f6f3f04f;
+
+}
+
+
+.similarProductsCardWrapper {
+  display: flex;
+  transition: all 0.5s ease-out;
+
+  .productCardContainer {
+    flex-basis: 25%;
+    flex-shrink: 0;
+  }
+}
+
+.similarProductsTitle {
+  font-size: 3em;
+}
+.scrollBtns {
+  max-width: 1440px;
+}
+
+
+@media(min-width: v.$md) and (max-width: v.$lg) {
   .productTitle {
     font-size: 1.5em;
   }
@@ -147,7 +171,7 @@
     font-size: 1.5rem;
   }
 
- 
+
   .sizeLabel {
     font-size: 0.8rem;
   }
@@ -163,13 +187,20 @@
   .productBtn {
     margin-top: 1rem;
   }
-  .productPrice{
-   font-size: 1.5rem; 
-   
+  .productPrice {
+    font-size: 1.5rem;
+
   }
+  .similarProductsCardWrapper {
+    .productCardContainer {
+      flex-basis: 33.3%;
+    }
+  }
+  
 }
 
-@media (max-width: v.$md) {
+
+@media(max-width: v.$md) {
   .productTitle {
     font-size: 2em;
   }
@@ -177,14 +208,29 @@
     flex-basis: auto;
   }
 
-  .productContainer{
+  .productContainer {
     flex-wrap: wrap;
   }
 
-  .productImageContainer{
-  margin: auto;    
+  .productImageContainer {
+    margin: auto;
   }
-  .productPrice{
+  .productPrice {
     font-size: 1.5rem;
+  }
+
+  .similarProductsCardWrapper {
+    .productCardContainer {
+      flex-basis: 50%;
+    }
+  }
+  
+}
+
+@media(max-width: v.$sm) {
+  .similarProductsCardWrapper {
+    .productCardContainer {
+      flex-basis: 100%;
+    }
   }
 }
