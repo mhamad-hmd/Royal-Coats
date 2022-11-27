@@ -5,20 +5,23 @@ import ReactDOM from 'react-dom/client'
 
 
 const whyUs = () => {
+if(document.getElementById('WhyUsTitle')){
 
-    ReactDOM.createRoot(document.getElementById('WhyUsTitle') as HTMLElement).render(
-        <React.StrictMode>
+  ReactDOM.createRoot(document.getElementById('WhyUsTitle') as HTMLElement).render(
+    <React.StrictMode>
             <WhyUsReact/>
         </React.StrictMode>
     )
+  }
 }
 
 const WhyUsReact = () => {
     const reasonsContainer = document.getElementById('reasonsContainer');
     const ref = useRef<HTMLHeadingElement>(null);
     const onScreen = useOnScreen(ref, "-300px");
-    
-    function useOnScreen(ref, rootMargin = "0px") {
+
+      
+      function useOnScreen(ref, rootMargin = "0px") {
         // State and setter for storing whether element is visible
         const [isIntersecting, setIntersecting] = useState(false);
         useEffect(() => {
@@ -52,7 +55,7 @@ const WhyUsReact = () => {
                 document.getElementById(`reasonInfo${i + 1}`)!.style.width = "100%";
                 document.getElementById(`reasonTitle${i + 1}`)!.style.transform = 'translateX(0%)';
               }
-
+              
             })
 
           }
@@ -60,9 +63,9 @@ const WhyUsReact = () => {
 
 
 
-
-  return (
-    <h1 className='whyUsTitle' ref={ref}>Why Us</h1>
+      
+      return (
+        <h1 className='whyUsTitle' ref={ref}>Why Us</h1>
   )
 }
 

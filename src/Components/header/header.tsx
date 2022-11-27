@@ -8,8 +8,28 @@ const Header = () => {
     const searchIcon = document.getElementById('searchIcon');
     const searchBarWrapper = document.getElementById('searchBarWrapper');
     const searchBarContainer = document.getElementById('searchBarContainer');
+    const itemListHeaderLinks = document.querySelectorAll('.itemListHeader')
 
     let showHeader = 0;
+
+     const linksColor = (top:Boolean) => {
+            if(top){
+                itemListHeaderLinks!.forEach((link) => {
+                    link!.classList.remove('itemListHeaderDown')                
+                })
+            }
+            else{
+                itemListHeaderLinks!.forEach((link) => {
+                    console.log(link)
+                    link!.classList.add('itemListHeaderDown')                
+                })
+            }
+            
+        }
+
+    
+    
+    
     let lastScrollTop = 0
 
     window!.onscroll = () => {
@@ -17,15 +37,18 @@ const Header = () => {
             headerContainer!.classList.remove('annUp');
             swordPath!.style.fill = "rgb(w)"
             searchBarWrapper!.classList.add('searchTop');
+            linksColor(true)
 
         }
         else {
             headerContainer!.classList.add('annUp')
             swordPath!.style.fill = "rgb(102, 104, 106)"
             searchBarWrapper!.classList.remove('searchTop');
+            linksColor(false)
 
         }
 
+       
         const st = window.pageYOffset
         if (st > lastScrollTop) {
             headerContainer!.classList.add('navUp')

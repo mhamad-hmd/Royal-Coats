@@ -1,22 +1,49 @@
-{% paginate search.results by 10 %}
-  <form action="/search" method="get" role="search">
-    <input type="search" name="q" value="{{ search.terms | escape }}">
-    <button type="submit">search</button>
-  </form>
+<div class="searchResultContainer ">
+  {% paginate search.results by 10 %}
 
-  {% if search.performed %}
-    {% for item in search.results %}
-      {% if item.featured_image %}
-        <a href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
-          {{ item.featured_image.src | img_url: 'medium' | img_tag: item.featured_image.alt }}
-        </a>
-      {% endif %}
-      <h5>{{ item.title | link_to: item.url }}</h5>
-      <p>{{ item.content | strip_html | truncatewords: 50 }}</p>
-    {% else %}
+  <div class="searchResultHeader">
+
+    <h1 class="itemNumber">{{search.results_count}} Items Were Found</h1>
+    <form class="searchBarForm relative" action="/search" method="get" role="search">
+      <input class="resultSearchBar" type="search" name="q" value="{{ search.terms | escape }}">
+      <button type="submit" class="searchBtn">
+        <svg width="30" height="30" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M33.125 36.0417L21.4583 24.375C20.4167 25.2083 19.2187 25.8681 17.8646 26.3542C16.5104 26.8403 15.0694 27.0833 13.5417 27.0833C9.75694 27.0833 6.55417 25.7729 3.93333 23.1521C1.31111 20.5299 0 17.3264 0 13.5417C0 9.75695 1.31111 6.55347 3.93333 3.93125C6.55417 1.31042 9.75694 0 13.5417 0C17.3264 0 20.5299 1.31042 23.1521 3.93125C25.7729 6.55347 27.0833 9.75695 27.0833 13.5417C27.0833 15.0694 26.8403 16.5104 26.3542 17.8646C25.8681 19.2188 25.2083 20.4167 24.375 21.4583L36.0938 33.1771C36.4757 33.559 36.6667 34.0278 36.6667 34.5833C36.6667 35.1389 36.4583 35.625 36.0417 36.0417C35.6597 36.4236 35.1736 36.6146 34.5833 36.6146C33.9931 36.6146 33.5069 36.4236 33.125 36.0417V36.0417ZM13.5417 22.9167C16.1458 22.9167 18.3597 22.0056 20.1833 20.1833C22.0056 18.3597 22.9167 16.1458 22.9167 13.5417C22.9167 10.9375 22.0056 8.72361 20.1833 6.9C18.3597 5.07778 16.1458 4.16667 13.5417 4.16667C10.9375 4.16667 8.72361 5.07778 6.9 6.9C5.07778 8.72361 4.16667 10.9375 4.16667 13.5417C4.16667 16.1458 5.07778 18.3597 6.9 20.1833C8.72361 22.0056 10.9375 22.9167 13.5417 22.9167Z"
+            fill="black" />
+        </svg>
+      </button>
+    </form>
+  </div>
+  <div class="searchResultWrapper ">
+
+    <div class="searchResultCardWrapper ">
+
+      {% if search.performed %}
+      {% for item in search.results %}
+      <div class="searchCardWrapper ">
+        <div class="searchCard">
+          <a class="resultImgWrapper" href="{{ item.url | within: collection }}" title="{{ item.title | escape }}">
+            {% if item.featured_image %}
+            {{ item.featured_image.src | img_url: 'medium' | img_tag: item.featured_image.alt }}
+            {% endif %}
+          </a>
+          <div class="resultCardInfo flex flex-col">
+            {{ item.title | link_to: item.url }}
+            <span>
+              {{ item.price| money }}
+            </span>
+
+          </div>
+        </div>
+      </div>
+      {% else %}
       no results
-    {% endfor %}
-  {% endif %}
+      {% endfor %}
+      {% endif %}
 
-  {% if paginate.pages > 1 %}{{ paginate | default_pagination }}{% endif %}
-{% endpaginate %}
+    </div>
+  </div>
+  {% if paginate.pages > 1 %}<div class="flex justify-center items-center gap-3"> {{ paginate | default_pagination }} </div> {% endif %}
+  {% endpaginate %}
+</div>

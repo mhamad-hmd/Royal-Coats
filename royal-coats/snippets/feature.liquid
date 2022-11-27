@@ -5,12 +5,12 @@
         <div id="featureCardwrapper" class="featureCardwrapper">
             <div id="featureCardContainer" class="featureCardContainer onBlur">
                 {%- for item in collections -%}
-                <div id="cardWrapper" class="cardWrapper">
+                <a id="cardWrapper" href="{{item.url}}" class="cardWrapper">
                     <img id="cardImg{{forloop.index}}" class="cardImg " src="{{item.image | img_url: 'master'}}" alt="">
                     <div class="cardInfo">
                         <h2 class="cardTitle">{{item.title}}</h2>
                     </div>
-                 </div>
+                 </a>
                 {%- endfor -%}
             </div>
 

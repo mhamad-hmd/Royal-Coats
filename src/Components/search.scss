@@ -1,0 +1,131 @@
+@use "./utilities" as v;
+
+
+.searchResultContainer{
+    display: flex;
+    flex-direction: column;
+     max-width: 1280px;
+     gap: 1rem;
+     margin: 3em auto;
+     width: 100%;
+}
+
+.searchResultWrapper{
+    max-width: 1280px;
+    display: flex;
+    justify-content: center;
+}
+.searchResultCardWrapper{
+    display: flex;
+    margin: 2em auto;
+    flex-wrap: wrap;
+}
+
+.searchResultHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: auto 2em;
+    gap: 1em;
+}
+
+.resultImgWrapper{
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.itemNumber{
+    font-size: 3em;
+    font-style: normal;
+}
+
+.searchBarForm{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 700px;
+}
+
+.resultSearchBar{
+    width: 700px;
+    background-color: v.$third-color3;
+    opacity: .4;
+    padding: .7rem .8rem;
+    border-radius: 20px;
+    color: v.$main-second;
+}
+
+.searchBtn{
+    position: absolute;
+    margin-right: 1em;
+    svg{
+        path{
+            fill: v.$main-second;
+        }
+    }
+    
+}
+
+.searchCard{
+    display: flex;
+    flex-direction: column;
+    margin: .7rem 1rem ;
+}
+
+
+.resultCardInfo{
+    font-size: 1.3rem;
+    font-style: normal;
+    font-family: v.$mainFont;
+    color: v.$third-color2;
+    span{
+    color: v.$third-color3;
+    }
+}
+
+
+
+
+.searchCardWrapper{
+    flex-basis: 25%;
+} 
+
+@media (min-width: v.$sm) and (max-width: v.$lg) {
+    .searchCardWrapper{
+        flex-basis: 33.3%;
+    }
+    .resultCardInfo{
+        font-size: 1.0rem;
+    }
+}
+
+@media (max-width: v.$sm){
+    .searchCardWrapper{
+        flex-basis: 50%;
+    } 
+
+   
+}
+
+
+@media (min-width: v.$xs) and (max-width: v.$md) {
+    .resultCardInfo{
+        font-size: .8rem;
+    }
+    .resultSearchBar{
+        width: 100%;
+        padding: .5rem .7rem;
+        justify-self: center;
+    }
+    .itemNumber{
+        font-size: 2em;
+    }
+    .searchBarForm{
+        width: 100%;
+    }
+}

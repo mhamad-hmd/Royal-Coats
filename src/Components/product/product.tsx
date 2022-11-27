@@ -1,9 +1,11 @@
 import React from 'react'
 
 const Product = () => {
- 
-const quantityInput = document.getElementById('quantityInput') as HTMLInputElement;
-const incrementBtn = document.getElementById('increment');
+    const quantityInput = document.getElementById('quantityInput') as HTMLInputElement;
+    if(quantityInput){
+
+        
+        const incrementBtn = document.getElementById('increment');
 const decrementBtn = document.getElementById('decrement');
 const rightProductBtn = document.getElementById('rightProductBtn');
 const leftProductBtn = document.getElementById('leftProductBtn');
@@ -42,6 +44,7 @@ rightProductBtn!.onclick = () => {
 }
 
 
+}
 }
 
 export default Product();

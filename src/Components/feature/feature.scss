@@ -10,7 +10,7 @@
 
 .featureWrapper {
     display: grid;
-    gap: 4rem;
+    gap: 1rem;
     margin: auto;
     overflow-x: hidden;
 }
@@ -73,11 +73,12 @@
 .cardTitle{
     font-size: 2rem;
     margin: 0em 1em;
+    white-space: break-spaces;
 }
 .cardBtns{
     z-index: 31;
     align-self: flex-end;
-    margin: 2em 5em 1em 5em;
+    margin: 0em 4em 1em;
     padding-top:1em ;
 }
 
@@ -89,5 +90,20 @@
 
 .cardMain{
     z-index: 20;
+}
+
+
+@media(max-width: v.$lg) {
+    .cardTitle{
+        font-size: 1.4rem;
+    }
+}
+
+
+@media(max-width: v.$md) {
+    .cardTitle{
+        font-size: 1.2rem;
+        margin: 0 .3rem;
+    }
 }
 

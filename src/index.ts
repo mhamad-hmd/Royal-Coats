@@ -8,7 +8,7 @@ import whyUs from "./Components/whyUs/whyUs";
 window.addEventListener('DOMContentLoaded', () => {
 
   // App
-  
+
   product
   swordAnimation;
   feature;
