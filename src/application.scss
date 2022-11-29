@@ -2,7 +2,7 @@
 
 @forward "./Components/header/header.scss";
 @forward "./Components/header/sideNav.scss";
-@forward "./Components/collection.scss";
+@forward "./Components/collectionProducts/collection.scss";
 @forward "./Components/footer.scss";
 @forward "./Components/search.scss";
 @forward "./Components/product/product.scss";
@@ -54,7 +54,7 @@ input::-webkit-inner-spin-button {
   }
 
   .topPage {
-    margin-top: 86px;
+    margin-top: 110px;
 }
 
 input[type="search"]::-webkit-search-cancel-button { display: none; }

@@ -11,6 +11,17 @@
   transform: translateY(0);
 }
 
+.headerTrans{
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.headerVisible{
+  transform: translate(0);
+  opacity: 1;
+  transition: all .5s ease;
+}
+
 .announcement {
   transition: all 0.5s ease-in-out;
 }
@@ -265,11 +276,11 @@ input:focus {
 
 @media(max-width: v.$md){
   .titleHeader{
-    font-size: 1.5em;
+    font-size: 1.7em;
   }
   .swordSvg{
     height: 45px;
-    width: 11 px;
+    width: 11px;
   }
 }
 

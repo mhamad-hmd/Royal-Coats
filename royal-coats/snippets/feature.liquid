@@ -1,35 +1,35 @@
-<div id="featureContainer" class="featureContainer relative ">
+<div id="featureContainer" class="featureContainer relative  ">
     <div class="featureWrapper">
 
-        <h1 class="featureTitle">Coat Collections</h1>
-        <div id="featureCardwrapper" class="featureCardwrapper">
+        <h1 class="featureTitle featureVisible featureHidden">Coat Collections</h1>
+        <div id="featureCardwrapper" class="featureCardwrapper featureVisible featureHidden">
             <div id="featureCardContainer" class="featureCardContainer onBlur">
                 {%- for item in collections -%}
-                <a id="cardWrapper" href="{{item.url}}" class="cardWrapper">
+                <a id="cardWrapper" href="{{item.url}}" class="cardWrapper ">
                     <img id="cardImg{{forloop.index}}" class="cardImg " src="{{item.image | img_url: 'master'}}" alt="">
                     <div class="cardInfo">
                         <h2 class="cardTitle">{{item.title}}</h2>
                     </div>
-                 </a>
+                </a>
                 {%- endfor -%}
             </div>
 
             <div class="cardBtns / flex justify-between   /">
                 <button id="cardBtnLeft" class="cardBtnLeft">
-                        <svg class="cardBtnsSvg" width="88" height="61" viewBox="0 0 88 61" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_114_24)">
-                                <path class="cardBtnsPath"
-                                    d="M13.167 30.278L13.167 30.278L13.1611 30.2821C13.0854 30.3337 13.0399 30.3855 13.0149 30.4269C12.991 30.4667 12.9857 30.4969 12.986 30.5181C12.9862 30.5392 12.9921 30.5693 13.0169 30.6086C13.0427 30.6495 13.0894 30.7002 13.1661 30.7502L13.1662 30.7502L13.1721 30.7542L37.6417 47.1885C37.8132 47.2684 38.036 47.3116 38.2705 47.2976C38.5175 47.2828 38.7286 47.2077 38.8692 47.1088C39.0094 47.0101 39.041 46.9191 39.0449 46.8766C39.048 46.8431 39.0401 46.7779 38.9568 46.6948L16.8391 31.8171L15.5049 30.9196L17.1128 30.9022L73.2798 30.2943C73.5542 30.2913 73.7942 30.2125 73.9499 30.103C74.1044 29.9943 74.1267 29.8967 74.1262 29.8563C74.1258 29.8159 74.1014 29.7189 73.9446 29.6136C73.7865 29.5074 73.5449 29.4338 73.2706 29.4368L17.1035 30.0447L15.4957 30.0621L16.8101 29.136L38.6006 13.783C38.6821 13.6981 38.6886 13.6328 38.6847 13.5994C38.6799 13.557 38.6464 13.4667 38.504 13.3711C38.3613 13.2752 38.1486 13.2046 37.9014 13.1953C37.6667 13.1863 37.4449 13.2344 37.2751 13.3179L13.167 30.278Z"
-                                    stroke="#614411" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_114_24">
-                                    <rect width="59.4418" height="86.4679" fill="white"
-                                        transform="matrix(-0.0108224 -0.999941 -0.999941 0.0108224 87.1062 59.4382)" />
-                                </clipPath>
-                            </defs>
-                        </svg>
+                    <svg class="cardBtnsSvg" width="88" height="61" viewBox="0 0 88 61" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_114_24)">
+                            <path class="cardBtnsPath"
+                                d="M13.167 30.278L13.167 30.278L13.1611 30.2821C13.0854 30.3337 13.0399 30.3855 13.0149 30.4269C12.991 30.4667 12.9857 30.4969 12.986 30.5181C12.9862 30.5392 12.9921 30.5693 13.0169 30.6086C13.0427 30.6495 13.0894 30.7002 13.1661 30.7502L13.1662 30.7502L13.1721 30.7542L37.6417 47.1885C37.8132 47.2684 38.036 47.3116 38.2705 47.2976C38.5175 47.2828 38.7286 47.2077 38.8692 47.1088C39.0094 47.0101 39.041 46.9191 39.0449 46.8766C39.048 46.8431 39.0401 46.7779 38.9568 46.6948L16.8391 31.8171L15.5049 30.9196L17.1128 30.9022L73.2798 30.2943C73.5542 30.2913 73.7942 30.2125 73.9499 30.103C74.1044 29.9943 74.1267 29.8967 74.1262 29.8563C74.1258 29.8159 74.1014 29.7189 73.9446 29.6136C73.7865 29.5074 73.5449 29.4338 73.2706 29.4368L17.1035 30.0447L15.4957 30.0621L16.8101 29.136L38.6006 13.783C38.6821 13.6981 38.6886 13.6328 38.6847 13.5994C38.6799 13.557 38.6464 13.4667 38.504 13.3711C38.3613 13.2752 38.1486 13.2046 37.9014 13.1953C37.6667 13.1863 37.4449 13.2344 37.2751 13.3179L13.167 30.278Z"
+                                stroke="#614411" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_114_24">
+                                <rect width="59.4418" height="86.4679" fill="white"
+                                    transform="matrix(-0.0108224 -0.999941 -0.999941 0.0108224 87.1062 59.4382)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
 
 
 

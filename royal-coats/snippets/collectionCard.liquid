@@ -6,7 +6,7 @@
 {%- if product.title != productPage.title -%}
 
 
-<div class="productCardContainer">
+<div class="productCardContainer productCardHidden">
     <a href="{{ product.url | within: collection }}" class="productCard">
         <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
             alt="{{ product.featured_image.alt | escape }}">

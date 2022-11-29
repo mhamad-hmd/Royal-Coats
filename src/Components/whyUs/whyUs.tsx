@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from 'react-dom/client'
+import onView from '../onView/onView';
 
 
 
@@ -12,6 +13,7 @@ const WhyUs = () => {
   const indexPage = document.getElementById('indexPage')
   const onScreen = useOnScreen(whyUsContainer);
   
+  const displayFeature = onView(reasonsContainer, 'whyHidden', 'whyVisible')
     
     function useOnScreen(ref, rootMargin = "0px") {
       // State and setter for storing whether element is visible
@@ -20,6 +22,7 @@ const WhyUs = () => {
         ([entry]) => {
           // Update our state when observer callback fires
           if(entry.isIntersecting){
+
             reasonsContainer!.childNodes.forEach((child: any, i: number) => {
               if (i % 2 == 0) {
                 document.getElementById(`reasonInfo${i + 1}`)!.style.width = "100%";

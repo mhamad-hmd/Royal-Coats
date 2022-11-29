@@ -1,9 +1,11 @@
 import React from 'react'
+import onView from '../onView/onView';
 
 const Feature = () => {
 
   const righBtn = document.getElementById('cardBtnRight');
   const leftBtn = document.getElementById('cardBtnLeft');
+  const featureContainer = document.getElementById('featureContainer');
   const featureCardContainer = document.getElementById('featureCardContainer');
   const featureCardwrapper = document.getElementById('featureCardwrapper');
   const cardImg = document.getElementById('cardImg');
@@ -11,6 +13,9 @@ const Feature = () => {
   let translateBy = 33.3;
   let mainChild = 1;
 
+  const displayFeature = onView(featureContainer, 'featureHidden', 'featureVisible')
+
+console.log(displayFeature)
 if(screen.width < 768 ){
   translateCount = -55;
   translateBy = 70;

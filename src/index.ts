@@ -1,4 +1,5 @@
 import App from "./App"
+import collectionProducts from "./Components/collectionProducts/collectionProducts";
 import feature from "./Components/feature/feature";
 import header from "./Components/header/header";
 import sideNav from "./Components/header/sideNav";
@@ -11,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // App
 
   sideNav;
+  collectionProducts;
   product;
   swordAnimation;
   feature;

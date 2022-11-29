@@ -8,12 +8,21 @@
     justify-content: center;
     align-items: center;
     background: v.$third-color2;
-    overflow-x: hidden;
+    overflow: hidden;
     gap: 1em;
     padding: 2em 0em;
     max-width: 1280px;
     border-radius: 150px;
     margin: 1em auto;
+}
+
+.whyVisible{
+    transition: all 1s;
+}
+
+.whyHidden{
+    transform: translateY(40px);
+    opacity: 0;
 }
 
 .reasonsContainer{
@@ -53,9 +62,10 @@
     background-color:#815B21;
     box-shadow: -8px -8px 14px rgba(255, 255, 255, 0.1), 8px 8px 13px rgba(0, 0, 0, 0.11);
     border-radius: 0px 10px 10px 0px;
-    transition: all .8s ease-in-out;
+    transition: all 1s ease;
     z-index: 10;
     overflow: hidden;
+    transition-delay: 1s ;
     p{
         min-width: 500px;
         margin-inline: 1em;
@@ -68,7 +78,7 @@
 .reasonImg{
     height: 300px;
     width: 300px;
-    transition: all .8s ease-in-out;
+    transition: all 1s ease;
     z-index: 15;
     border-radius: 5px;
     object-fit: cover;
@@ -81,7 +91,8 @@
     transform: translateX(40%);
     text-align: center;
     width: 100%;
-    transition: all .8s ease-in-out;
+    transition: all .8s ease;
+    transition-delay: 1s ;
 }
 
 .whyUsTitle{

@@ -4,7 +4,7 @@
     <div id="headerWrapper"
         class="onBlur flex items-center justify-between headerWrapper h-20 md:px-5 xs:px-0 headerFont  w-full">
 
-        <div class="mobileNavContainer flex-1 md:hidden xs:block">
+        <div class="mobileNavContainer flex-1 md:hidden xs:block headerTrans">
             <div class="sideNav ml-4">
                 <svg id="navBtn" class="navBtn" width="27" height="16" viewBox="0 0 27 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="firstHeader  / flex justify-start items-center / ">
+        <div class="firstHeader headerTrans / flex justify-start items-center /  ">
             <div class="w-fit relative  ">
                 <h1 id="titleHeader" class="break-words titleHeader uppercase  tracking-widest">
                     {{shop.name}}
@@ -39,7 +39,7 @@
                     {%- if link.links != blank -%}
 
                     <a id="itemListHeader{{forloop.index}}"
-                        class="leftItem itemListHeaderWrapper headerItems  cursor-pointer">
+                        class="leftItem itemListHeaderWrapper headerItems  cursor-pointer headerTrans">
                         <span class=" itemListHeader itemListHeaderLinks itemListHeaderParent">{{ link.title }}</span>
                     </a>
 
@@ -51,8 +51,8 @@
                         </div>
                     </div>
                     {%- else -%}
-                    <a id="itemListHeader{{forloop.index}}" class="leftItem itemListHeaderWrapper headerItems"
-                        href="{{ link.url }}">
+                    <a id="itemListHeader{{forloop.index}}"
+                        class="leftItem itemListHeaderWrapper headerTrans headerItems" href="{{ link.url }}">
                         <span class="itemListHeader">{{ link.title }}</span>
                     </a>
                     {%- endif -%}
@@ -68,7 +68,7 @@
             {%- if forloop.index > 2 -%} <div class="relative itemListHeaderContainer">
                 {%- if link.links != blank -%}
 
-                <a id="itemListHeader{{forloop.index}}" class="leftItem itemListHeaderWrapper headerItems"
+                <a id="itemListHeader{{forloop.index}}" class="leftItem itemListHeaderWrapper headerTrans headerItems"
                     href="{{ link.url }}">
                     <span class="itemListHeader itemListHeaderParent itemListHeaderLinks">{{ link.title }}</span>
                 </a>
@@ -81,9 +81,9 @@
                     </div>
                 </div>
                 {%- else -%}
-                <a id="itemListHeader{{forloop.index}}" class="leftItem itemListHeaderWrapper headerItems"
+                <a id="itemListHeader{{forloop.index}}" class="leftItem headerTrans itemListHeaderWrapper headerItems"
                     href="{{ link.url }}">
-                    <span class="itemListHeader">{{ link.title }}</span>
+                    <span class="itemListHeader ">{{ link.title }}</span>
                 </a>
                 {%- endif -%}
             </div>
@@ -98,7 +98,7 @@
 
         <ul id="" class="">
             <div class="flex ">
-                <li class="items headerItems ">
+                <li class="items headerItems headerTrans ">
                     <a id="cart" href="/cart">
                         <svg class="cartSvg" width="25" height="25" viewBox="0 0 32 32" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -115,7 +115,7 @@
 
 
         <div class="flex  items-center mr-1">
-            <button id="searchIcon" type="submit" class="w-8 h-8 headerItems">
+            <button id="searchIcon" type="submit" class="w-8 h-8 headerItems headerTrans">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                     stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" class="searchIconFill"

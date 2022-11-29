@@ -9,6 +9,17 @@ const Header = () => {
     const searchBarWrapper = document.getElementById('searchBarWrapper');
     const searchBarContainer = document.getElementById('searchBarContainer');
     const itemListHeaderLinks = document.querySelectorAll('.itemListHeader')
+    const headerTrans = document.querySelectorAll('.headerTrans')
+
+    let delay = 100;
+    window.addEventListener('DOMContentLoaded', () => {
+        headerTrans!.forEach((element:any) => {
+            element!.classList.add('headerVisible')
+            element!.style.transitionDelay = `${delay}ms`
+            delay += 75
+        })
+
+    })
 
     let showHeader = 0;
 

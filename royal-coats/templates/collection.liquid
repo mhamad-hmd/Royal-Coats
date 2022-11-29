@@ -24,8 +24,8 @@
     </div>
 
     {% paginate collection.products by 9 %}
-    <div class="productsContainer">
-      <div class="productWrapper my-5">
+    <div id="productsContainer" class="productsContainer">
+      <div id="productWrapper" class="productWrapper my-5">
         {%- render 'collectionCard' -%}
 
       </div>

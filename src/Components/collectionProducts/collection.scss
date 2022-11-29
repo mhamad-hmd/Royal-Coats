@@ -1,4 +1,4 @@
-@use "./utilities.scss" as v;
+@use "../utilities.scss" as v;
 
 
 
@@ -30,7 +30,8 @@
     flex-wrap: wrap ;
 }
 .productCardContainer{
-
+    transition: all .5s ease;
+    
     @media (min-width: v.$lg){
         flex-basis: 33.3%;
     } 
@@ -46,7 +47,9 @@
 .productCard{
     display: block;
     margin: .7em 1em;
+
 }
+
 
 
 

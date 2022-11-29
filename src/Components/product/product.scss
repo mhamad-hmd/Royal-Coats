@@ -227,6 +227,11 @@
   
 }
 
+@media(max-width: v.$md ) {
+  .productImageContainer {
+    flex-basis: 100%;
+  }
+}
 @media(max-width: v.$sm) {
   .similarProductsCardWrapper {
     .productCardContainer {

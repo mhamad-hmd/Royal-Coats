@@ -1,8 +1,8 @@
-<div id="whyUsContainer" class="whyUsContainer">
-    <div id="WhyUsTitle" class="WhyUsTitlecontainer"></div>
-    <div id="reasonsContainer" class="reasonsContainer">
+<div id="whyUsContainer" class="whyUsContainer whyVisible whyHidden">
+    <h1 id="WhyUsTitle" class="whyUsTitle whyVisible whyHidden">{{section.settings.title}}</h1>
+    <div id="reasonsContainer" class="reasonsContainer whyVisible whyHidden">
         {%- for block in section.blocks -%}
-        <div class="                                                                                                ">
+        <div class="">
             <h1 id="reasonTitle{{forloop.index}}" class="reasonTitle">{{block.settings.blockTitle}}</h1>
             <div class="reasonInfoContainer">
                 <img id="reasonImg{{forloop.index}}" class="reasonImg"
