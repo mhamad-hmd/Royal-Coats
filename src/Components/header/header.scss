@@ -3,15 +3,16 @@
 
 .headerContainer {
   z-index: 999;
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: rgba(246, 243, 240, 0);
   transition: all 0.5s ease-in-out;
   flex: 1;
+  transform: translateY(0);
 }
 
 .announcement {
-  transition: all 0.5s easy-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .firstHeader,
@@ -30,12 +31,13 @@
 }
 
 .titleHeader {
-  font-size: 32px;
+  font-size: 2em;
   font-weight: 600;
   font-family: v.$scndFont;
   position: relative;
   z-index: 10;
   cursor: pointer;
+
 }
 
 .headerWrapper {
@@ -44,11 +46,13 @@
 }
 
 .navUp {
-  top: -28% !important;
+  transform: translateY(-100%) !important;
+}
+.headUp {
+  background-color: v.$secondary-color2;
 }
 .annUp {
-  top: -3%;
-  background-color: v.$secondary-color2;
+  margin-top: -28px;
 }
 
 .headerItems {
@@ -117,7 +121,6 @@ input:focus {
   height: auto;
   overflow: hidden;
   position: absolute;
-  top: 100%;
 }
 
 .searchBarWrapper {
@@ -246,3 +249,28 @@ input:focus {
 .cartIconPath {
   fill: v.$third-color2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------MEDIA---------------------------
+
+@media(max-width: v.$md){
+  .titleHeader{
+    font-size: 1.5em;
+  }
+  .swordSvg{
+    height: 45px;
+    width: 11 px;
+  }
+}
+
+// ---------------------MEDIA---------------------------

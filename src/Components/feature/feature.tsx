@@ -11,6 +11,11 @@ const Feature = () => {
   let translateBy = 33.3;
   let mainChild = 1;
 
+if(screen.width < 768 ){
+  translateCount = -55;
+  translateBy = 70;
+}
+
 
   if(featureCardContainer){
 
@@ -55,18 +60,9 @@ const Feature = () => {
           childImg!.style.transform = 'scale(100%)'
   
         }
-        // else{
-        //   child.style.boxShadow = 'rgba(201, 199, 199, 0.603) .5px .5px 40px, rgba(201, 199, 199, 0.603) 0.5px 0.5px 40px'
-        //   child.style.transform = 'scale(110%)'
-        //   child.style.filter = 'blur(3px)'
-        //   childImg!.style.transform = 'scale(100%)'
-  
-  
-        // }
-  
-    
-  
-  
+
+        
+        
       })
   
   

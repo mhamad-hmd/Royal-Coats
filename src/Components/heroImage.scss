@@ -14,7 +14,7 @@
 }
 
 .heroQuote{
-    font-size: 48px;
+    font-size: 3rem;
     color: v.$secondary-color2;
     font-family: v.$scndFont;
     font-style: italic;
@@ -38,15 +38,29 @@
 }
 
 .heroBtn{
-    padding: 8px 24px;
+    padding: 0.4em 1em;
     background: v.$secondary-color2;
     border-radius: 10px;
 }
 
 .heroBtn2{
-    padding: 8px 24px;
+    padding:0.4em 1em;
     background: transparent;
     border: 2px v.$secondary-color2 solid;
     color: v.$secondary-color2 ;
     border-radius: 10px;
+}
+
+
+@media(max-width: v.$md){
+    .heroQuote{
+        font-size: 2rem;
+    }
+    .heroWrapper{
+        justify-content: center;
+    }
+    .heroQuotesWrapper{
+        margin-left: 0px;
+        margin-top: 3em;
+    }
 }

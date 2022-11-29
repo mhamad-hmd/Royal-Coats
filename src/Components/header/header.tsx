@@ -20,8 +20,7 @@ const Header = () => {
             }
             else{
                 itemListHeaderLinks!.forEach((link) => {
-                    console.log(link)
-                    link!.classList.add('itemListHeaderDown')                
+                        link!.classList.add('itemListHeaderDown')                
                 })
             }
             
@@ -34,14 +33,16 @@ const Header = () => {
 
     window!.onscroll = () => {
         if (window.scrollY == 0) {
-            headerContainer!.classList.remove('annUp');
+            announcement!.classList.remove('annUp');
+            headerContainer!.classList.remove('headUp')
             swordPath!.style.fill = "rgb(w)"
             searchBarWrapper!.classList.add('searchTop');
             linksColor(true)
 
         }
         else {
-            headerContainer!.classList.add('annUp')
+            announcement!.classList.add('annUp')
+            headerContainer!.classList.add('headUp')
             swordPath!.style.fill = "rgb(102, 104, 106)"
             searchBarWrapper!.classList.remove('searchTop');
             linksColor(false)

@@ -1,6 +1,7 @@
 @use './Components/utilities' as v;
 
 @forward "./Components/header/header.scss";
+@forward "./Components/header/sideNav.scss";
 @forward "./Components/collection.scss";
 @forward "./Components/footer.scss";
 @forward "./Components/search.scss";
@@ -33,6 +34,7 @@ body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    position: relative;
     }
 #main{
     flex: 1;
@@ -52,7 +54,7 @@ input::-webkit-inner-spin-button {
   }
 
   .topPage {
-    margin-top: -86px;
+    margin-top: 86px;
 }
 
 input[type="search"]::-webkit-search-cancel-button { display: none; }

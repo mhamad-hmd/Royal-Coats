@@ -1,0 +1,152 @@
+@use "../utilities.scss" as v;
+
+.mobileSideNavWrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 60%;
+  padding: 1.5em .75em;
+  z-index: 999;
+  background: v.$main-second;
+  transform: translateX(-100%);
+  transition: all .4s ease-in-out;
+}
+
+.blocker{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+  background-color: #815a1765;
+  display: none;
+}
+
+.mobileSideNavWrapperIn{
+  transform: translateX(0%);
+}
+
+.SideNavLinksWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1em;
+  transition: all .5s ease-in-out;
+
+}
+
+.sideNavLinks {
+  font-size: 1.6rem;
+  color: v.$third-color2;
+  width: 100%;
+  transition: all .3s ease-in-out;
+
+  padding-left: .3em;
+
+}
+
+.sideNavLinks:hover {
+  background-color: v.$secondary-color2;
+}
+
+.mobileSideNavTop::after {
+  content: "";
+  background-color: v.$third-color2;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+
+}
+.SideNavLinksWrapper::after {
+  content: "";
+  background-color: v.$third-color2;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+
+}
+
+
+.itemListParentContainer{
+  height: 36px;
+  width: 100%;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+
+  
+}
+.navSubMenuContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  gap: 1rem;
+  margin: .5em 0em;
+}
+
+.navSubItem{
+  transform: translateX(-100%);
+  transition: all .3s ease-in-out;
+
+  color: v.$third-color2;
+}
+
+.navSubMenuContainerIN{
+    height: 100%;
+    
+}
+
+.navSubItemin{
+    transform: translateX(0%);
+}
+
+
+.dropDownBtn{
+  transition: all .3s ease-in-out;
+
+}
+
+.dropDownBtnUp{
+  rotate: -180deg;
+}
+
+.sideNavSocialMedia{
+  display: flex;
+  transition: all .5s ease-in-out;
+
+}
+
+.sideNavItem{
+  font-size: .8rem;
+  padding: .5rem;
+  color: v.$third-color2;
+}
+
+
+.sideNavMainElement{
+  transition: all .3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-20px);
+
+  
+}
+
+.sideNavMainElementOpacity{
+  opacity: 1;
+  transform: translateY(0px);
+
+}
+
