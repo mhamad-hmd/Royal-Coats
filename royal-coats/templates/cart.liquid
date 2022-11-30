@@ -1,49 +1,79 @@
-{% form 'cart', cart %}
+<div class="cartContainer mb-5 topPage max-w-7xl">
 
-<h1>
-  Cart
-</h1>
 
-{% if cart.empty? %}
-  <p>
-    heyy your cart is empty!! 
-  </p>
-{% else %}
+  {% form 'cart', cart %}
 
-    {% for item in cart.items %}
+  <h1 class="cartTitle">
+    Cart
+  </h1>
+  <div class="cartproductsContainer">
 
-    <div>
-
-    <img src="{{ item.image | image_url: width: 200 }}" />
-    <h2>
-      {{item.title}}
-    </h2>
+    {% if cart.empty? %}
     <p>
-      {{item.final_line_price | money}}
+      heyy your cart is empty!!
     </p>
-    <input name="updates[]" value="{{ item.quantity }}">
-    <a href="{{item.url_to_remove}}">Remove</a>
+    {% else %}
 
+    <div class="cartProducts">
+
+      {% for item in cart.items %}
+
+      <div class="cartProductCard">
+
+        <img src="{{ item.image | image_url: width: 200 }}" />
+        <div class="cartCardInfo flex flex-col gap-4">
+
+          <h2 class="cartProductTitle">
+            {{item.title}}
+          </h2>
+          <p class="cartProductPrice">
+            {{item.final_line_price | money}}
+          </p>
+          <div class="quantityContainer flex items-center gap-3">
+            <div class="quantityWrapper">
+              <button id="decrement" type="button" data-action="decrement" class="decrement quantityBtn">-</button>
+              <input id="quantityInput" class="quantityInput" min="1" type="number" name="updates[]"
+                value="{{ item.quantity }}">
+              <button id="increment" type="button" data-action="increment" class="increment quantityBtn">+</button>
+            </div>
+          </div>
+        </div>
+        <a href="{{item.url_to_remove}}" class="self-start">
+          <svg id="cartProductRemove" class="cartProductRemove" width="22" height="22" viewBox="0 0 22 22" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21.5833 2.17375L19.4096 0L10.7917 8.61792L2.17375 0L0 2.17375L8.61792 10.7917L0 19.4096L2.17375 21.5833L10.7917 12.9654L19.4096 21.5833L21.5833 19.4096L12.9654 10.7917L21.5833 2.17375Z"
+              fill="#815B17" />
+          </svg>
+        </a>
+
+      </div>
+
+      {% endfor %}
     </div>
 
-    {% endfor %}
 
 
+    <hr />
+    <div class="cartCheckout">
 
-<hr/>
+      <p class="cartTotalPrice">
+        Total price:
+        <span>{{cart.total_price | money}}</span>
+      </p>
 
-<p>
-  Total price: {{cart.total_price | money}}
-</p>
+      <button type="submit" name="update">
+        update
+      </button>
 
-<button type="submit" name="update">
-  update
-</button>
+      <button class="checkoutBtn" type="submit" name="checkout">
+        Checkout
+      </button>
+    </div>
 
-<button type="submit" name="checkout">
-  checkout
-</button>
+    {% endif %}
 
-{% endif %}
+  </div>
+  {% endform %}
 
-{% endform %}
+</div>

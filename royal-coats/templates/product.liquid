@@ -23,14 +23,14 @@
       <div class="flex gap-3 items-center">
 
         <h1 class="optionTitle">{{ option.name }}:</h1>
-
+        {% assign choice = [] %}
         {%- for value in option.values -%}
 
         <label class=" text-center flex items-center justify-center relative"
           for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
 
-          <input class="{{option.name | handleize}}Input optionInput" type="radio" {% if option.selected_value == value %}
-            checked="checked" {%endif %} value="{{ value }}" data-index="option{{ forloop.index }}"
+          <input class="{{option.name | handleize}}Input optionInput" type="radio"   {% if option.selected_value == value %}
+            checked="checked"  {%endif %}   value="{{ value | escape }}" data-index="option{{ forloop.index }}"
             name="{{ option.name | handleize }}"
             id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
           <span class="{{option.name | handleize }}Label spanLabel " {% if option.name == "Color" %}
@@ -42,10 +42,23 @@
 
         </label>
         {%- endfor -%}
-
+  {%- assign choice = options.selected_value -%}
       </div>
       {%- endfor %}
       {%- endif %}
+      <h1>{{choice}}</h1>
+       <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js hidden">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option value="{{variant.id}}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} >
+                    {{ variant.title }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+
       <div class="quantityContainer flex items-center gap-3">
 
         <h1 class="optionTitle">quantity:</h1>
@@ -57,7 +70,7 @@
       </div>
 
 
-      <button class="productBtn" type="submit" name="add" value="Add to cart">
+      <button class="productBtn" type="submit" name="add">
         ADD TO CART
       </button>
 
@@ -71,8 +84,9 @@
   {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: product %}
 
 
-  <div class="similarProductsContainer relative / flex items-center flex-col justify-center gap-5 / my-5 overflow-x-hidden">
-  <h1 class="similarProductsTitle">Similar Products</h1>
+  <div
+    class="similarProductsContainer relative / flex items-center flex-col justify-center gap-5 / my-5 overflow-x-hidden">
+    <h1 class="similarProductsTitle">Similar Products</h1>
     <div class="similarProductsWrapper relative md:max-w-7xl sm:max-w-3xl overflow-x-hidden w-full">
       <div id="similarProductsCardWrapper" class="similarProductsCardWrapper ">
         {%- for collection in product.collections -%}

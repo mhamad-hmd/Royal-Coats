@@ -1,0 +1,69 @@
+@use "./utilities" as v;
+
+
+.cartproductsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.cartProducts {
+  flex-basis: 50%;
+}
+
+.cartProductCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+.cartCheckout {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-basis: 25%;
+  max-width: 300px;
+  width: 100%;
+  font-weight: 600;
+  color: v.$third-color2;
+}
+
+.checkoutBtn {
+  background-color: v.$secondary-color3 !important;
+  color: v.$main-second;
+  border-radius: 25px;
+  padding: 0.5em 0;
+  letter-spacing: 1px;
+}
+
+.cartTotalPrice {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartTitle {
+  font-size: 3em;
+  margin: 0.4em 0;
+  text-align: center;
+}
+
+.cartProductPrice {
+  font-weight: 600;
+  color: v.$third-color3;
+}
+
+.cartProductTitle {
+  font: 1em;
+  color: v.$third-color2;
+  font-weight: 400;
+
+}
+
+
+@media(max-width: v.$md) {
+  .cartproductsContainer {
+
+    flex-direction: column;
+  }
+}
