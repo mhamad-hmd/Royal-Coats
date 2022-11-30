@@ -35,8 +35,12 @@
   border-radius: 25px;
   padding: 0.5em 0;
   letter-spacing: 1px;
+  transition: all .5s ease;
 }
 
+.checkoutBtn:hover {
+  background-color: v.$secondary-color2 !important;
+}
 .cartTotalPrice {
   display: flex;
   justify-content: space-between;
@@ -59,6 +63,11 @@
   font-weight: 400;
 
 }
+
+.cartFeatruedProducts{
+  width: 100%;
+}
+
 
 
 @media(max-width: v.$md) {

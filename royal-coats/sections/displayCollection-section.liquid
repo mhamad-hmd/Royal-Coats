@@ -1,0 +1,24 @@
+{%- render 'displayCollection' -%}
+
+{% schema %}
+  {
+    "name": "display Products",
+    "settings": [
+      {
+        "id": "featured-Collection",
+        "type": "collection",
+        "label": "display collection"
+      }, {
+        "id": "collection-title",
+        "type": "text",
+        "label": "collection-title"
+      }
+    ],
+    "presets":[
+        {
+            "name":"display Products",
+            "category": "collection"
+        }
+    ]
+  }
+{% endschema %}

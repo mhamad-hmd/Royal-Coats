@@ -2,10 +2,10 @@ import React from 'react'
 import onView from '../onView/onView';
 
 const Product = () => {
-    const quantityInput = document.getElementById('quantityInput') as HTMLInputElement;
-    if (quantityInput) {
-
-
+    const productPageContainer = document.getElementById('productPageContainer');
+    if (productPageContainer) {
+        
+        const quantityInput = document.getElementById('quantityInput') as HTMLInputElement;
         const incrementBtn = document.getElementById('increment');
         const decrementBtn = document.getElementById('decrement');
         const rightProductBtn = document.getElementById('rightProductBtn');

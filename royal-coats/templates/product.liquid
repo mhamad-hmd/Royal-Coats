@@ -1,4 +1,4 @@
-<div class="productPageContainer topPage">
+<div id="productPageContainer" class="productPageContainer topPage">
   <div class="productContainer">
     <div class="productImageContainer">
       <div class="productImagesWrapper">
@@ -17,7 +17,7 @@
         {{product.description}}
         <span class="productPrice">{{product.price | money}}</span>
       </div>
-      {% form 'product', product %}
+      {% form 'product', product %} 
       {% if product.options.size > 0 -%}
       {% for option in product.options_with_values -%}
       <div class="flex gap-3 items-center">

@@ -1,5 +1,6 @@
 import App from "./App"
 import collectionProducts from "./Components/collectionProducts/collectionProducts";
+import displayCollection from "./Components/displayCollection/displayCollection";
 import feature from "./Components/feature/feature";
 import header from "./Components/header/header";
 import sideNav from "./Components/header/sideNav";
@@ -18,5 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
   feature;
   whyUs;
   header;
-
+  displayCollection;
 })
