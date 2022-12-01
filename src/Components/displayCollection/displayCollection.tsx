@@ -25,8 +25,6 @@ const displayCollection = () => {
         element!.addEventListener('mouseenter', () => {
         let delay = 0;
 
-        
-
             display.forEach((displayElement:any, i) => {
                 displayElement!.classList.remove('optionInvisible')
                 displayElement!.style.transitionDelay = `${delay}ms`

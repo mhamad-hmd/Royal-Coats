@@ -33,7 +33,7 @@
             checked="checked" {%endif %}   value="{{ value | escape }}" data-index="option{{ forloop.index }}"
             name="{{ option.name | handleize }}"
             id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-          <span class="{{option.name | handleize }}Label spanLabel " {% if option.name == "Color" %}
+          <span  class="{{option.name | handleize }}Label spanLabel " {% if option.name == "Color" %}
             style="background-color: {{ value | handleize }};" {% endif %}>
             {% if option.name == "Size" %}
             {{ value | escape }}
@@ -45,10 +45,10 @@
       </div>
       {%- endfor %}
       {%- endif %}
-       <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js hidden">
+       <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js hidden ">
               {% for variant in product.variants %}
                 {% if variant.available %}
-                  <option value="{{variant.id}}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} >
+                  <option id="{{variant.title}}" class="selectOptions" value="{{variant.id}}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} >
                     {{ variant.title }}
                   </option>
                 {% else %}

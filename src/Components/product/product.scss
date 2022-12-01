@@ -81,21 +81,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0.2em 0.2em 0.9em -0.25rem #847e7eed;
 }
 
-.colorInput:hover ~ .colorLabel::after {
-  width: auto;
-  opacity: 1;
-  padding: 1em;
-}
-
-.colorInput:checked ~ .colorLabel::after {
-  width: auto;
-  opacity: 1;
-  padding: 1em;
-}
-
-.colorLabel::after {
+.spanLabel::after {
   content: "";
   position: absolute;
   border: 2px v.$third-color2 solid;
@@ -105,6 +94,20 @@
   opacity: 0;
   transition: all 0.3s;
 }
+
+.colorInput:hover ~ .spanLabel::after {
+  width: auto;
+  opacity: 1;
+  padding: 1em;
+}
+
+.colorInput:checked ~ .spanLabel::after {
+  width: auto;
+  opacity: 1;
+  padding: 1em;
+}
+
+
 
 .quantityWrapper {
   display: flex;
