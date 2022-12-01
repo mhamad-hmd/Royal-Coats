@@ -1,34 +1,53 @@
 @use "../utilities" as v;
 
 
-.displayCollectionContainer {
+.displayCollectionWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 3em auto;
+  max-width: 1280px;
+
+}
+
+.displayVisible{
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all .5s ease;
+}
+.displayHidden{
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .displaycollectionTitle {
   font-size: 3em;
-  margin: 2em auto;
+  margin: 2rem auto;
 }
 
-.displayCollectionWrapper {
-  display: flex;
-  flex-wrap: wrap;
+.displayCollectionCardWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
-  justify-content: space-evenly;
+  margin: 1em auto;
+  gap: 2em;
 }
 
 .displayCollectionProductCard {
   display: flex;
   flex-direction: column;
   border-radius: 1em;
-  box-shadow: 0.2em 0.2em 0.9em -0.25rem #bebebe;
+  box-shadow: 0.2em 0.2em 0.9em -0.25rem #b3ababed;
   padding: 1em;
   gap: 0.5em;
+  transition: all .5s ease;
 }
+
+.displayCollectionProductCard:hover{
+  scale: 102%;
+}
+
 
 .displayCollectionProductCardOptions {
   display: flex;
@@ -37,6 +56,9 @@
 }
 
 .displayCollectionImg {
+  max-width: 300px;
+  max-height: 300px;
+  width: 100%;
   padding: 1em;
 }
 
@@ -66,15 +88,20 @@
   transform: translateX(0px);
   opacity: 1;
   transition: all 0.3s ease;
+  height: 27px;
 }
 
 .optionInvisible {
-  transform: translateX(10px);
+  transform: translateX(-20px);
   opacity: 0;
+  height: 0px;
 }
 
 @media(max-width:v.$md) {
   .displaycollectionTitle {
     font-size: 2.1em;
+  }
+  .displayCollectionWrapper {
+    justify-content: center;
   }
 }

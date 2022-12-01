@@ -12,7 +12,7 @@ const onView = (ref, className, elements, rootMargin = "0px", threshold = .5) =>
                 classElements!.forEach((element:any) => {
                     element!.classList.remove(className)
                     element!.style.transitionDelay = `${delay}ms`
-                    delay += 300
+                    delay += 100
                 })
             }
 

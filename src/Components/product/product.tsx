@@ -3,15 +3,16 @@ import onView from '../onView/onView';
 
 const Product = () => {
     const productPageContainer = document.getElementById('productPageContainer');
+    
     if (productPageContainer) {
-        
+        const optionColorInput = document.querySelectorAll('.colorInput')
         const quantityInput = document.getElementById('quantityInput') as HTMLInputElement;
         const incrementBtn = document.getElementById('increment');
         const decrementBtn = document.getElementById('decrement');
         const rightProductBtn = document.getElementById('rightProductBtn');
         const leftProductBtn = document.getElementById('leftProductBtn');
         const similarProductsCardWrapper = document.getElementById('similarProductsCardWrapper');
-
+        const colorInputValue = window.localStorage.getItem('colorInputValue')
 
         let scroll = 0;
 
@@ -30,6 +31,11 @@ const Product = () => {
             }
         }
 
+        optionColorInput.forEach((colorInput:any) => {
+            if(colorInput.value === colorInputValue ){
+                colorInput.checked = true;
+            }
+        })
 
         leftProductBtn!.onclick = () => {
             if (scroll < 0) {

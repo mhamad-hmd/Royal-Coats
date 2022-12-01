@@ -9,13 +9,16 @@
 }
 
 .cartProducts {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
   flex-basis: 50%;
 }
 
 .cartProductCard {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 1em;
 }
 .cartCheckout {
@@ -27,6 +30,11 @@
   width: 100%;
   font-weight: 600;
   color: v.$third-color2;
+}
+
+.shopify-cart-form{
+  max-width: 1280px;
+  margin: auto;
 }
 
 .checkoutBtn {

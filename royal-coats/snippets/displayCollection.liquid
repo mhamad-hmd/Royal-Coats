@@ -1,57 +1,53 @@
+{%- if section.settings.featured-Collection != "" -%}
+
 {% assign selectedCollection = collections[section.settings.featured-Collection] %}
 
-<div class="displayCollectionContainer">
-    <h1 class="displaycollectionTitle">{{section.settings.collection-title}}</h1>
-    <div class="displayCollectionWrapper">
-        {% for product in selectedCollection.products %}
-        <div id="displayCollectionProductCard" class="displayCollectionProductCard">
-            <img class="displayCollectionImg" loading="lazy"
-                src="{{ product.featured_image.src | image_url: width: 247, height: 247 }}" alt="">
-            <div class="displayCollectionProductCardInfo">
-                <h2 class="displayCollectionTitle">{{product.title}}
-                    <span class="displayCollectionPrice">
-                        {{product.price | money }}
-                    </span>
-                </h2>
-                {%- assign optionsIndex = forloop.index0 -%}
-                <div class="displayCollectionProductCardOption optionInvisible display display{{forloop.index0}}">
+<div id="displayCollectionContainer" class="displayCollectionContainer displayVisible displayHidden" style="background-color: {{section.settings.collection-color}};">
+  <div id="displayCollectionWrapper" class="displayCollectionWrapper">
+    <h1  class="displaycollectionTitle displayVisible displayHidden">{{section.settings.collection-title}}</h1>
+    <div class="displayCollectionCardWrapper">
+      {% for product in selectedCollection.products %}
+        <div class="displayCollectionProductCardWrapper m-auto w-fit md:p-4 xs:p-0 displayVisible displayHidden ">
 
-                    {% if product.options.size > 0 -%}
-                    {% for option in product.options_with_values -%}
+          <div id="displayCollectionProductCard" class="displayCollectionProductCard">
+            <img class="displayCollectionImg" loading="lazy" src="{{ product.featured_image.src | image_url: width: 300, height: 300 }}" alt="">
+            <div class="displayCollectionProductCardInfo">
+              <h2 class="displayCollectionTitle">{{product.title}}
+                <span class="displayCollectionPrice">
+                  {{product.price | money }}
+                </span>
+              </h2>
+              {%- assign optionsIndex = forloop.index0 -%}
+              <div class="displayCollectionProductCardOption optionInvisible display display{{forloop.index0}}">
+
+                {% if product.options.size > 0 -%}
+                  {% for option in product.options_with_values -%}
                     {%- if option.name == "Color" -%}
 
-                    <div class="flex gap-3 items-center ">
+                      <div class="flex gap-3 items-center ">
                         <h1 class="optionTitle">{{ option.name }}:</h1>
                         {%- for value in option.values -%}
 
-                        <label
-                            class=" text-center flex items-center justify-center relative optionInvisible display display{{optionsIndex}}"
-                            for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+                          <label class=" text-center flex items-center justify-center relative optionInvisible display display{{optionsIndex}}" for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
 
-                            <input
-                                class="{{option.name | handleize}}Input optionInput optionInvisible display display{{optionsIndex}}"
-                                type="radio"
-                                value="{{ value | escape }}" data-index="option{{ forloop.index }}"
-                                name="{{ option.name | handleize }}{{optionsIndex}}"
-                                id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
-                            <span class="{{option.name | handleize }}Label spanLabel "
-                                style="background-color: {{ value | handleize }};">
-                                {% if option.name == "Size" %}
-                                {{ value | escape }}
-                                {%endif%}
-                            </span>
+                            <input class="{{option.name | handleize}}Input optionInput optionInvisible colorInput{{optionsIndex}}  display display{{optionsIndex}}" type="radio" value="{{ value | escape }}" data-index="option{{ forloop.index }}" name="{{ option.name | handleize }}{{optionsIndex}}" onclick="{% assign option.selected_value = value %}" {% if option.selected_value == value %} {% assign globalColorOption=value %} {%endif%}id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+                            <span  class="{{option.name | handleize }}Label spanLabel " style="background-color: {{ value | handleize }};"></span>
 
-                        </label>
+                          </label>
+
                         {%- endfor -%}
-                    </div>
+                      </div>
                     {%- endif -%}
-                    {%- endfor %}
-                    {%- endif %}
-                </div>
-                <a class="displayCollectionBtn text-center" href="{{ product.url | within: collection }}">Show</a>
+                  {%- endfor %}
+                {%- endif %}
+              </div>
+              <a class="displayCollectionBtn text-center" href="{{ product.url | within: collection }}">Show</a>
             </div>
 
+          </div>
         </div>
-        {%endfor%}
+      {%endfor%}
     </div>
+  </div>
 </div>
+{%- endif -%}

@@ -13,7 +13,7 @@ const WhyUs = () => {
   const indexPage = document.getElementById('indexPage')
   const onScreen = useOnScreen(whyUsContainer);
   
-  const displayFeature = onView(reasonsContainer, 'whyHidden', 'whyVisible')
+  onView(reasonsContainer, 'whyHidden', 'whyVisible', "0px", .3)
     
     function useOnScreen(ref, rootMargin = "0px") {
       // State and setter for storing whether element is visible

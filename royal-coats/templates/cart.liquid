@@ -1,82 +1,83 @@
-<div class="cartContainer mb-5 mx-auto topPage max-w-7xl">
+<div class="cartContainer mb-5 topPage ">
+  <div class="cartWrapper mx-auto ">
 
+    {% form 'cart', cart %}
 
-  {% form 'cart', cart %}
+    <h1 class="cartTitle">
+      Cart
+    </h1>
+    <div class="cartproductsContainer">
 
-  <h1 class="cartTitle">
-    Cart
-  </h1>
-  <div class="cartproductsContainer">
+      {% if cart.empty? %}
+      <p>
+        heyy your cart is empty!!
+      </p>
+      {% else %}
 
-    {% if cart.empty? %}
-    <p>
-      heyy your cart is empty!!
-    </p>
-    {% else %}
+      <div class="cartProducts">
 
-    <div class="cartProducts">
+        {% for item in cart.items %}
 
-      {% for item in cart.items %}
+        <div class="cartProductCard">
 
-      <div class="cartProductCard">
+          <img src="{{ item.image | image_url: width: 200 }}" />
+          <div class="cartCardInfo flex flex-col gap-4">
 
-        <img src="{{ item.image | image_url: width: 200 }}" />
-        <div class="cartCardInfo flex flex-col gap-4">
-
-          <h2 class="cartProductTitle">
-            {{item.title}}
-          </h2>
-          <p class="cartProductPrice">
-            {{item.final_line_price | money}}
-          </p>
-          <div class="quantityContainer flex items-center gap-3">
-            <div class="quantityWrapper">
-              <button id="decrement" type="button" data-action="decrement" class="decrement quantityBtn">-</button>
-              <input id="quantityInput" class="quantityInput" min="1" type="number" name="updates[]"
-                value="{{ item.quantity }}">
-              <button id="increment" type="button" data-action="increment" class="increment quantityBtn">+</button>
+            <h2 class="cartProductTitle">
+              {{item.title}}
+            </h2>
+            <p class="cartProductPrice">
+              {{item.final_line_price | money}}
+            </p>
+            <div class="quantityContainer flex items-center gap-3">
+              <div class="quantityWrapper">
+                <button id="decrement" type="button" data-action="decrement" class="decrement quantityBtn">-</button>
+                <input id="quantityInput" class="quantityInput" min="1" type="number" name="updates[]"
+                  value="{{ item.quantity }}">
+                <button id="increment" type="button" data-action="increment" class="increment quantityBtn">+</button>
+              </div>
             </div>
           </div>
-        </div>
-        <a href="{{item.url_to_remove}}" class="self-start">
-          <svg id="cartProductRemove" class="cartProductRemove" width="22" height="22" viewBox="0 0 22 22" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M21.5833 2.17375L19.4096 0L10.7917 8.61792L2.17375 0L0 2.17375L8.61792 10.7917L0 19.4096L2.17375 21.5833L10.7917 12.9654L19.4096 21.5833L21.5833 19.4096L12.9654 10.7917L21.5833 2.17375Z"
-              fill="#815B17" />
-          </svg>
-        </a>
+          <a href="{{item.url_to_remove}}" class="self-start">
+            <svg id="cartProductRemove" class="cartProductRemove" width="22" height="22" viewBox="0 0 22 22" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21.5833 2.17375L19.4096 0L10.7917 8.61792L2.17375 0L0 2.17375L8.61792 10.7917L0 19.4096L2.17375 21.5833L10.7917 12.9654L19.4096 21.5833L21.5833 19.4096L12.9654 10.7917L21.5833 2.17375Z"
+                fill="#815B17" />
+            </svg>
+          </a>
 
+        </div>
+
+        {% endfor %}
       </div>
 
-      {% endfor %}
+
+
+      <hr />
+      <div class="cartCheckout">
+
+        <p class="cartTotalPrice">
+          Total price:
+          <span>{{cart.total_price | money}}</span>
+        </p>
+
+        <button type="submit" name="update">
+          update
+        </button>
+
+        <button class="checkoutBtn" type="submit" name="checkout">
+          Checkout
+        </button>
+      </div>
+
+      {% endif %}
+
     </div>
+    {% endform %}
 
+    {%- section 'displayCollection-section' -%}
 
-
-    <hr />
-    <div class="cartCheckout">
-
-      <p class="cartTotalPrice">
-        Total price:
-        <span>{{cart.total_price | money}}</span>
-      </p>
-
-      <button type="submit" name="update">
-        update
-      </button>
-
-      <button class="checkoutBtn" type="submit" name="checkout">
-        Checkout
-      </button>
-    </div>
-
-    {% endif %}
 
   </div>
-  {% endform %}
-
-  {{content_for_index}}
-
-
 </div>

@@ -83,6 +83,12 @@
   align-items: center;
 }
 
+.colorInput:hover ~ .colorLabel::after {
+  width: auto;
+  opacity: 1;
+  padding: 1em;
+}
+
 .colorInput:checked ~ .colorLabel::after {
   width: auto;
   opacity: 1;
