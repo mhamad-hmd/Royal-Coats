@@ -3,11 +3,11 @@ import onView from '../onView/onView'
 
 const displayCollection = () => {
     const displayCollectionProductCard = document.querySelectorAll('.displayCollectionProductCard')
-    const displayCollectionWrapper = document.getElementById('displayCollectionWrapper')    
+    const displayCollectionContainer = document.getElementById('displayCollectionContainer')    
     let colorInputValue = ""
 
 
-    onView(displayCollectionWrapper, 'displayHidden', 'displayVisible', "0px", .3)
+    onView(displayCollectionContainer, 'displayHidden', 'displayVisible', "0px", .1)
     
     displayCollectionProductCard.forEach((element:any, i) => {
         const display = document.querySelectorAll(`.display${i}`)

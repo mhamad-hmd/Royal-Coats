@@ -1,0 +1,153 @@
+@use "../utilities" as v;
+
+
+
+#contact_form {
+  display: flex;
+  flex: 1;
+  max-width: 500px;
+  max-height: 600px;
+  width: 500px;
+  height: 600px;
+  margin: 1.5em 3em;
+  align-self: start;
+  justify-content: center;
+  background-color: v.$main-color3;
+  box-shadow: 3.3px 3.3px 14px #665F5F;
+}
+
+
+
+.contactInputWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 350px;
+  width: 100%;
+  margin: auto 1em;
+  gap: 3em;
+}
+
+.ContactPageWrapper {
+  padding: 7em 0 2em 0;
+  display: flex;
+}
+
+.quoteWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.contactQuote{
+    font-size: 3em;
+    color: v.$main-second;
+    margin: auto 2em;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  color: v.$main-second;
+  font-weight: 300;
+  letter-spacing: 1px;
+  height: 50px;
+}
+
+.contactInput {
+  background-color: transparent;
+  border-bottom: 1px v.$main-second solid;
+  padding-left: 0.6em;
+  width: 100%;
+}
+
+.contactLabel {
+  align-self: flex-start;
+}
+
+
+.textAreaInput {
+  height: 25px;
+}
+
+.contactBtn {
+  align-self: baseline;
+  padding: 0.4em 3.3em;
+  border-radius: 3px;
+  background-color: v.$main-second !important;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: v.$main-color3;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.contactBtn:hover {
+  transform: translateY(2px);
+  scale: .95;
+}
+
+.selectInterest {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.interestLabel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.interestSpan {
+  padding: 0.5em;
+  border: 2px v.$main-second solid;
+  color: v.$main-second;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interestInput:checked ~ .interestSpan {
+  background-color: v.$main-second !important;
+  color: v.$main-color3;
+  scale: 1.09;
+}
+
+
+.interestInput {
+  position: absolute;
+  width: 0;
+}
+
+
+.contactLabel {
+  padding-left: 0.6em;
+  position: absolute;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.contactLabelValid {
+  transform: translateY(-25px);
+}
+
+.contactInput:focus ~ .contactLabel {
+  transform: translateY(-25px);
+}

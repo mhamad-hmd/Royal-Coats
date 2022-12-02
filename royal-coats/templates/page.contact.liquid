@@ -1,12 +1,59 @@
-<h1>{{ page.title }}</h1>
-{% form 'contact' %}
-  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
-  {{ form.errors | default_errors }}
-  <label for="ContactFormName">name</label>
-  <input type="text" id="ContactFormName" name="contact[name]">
-  <label for="ContactFormEmail">email</label>
-  <input type="email" id="ContactFormEmail" name="contact[email]">
-  <label for="ContactFormMessage">message</label>
-  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-  <input type="submit" value="send">
-{% endform %}
+{%- section 'contactPage-section' -%}
+<div class="contactContainer  ">
+
+  <div class="ContactPageWrapper ">
+    <div class="quoteWrapper">
+      <h2 class="contactQuote">We are ready to answer all your questions</h2>
+    </div>
+    {% form 'contact' %}
+      <div class="contactInputWrapper">
+
+        {% if form.posted_successfully? %}
+          Thank you for your contact
+        {% endif %}
+        {{ form.errors | default_errors }}
+
+        <div class="selectInterest">
+          <label for="returns" class="interestLabel">
+            <input id="returns" class="interestInput" type="radio" name="contact[request_type]">
+            <span class="interestSpan">Returns</span>
+          </label>
+          <label for="Shipping" class="interestLabel">
+            <input id="Shipping" class="interestInput" type="radio" name="contact[request_type]">
+            <span class="interestSpan">Shipping</span>
+          </label>
+          <label for="Custom-order" class="interestLabel">
+            <input id="Custom-order" class="interestInput" type="radio" name="contact[request_type]">
+            <span class="interestSpan">Custom order</span>
+          </label>
+          <label for="Other" class="interestLabel">
+            <input id="Other" class="interestInput" type="radio" name="contact[request_type]">
+            <span class="interestSpan">Other</span>
+          </label>
+        </div>
+
+        <div class="inputContainer">
+
+          <div class="nameWrapper inputWrapper">
+            <input class="contactInput" type="text" id="ContactFormName" name="contact[name]" required>
+            <label for="ContactFormName" class="contactLabel">name</label>
+          </div>
+
+          <div class="emailWrapper inputWrapper">
+            <input class="contactInput" type="email" id="ContactFormEmail" name="contact[email]" required>
+            <label for="ContactFormEmail" class="contactLabel">email</label>
+          </div>
+
+          <div class="formMessageWrapper inputWrapper">
+            <textarea class="contactInput textAreaInput" rows="10" id="Contact2FormMessage" name="contact[body]" required></textarea>
+            <label for="ContactFormMessage" class="contactLabel">message</label>
+          </div>
+
+        </div>
+
+        <input class="contactBtn" type="submit" value="Send">
+      {% endform %}
+    </div>
+
+  </div>
+</div>
