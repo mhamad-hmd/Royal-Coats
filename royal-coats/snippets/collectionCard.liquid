@@ -2,6 +2,9 @@
 {%- assign productPage = product -%}
 {%- endif -%}
 
+{%- for collection in product.collections -%}
+{%- if forloop.index > 1 -%}
+
 {% for product in collection.products %}
 {%- if product.title != productPage.title -%}
 
@@ -20,3 +23,5 @@
 </div>
 {%- endif -%}
 {% endfor %}
+{%- endif -%}
+{%- endfor -%}

@@ -1,41 +1,56 @@
 @use "../utilities" as v;
 
-.aboutUsContainer{
+.aboutUsContainer {
     background: v.$secondary-color3;
 }
 
-#shopify-section-aboutUsCard-section{
+#shopify-section-aboutUsCard-section {
     display: flex;
     flex-direction: column;
     gap: 2em;
+    padding: 2em 0;
 }
 
-.CardsContainer{
-    max-height: 550px;
-    max-width: 1000px;
+.CardsContainer {
     margin: auto;
 }
 
-.imageCard{
-    height: 500px;
-    width: 500px;
+.imageCard {
+    max-height: 600px;
+    max-width: 600px;
+    height: 600px;
+    width: 100%;
     object-fit: cover;
 }
 
-.aboutUsTitle{
+.aboutUsTitle {
     text-align: center;
     font-size: 3em;
     margin: 1em auto;
 }
 
-
-.aboutUsInforCard{
+.aboutUsInforCard {
     background: v.$main-second;
     color: v.$third-color2;
-    padding: 0em 2em;
     font-size: 1.2em;
-
+    max-width: 600px;
+    padding: 0 2em;
 }
 
+@media (max-width: v.$md) {
+    .cardImgContainer {
+        display: none;
+    }
+    .aboutUsInforCardContainer{
+        width: 100%;
+        height: 500px;
+    }
+    
+    .aboutUsInforCard{
+        margin: auto;
+        width: 90% !important;
+        padding: 0 2em;
+        font-size: 1.1em;
+    }
 
-
+}

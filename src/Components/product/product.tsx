@@ -5,6 +5,7 @@ const Product = () => {
     const productPageContainer = document.getElementById('productPageContainer');
     
     if (productPageContainer) {
+        const productCardContainer  = document.querySelectorAll('.productCardContainer ')
         const optionColorInput = document.querySelectorAll('.colorInput')
         const optionSizeInput  = document.querySelectorAll('.sizeInput')
         const selectOptions  = document.querySelectorAll('.selectOptions ')
@@ -16,6 +17,8 @@ const Product = () => {
         const similarProductsCardWrapper = document.getElementById('similarProductsCardWrapper');
         const selectVariant = document.getElementById('selectVariant');
         const selectedColor = localStorage.getItem('colorInputValue')
+
+        const productsNumber = Math.floor(productCardContainer.length / 3) * 100 -100
 
         let scroll = 0;
         const variant = {
@@ -82,6 +85,8 @@ const Product = () => {
             }
         })
 
+        console.log(productsNumber)
+
         leftProductBtn!.onclick = () => {
             if (scroll < 0) {
                 scroll += 100;
@@ -90,7 +95,7 @@ const Product = () => {
         }
 
         rightProductBtn!.onclick = () => {
-            if (scroll > -300) {
+            if (scroll > productsNumber * -1 ) {
                 scroll -= 100;
                 similarProductsCardWrapper!.style.transform = `translateX(${scroll}%)`
             }

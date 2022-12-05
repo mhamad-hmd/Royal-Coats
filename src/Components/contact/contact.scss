@@ -13,7 +13,7 @@
   position: absolute;
   filter: brightness(.5);
   background-color: #665F5F;
-  opacity: .2;
+  opacity: .5;
 }
 
 #contact_form {
@@ -45,6 +45,8 @@
 }
 
 .ContactPageWrapper {
+  max-width: 1280px;
+  margin: auto;
   z-index: 500;
   padding: 7em 0 2em;
   display: flex;

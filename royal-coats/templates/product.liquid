@@ -87,9 +87,8 @@
     <h1 class="similarProductsTitle">Similar Products</h1>
     <div class="similarProductsWrapper relative md:max-w-7xl sm:max-w-3xl overflow-x-hidden w-full">
       <div id="similarProductsCardWrapper" class="similarProductsCardWrapper ">
-        {%- for collection in product.collections -%}
+
         {%- render 'collectionCard' -%}
-        {%- endfor -%}
       </div>
     </div>
 
