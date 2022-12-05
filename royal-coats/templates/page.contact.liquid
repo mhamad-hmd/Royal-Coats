@@ -1,19 +1,19 @@
-{%- section 'contactPage-section' -%}
-<div class="contactContainer  ">
-
-  <div class="ContactPageWrapper ">
+{%- comment -%} {%- section 'contactPage-section' -%} {%- endcomment -%}
+<div id="contactContainer" class="contactContainer relative">
+<div class="filterContainer"></div>
+  <div class="ContactPageWrapper displayVisible displayHidden ">
     <div class="quoteWrapper">
       <h2 class="contactQuote">We are ready to answer all your questions</h2>
     </div>
     {% form 'contact' %}
-      <div class="contactInputWrapper">
+      <div class="contactInputWrapper displayVisible displayHidden">
 
         {% if form.posted_successfully? %}
           Thank you for your contact
         {% endif %}
         {{ form.errors | default_errors }}
 
-        <div class="selectInterest">
+        <div class="selectInterest displayVisible displayHidden">
           <label for="returns" class="interestLabel">
             <input id="returns" class="interestInput" type="radio" name="contact[request_type]">
             <span class="interestSpan">Returns</span>
@@ -32,7 +32,7 @@
           </label>
         </div>
 
-        <div class="inputContainer">
+        <div class="inputContainer displayVisible displayHidden">
 
           <div class="nameWrapper inputWrapper">
             <input class="contactInput" type="text" id="ContactFormName" name="contact[name]" required>
@@ -51,7 +51,7 @@
 
         </div>
 
-        <input class="contactBtn" type="submit" value="Send">
+        <input class="contactBtn " type="submit" value="Send">
       {% endform %}
     </div>
 

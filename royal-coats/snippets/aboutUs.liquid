@@ -1,0 +1,27 @@
+{%- for block in section.blocks -%}
+ {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+    <div class="CardsContainer flex gap-4">
+         {% if thecycle == 'odd' %}
+            <div class=" flex-1 ml-4">
+                <img class="imageCard" src="{{ block.settings.aboutUsCardImage | img_url: "master"}}" alt="">
+            </div>
+            <div class="aboutUsInforCardContainer mr-4 flex-1">
+                    <div class="aboutUsInforCard   / flex flex-col justify-center gap-10  items-center / w-full h-full">
+                        <h2 class="text-3xl justify-self-start">{{block.settings.aboutUsTitle}}</h2>
+                        {{block.settings.aboutUsDesc}}
+                    </div>
+            </div>
+            {%- else -%}
+             <div class="aboutUsInforCardContainer ml-4 flex-1">
+                    <div class="aboutUsInforCard   / flex flex-col justify-center gap-10  items-center / w-full h-full">
+                        <h2 class="text-3xl justify-self-start">{{block.settings.aboutUsTitle}}</h2>
+                        {{block.settings.aboutUsDesc}}
+                    </div>
+            </div>
+           <div class=" flex-1 mr-4">
+                <img class="imageCard" src="{{ block.settings.aboutUsCardImage | img_url: "master"}}" alt="">
+            </div>
+        {%- endif -%}
+
+</div>
+{%endfor%}

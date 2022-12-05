@@ -75,11 +75,11 @@
 
 .swordSvg svg path {
   fill: rgb(180, 177, 177);
-  transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease;
 }
 
 .swordSvg svg {
-  transition: all 0.7s ease-out;
+  transition: all 0.7s ease;
   width: 100%;
   height: auto;
 }

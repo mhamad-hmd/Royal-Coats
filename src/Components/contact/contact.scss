@@ -1,6 +1,20 @@
 @use "../utilities" as v;
 
 
+.contactContainer {
+  background: url('https://images.pexels.com/photos/5264931/pexels-photo-5264931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.filterContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: brightness(.5);
+  background-color: #665F5F;
+  opacity: .2;
+}
 
 #contact_form {
   display: flex;
@@ -10,15 +24,16 @@
   width: 500px;
   height: 600px;
   margin: 1.5em 3em;
+  z-index: 555;
   align-self: start;
   justify-content: center;
   background-color: v.$main-color3;
   box-shadow: 3.3px 3.3px 14px #665F5F;
+  border-radius: .5em;
 }
 
 
-
-.contactInputWrapper{
+.contactInputWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +45,8 @@
 }
 
 .ContactPageWrapper {
-  padding: 7em 0 2em 0;
+  z-index: 500;
+  padding: 7em 0 2em;
   display: flex;
 }
 
@@ -39,12 +55,15 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  z-index: 555;
 }
 
-.contactQuote{
-    font-size: 3em;
-    color: v.$main-second;
-    margin: auto 2em;
+
+.contactQuote {
+  font-size: 3em;
+  color: v.$main-second;
+  margin: auto 2em;
+  -webkit-text-stroke: 0.5px v.$main-color3;
 }
 
 .inputContainer {
@@ -97,8 +116,8 @@
 }
 
 .contactBtn:hover {
-  transform: translateY(2px);
-  scale: .95;
+  transform: translateY(3px);
+  scale: 95%;
 }
 
 .selectInterest {
@@ -150,4 +169,38 @@
 
 .contactInput:focus ~ .contactLabel {
   transform: translateY(-25px);
+}
+
+@media(max-width:v.$lg) {
+  .contactQuote {
+    font-size: 2.5em;
+  }
+}
+@media(max-width:v.$md) {
+  .contactQuote {
+    font-size: 2em;
+  }
+  #contact_form {
+    width: 400px;
+    height: 500px;
+    margin: 0.5em 2em;
+  }
+}
+
+@media(max-width:v.$md) {
+  .ContactPageWrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+  #contact_form {
+    align-self: auto;
+    padding: 1em;
+    margin: 0px;
+
+  }
+  .contactQuote {
+    margin: 1em 1em;
+  }
 }

@@ -1,0 +1,31 @@
+
+{%- render 'aboutUs' -%}
+
+{%- schema -%}
+{
+    "name":"AboutUs Cards",
+    "blocks":[
+        {
+            "name":"card",
+            "type":"cards",
+            "settings":[
+                {
+                    "id": "aboutUsCardImage",
+                    "type": "image_picker",
+                    "label": "choose an image"
+                },
+                {
+                    "id": "aboutUsTitle",
+                    "type": "text",
+                    "label": "Card Title"
+                },
+                {
+                    "id": "aboutUsDesc",
+                    "type": "richtext",
+                    "label": "description"
+                }
+            ]
+        }
+    ]
+}
+{%- endschema -%}

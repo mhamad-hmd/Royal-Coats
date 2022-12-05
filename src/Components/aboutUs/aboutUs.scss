@@ -1,0 +1,41 @@
+@use "../utilities" as v;
+
+.aboutUsContainer{
+    background: v.$secondary-color3;
+}
+
+#shopify-section-aboutUsCard-section{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.CardsContainer{
+    max-height: 550px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.imageCard{
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+}
+
+.aboutUsTitle{
+    text-align: center;
+    font-size: 3em;
+    margin: 1em auto;
+}
+
+
+.aboutUsInforCard{
+    background: v.$main-second;
+    color: v.$third-color2;
+    padding: 0em 2em;
+    font-size: 1.2em;
+
+}
+
+
+
