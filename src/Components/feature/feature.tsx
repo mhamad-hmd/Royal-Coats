@@ -8,6 +8,8 @@ const Feature = () => {
   const featureContainer = document.getElementById('featureContainer');
   const featureCardContainer = document.getElementById('featureCardContainer');
   const featureCardwrapper = document.getElementById('featureCardwrapper');
+  const cardBtnsSvgRight = document.getElementById('cardBtnsSvgRight');
+  const cardBtnsSvgLeft = document.getElementById('cardBtnsSvgLeft');
   const cardImg = document.getElementById('cardImg');
   let translateCount = 0;
   let translateBy = 33.3;
@@ -24,24 +26,38 @@ if(screen.width < 768 ){
 
   if(featureCardContainer){
 
-    righBtn!.onclick = () => {
+    cardBtnsSvgRight!.onclick = () => {
       if ((mainChild + 1) < featureCardContainer!.childNodes.length) {
         mainChild++
         translateCount = translateCount - translateBy;
         featureCardContainer!.style.transform = `translateX(${translateCount}%)`;
         mainComponent()
+        leftBtn!.style.visibility = "visible"
+        cardBtnsSvgLeft!.classList.remove('hideBtn')   
       }
+
+      if((mainChild + 1) == featureCardContainer!.childNodes.length){
+        cardBtnsSvgRight!.classList.add('hideBtn')   
+      }
+
+
     }
   
   
-    leftBtn!.onclick = () => {
+    cardBtnsSvgLeft!.onclick = () => {
       if (mainChild > 0) {
         mainChild--
         translateCount = translateCount + translateBy;
         featureCardContainer!.style.transform = `translateX(${translateCount}%)`;
         mainComponent()
+        cardBtnsSvgRight!.classList.remove('hideBtn')   
       }
-  
+      if(mainChild == 0){
+        cardBtnsSvgLeft!.classList.add('hideBtn')
+      }
+      else{
+        cardBtnsSvgLeft!.classList.remove('hideBtn')
+      }
     }
   
     
@@ -50,19 +66,14 @@ if(screen.width < 768 ){
       featureCardContainer!.childNodes.forEach((child: any, i) => {
         const childImg = document.getElementById(`cardImg${i + 1}`);
         if (i === mainChild) {
-          child.style.transform = 'scale(100%)'
-          childImg!.style.transform = 'scale(110%)'
-          child.style.filter = 'blur(0px)'
           child.classList.add("cardMain")
-          child.style.boxShadow = '0px 0px 0px #ffffff96, 0 0 0px #ffffff96'
-          
+          child.classList.remove("cardSecondary")
         }
         
         else {
-          child.style.transform = 'scale(85%)'
-          child.style.filter = 'blur(3px)'
-          child.style.boxShadow = 'rgba(201, 199, 199, 0.603) .5px .5px 40px, rgba(201, 199, 199, 0.603) 0.5px 0.5px 40px'
-          childImg!.style.transform = 'scale(100%)'
+          child.classList.remove("cardMain")
+          child.classList.add("cardSecondary")
+
   
         }
 

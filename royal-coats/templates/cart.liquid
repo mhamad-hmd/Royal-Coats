@@ -1,24 +1,24 @@
-<div class="cartContainer mb-5 topPage ">
+<div id="cartContainer" class="cartContainer mb-5 topPage ">
   <div class="cartWrapper mx-auto ">
 
     {% form 'cart', cart %}
 
-    <h1 class="cartTitle">
+    <h1 class="cartTitle displayVisible displayHidden">
       Cart
     </h1>
     <div class="cartproductsContainer">
 
       {% if cart.empty? %}
-      <p>
+      <h2 class="emptyCartMessage">
         heyy your cart is empty!!
-      </p>
+      </h2>
       {% else %}
 
       <div class="cartProducts">
 
         {% for item in cart.items %}
 
-        <div class="cartProductCard">
+        <div class="cartProductCard displayVisible displayHidden">
 
           <img src="{{ item.image | image_url: width: 200 }}" />
           <div class="cartCardInfo flex flex-col gap-4">
@@ -55,14 +55,14 @@
 
 
       <hr />
-      <div class="cartCheckout">
+      <div class="cartCheckout displayVisible displayHidden">
 
         <p class="cartTotalPrice">
           Total price:
           <span>{{cart.total_price | money}}</span>
         </p>
 
-        <button type="submit" name="update">
+        <button id="cartUpdate" type="submit"  class="hidden" name="update">
           update
         </button>
 

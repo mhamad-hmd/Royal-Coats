@@ -1,3 +1,5 @@
+import { parse } from 'node:path/win32';
+import { stringify } from 'querystring';
 import React from 'react'
 import onView from '../onView/onView';
 
@@ -19,6 +21,8 @@ const Product = () => {
         const selectedColor = localStorage.getItem('colorInputValue')
 
         const productsNumber = Math.floor(productCardContainer.length / 3) * 100 -100
+
+        onView(productPageContainer, 'displayHidden', 'displayVisible', "0px", .3)
 
         let scroll = 0;
         const variant = {
@@ -67,15 +71,17 @@ const Product = () => {
 
         if (quantityInput) {
             let inputValue = Number(quantityInput!.value)
-
+            console.log("availeble")
             incrementBtn!.onclick = (e) => {
+                console.log("cli1ck")
                 inputValue++
-                quantityInput!.value = inputValue
+                quantityInput!.value = inputValue.toString()
             }
 
             decrementBtn!.onclick = (e) => {
+                console.log("cli1ck")
                 inputValue > 1 && inputValue--
-                quantityInput!.value = inputValue
+                quantityInput!.value = inputValue.toString()
             }
         }
 

@@ -132,6 +132,7 @@ input:focus {
   height: auto;
   overflow: hidden;
   position: absolute;
+  visibility: collapse;
 }
 
 .searchBarWrapper {
@@ -144,6 +145,8 @@ input:focus {
   background: linear-gradient(180deg, #E2CCA5 49.48%, #815B17 172.16%);
 
 }
+
+
 
 .searchTop {
   background: linear-gradient(180deg, rgba(246, 243, 240, 0) 23.71%, rgba(129, 91, 23, 0) 228.35%);
@@ -240,6 +243,7 @@ input:focus {
   letter-spacing: normal;
   padding: 0.6em 0.2em;
   border-bottom: 1px rgba(161, 154, 154, 0.37) solid;
+  z-index: 99999;
 }
 
 .itemListHeaderContainer:hover > .headerSubMenuContainer {

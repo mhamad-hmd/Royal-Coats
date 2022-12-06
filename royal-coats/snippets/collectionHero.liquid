@@ -1,6 +1,6 @@
 <div class="collectionMediaWrapper ">
 
-  <video class="collectionMedia" loop preload="" autoplay muted>
+  <video class="collectionMedia" poster="{{collection.featured_image | img_url: "master"}}" loop preload="" playsinline  autoplay muted>
     
     {%- for block in section.blocks -%}
 

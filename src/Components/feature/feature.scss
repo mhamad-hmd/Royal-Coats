@@ -23,6 +23,7 @@
 }
 
 .featureWrapper {
+    position: relative;
     display: grid;
     gap: 1rem;
     margin: auto;
@@ -40,6 +41,7 @@
 }
 
 .featureCardwrapper{
+    position: relative;
     transition: all 1s ease;
     overflow: hidden;
 }
@@ -85,21 +87,68 @@
     margin: 0em 1em;
     white-space: break-spaces;
 }
-.cardBtns{
+.FeaturedcardBtn{
     z-index: 31;
-    align-self: flex-end;
-    margin: 0em 4em 1em;
-    padding-top:1em ;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+   
+
+}
+
+
+.cardBtnLeft{
+    left: 0;
+    margin-left: 14em;
+    
+}
+
+.cardBtnRight{
+    right: 0;
+    margin-right: 14em;
+
+}
+
+.cardBtnsSvg{
+    background-color: rgba(0, 0, 0, 0.350);
+    border-radius: 50px ;
+    padding: .5em;
+    margin-top: 5em;
+    transition: all .3s ease;
+    height: 80px;
+    width: 80px;
+
+}
+
+.hideBtn{
+    height: 0px;
+    width: 0px;
 }
 
 .cardBtnsPath{
-    fill: v.$third-color3;
-    color: v.$third-color3;
-    -webkit-text-stroke-color: v.$third-color3;
+    fill: v.$main-second;
+    color: v.$main-second;
+    -webkit-text-stroke-color: v.$main-second;
 }
 
 .cardMain{
     z-index: 20;
+    box-shadow: 0px 0px 0px #ffffff96, 0 0 0px #ffffff96 !important;
+    filter: blur(0) !important;
+    scale: 100% !important;
+    img{
+        scale: 110% !important;
+    }
+}
+
+.cardSecondary{
+    scale: 85%;
+    filter: blur(3px);
+    box-shadow: rgba(201, 199, 199, 0.603) .5px .5px 40px, rgba(201, 199, 199, 0.603) 0.5px 0.5px 40px;
+    img{
+        scale: 100%;
+    }
 }
 
 
@@ -111,6 +160,13 @@
 
 
 @media(max-width: v.$md) {
+    .cardBtnLeft{
+        margin-left: 0;
+    }
+    .cardBtnRight{
+        margin-right: 0;
+
+    }
     .cardTitle{
         margin: 0 .5rem;
     }

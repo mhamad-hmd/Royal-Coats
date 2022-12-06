@@ -16,6 +16,16 @@
 
 }
 
+.displayVisibleFooter{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all .5s ease;
+  }
+  .displayHiddenFooter{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
 // .footerWrapper{
 //     flex-wrap: wrap;
 //     overflow: hidden;

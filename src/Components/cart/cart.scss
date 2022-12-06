@@ -1,4 +1,4 @@
-@use "./utilities" as v;
+@use "../utilities" as v;
 
 
 .cartproductsContainer {
@@ -27,6 +27,7 @@
   justify-content: flex-start;
   flex-basis: 25%;
   max-width: 300px;
+  gap: 1em;
   width: 100%;
   font-weight: 600;
   color: v.$third-color2;
@@ -72,6 +73,11 @@
 
 }
 
+.emptyCartMessage{
+  font-size: 3em;
+  color: v.$third-color2;
+}
+
 .cartFeatruedProducts{
   width: 100%;
 }
@@ -80,7 +86,9 @@
 
 @media(max-width: v.$md) {
   .cartproductsContainer {
-
     flex-direction: column;
+  }
+  .emptyCartMessage{
+    font-size: 2em;
   }
 }

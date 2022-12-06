@@ -1,14 +1,14 @@
 <div id="productPageContainer" class="productPageContainer topPage">
   <div class="productContainer">
     <div class="productImageContainer">
-      <div class="productImagesWrapper">
+      <div class="productImagesWrapper displayHidden displayVisible">
         {%- for image in product.images -%}
         <img class="productImage " src="{{ image.src | img_url: 'large' }}" alt="">
         {%- endfor -%}
       </div>
 
     </div>
-    <div class="productDetailsContainer / flex flex-col items-start">
+    <div class="productDetailsContainer / flex flex-col items-start displayHidden displayVisible">
       <div class="productInfo flex flex-col items-start">
 
         <h1 class="productTitle text-center">

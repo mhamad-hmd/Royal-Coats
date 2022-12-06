@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import onView from '../onView/onView';
 
 const Header = () => {
     const headerContainer = document.getElementById('headerContainer');
+    const footerContainer = document.getElementById('footerContainer');
     const headerWrapper = document.getElementById('headerWrapper');
     const announcement = document.getElementById('announcement')
     const swordPath = document.getElementById('swordPath');
@@ -10,6 +12,8 @@ const Header = () => {
     const searchBarContainer = document.getElementById('searchBarContainer');
     const itemListHeaderLinks = document.querySelectorAll('.itemListHeader')
     const headerTrans = document.querySelectorAll('.headerTrans')
+    const displayCollectionContainer = document.getElementById('displayCollectionContainer')    
+
 
     let delay = 100;
     window.addEventListener('DOMContentLoaded', () => {
@@ -103,6 +107,10 @@ const Header = () => {
     document.addEventListener('click', (e) => handleClickOutsideSearchBar(e))
 
 
+
+    // -----------------Footer--------------------------
+    onView(footerContainer, 'displayHiddenFooter', 'displayVisibleFooter', "0px", .3)
+    // -----------------Footer--------------------------
 
 
 }

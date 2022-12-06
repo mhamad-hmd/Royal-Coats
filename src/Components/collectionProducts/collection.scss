@@ -22,6 +22,9 @@
 
 .collectionTitle{
     font-size: 3em;
+    @media (max-width:v.$md) {
+        font-size: 2.5em;
+    }
 }
 
 .productWrapper{
@@ -90,6 +93,9 @@
     margin: 2em auto 0em;
     flex-wrap: wrap;
     gap: 2em;
+    @media (max-width:v.$lg) {
+        margin: 2em 1em 0em;
+    }
 }
 
 select{

@@ -13,7 +13,7 @@
   z-index: 999;
   background: v.$main-second;
   transform: translateX(-100%);
-  transition: all .4s ease-in-out;
+  transition: all .4s ease;
 }
 
 .blocker{
@@ -37,7 +37,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 1em;
-  transition: all .5s ease-in-out;
+  transition: all .5s ease;
 
 }
 
@@ -45,7 +45,7 @@
   font-size: 1.6rem;
   color: v.$third-color2;
   width: 100%;
-  transition: all .3s ease-in-out;
+  transition: all .3s ease;
 
   padding-left: .3em;
 
@@ -83,7 +83,7 @@
   height: 36px;
   width: 100%;
   overflow: hidden;
-  transition: all .5s ease-in-out;
+  transition: all .5s ease;
 
   
 }
@@ -99,7 +99,7 @@
 
 .navSubItem{
   transform: translateX(-100%);
-  transition: all .3s ease-in-out;
+  transition: all .3s ease;
 
   color: v.$third-color2;
 }
@@ -115,7 +115,7 @@
 
 
 .dropDownBtn{
-  transition: all .3s ease-in-out;
+  transition: all .3s ease;
 
 }
 
@@ -125,7 +125,7 @@
 
 .sideNavSocialMedia{
   display: flex;
-  transition: all .5s ease-in-out;
+  transition: all .5s ease;
 
 }
 
@@ -137,7 +137,7 @@
 
 
 .sideNavMainElement{
-  transition: all .3s ease-in-out;
+  transition: all .5s ease;
   opacity: 0;
   transform: translateY(-20px);
 

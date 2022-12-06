@@ -24,12 +24,12 @@ const subItemSwitch = (itemSwitch: Boolean) => {
     if(itemSwitch){
       element!.classList.add('navSubItemin')
       element!.style.transitionDelay = `${transDelay}ms`
-      transDelay += 50
+      transDelay += 40
     }
     else if(!itemSwitch){
       element!.classList.remove('navSubItemin')
       element!.style.transitionDelay = `${reverseDelay}ms`
-      reverseDelay -= 50;
+      reverseDelay -= 40;
     }
   })
   transDelay = 50;
@@ -53,7 +53,7 @@ navBtn!.onclick = () => {
   mobileSideNavWrapper!.classList.add('mobileSideNavWrapperIn')
   body.style.overflow = "hidden"
   sideNavMainElement!.forEach((element:any) => {
-    transDelay += 80
+    transDelay += 40
     element!.classList.add('sideNavMainElementOpacity')
     element!.style.transitionDelay = `${transDelay}ms`
   })

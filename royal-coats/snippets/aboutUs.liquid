@@ -1,6 +1,6 @@
 {%- for block in section.blocks -%}
 {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-<div class="CardsContainer flex gap-4">
+<div id="CardsContainer" class="CardsContainer flex gap-4">
     {% if thecycle == 'odd' %}
     <div class="cardImgContainer flex-1 xs:m-0 md:ml-4">
         <img class="imageCard" src="{{ block.settings.aboutUsCardImage | img_url: "master" }}" alt="">
