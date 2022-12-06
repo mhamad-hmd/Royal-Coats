@@ -22,7 +22,7 @@ const Product = () => {
 
         const productsNumber = Math.floor(productCardContainer.length / 3) * 100 -100
 
-        onView(productPageContainer, 'displayHidden', 'displayVisible', "0px", .3)
+        onView(productPageContainer, 'displayHidden', 'displayVisible', "0px", .1)
 
         let scroll = 0;
         const variant = {

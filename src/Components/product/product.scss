@@ -143,9 +143,10 @@
   margin-top: 2em;
 }
 
-.leftProductBtn, .rightProductBtn{
-  background-color: #f6f3f04f;
-
+.cardBtnsPath{
+  fill: v.$main-second;
+  color: v.$main-second;
+  -webkit-text-stroke-color: v.$main-second;
 }
 
 

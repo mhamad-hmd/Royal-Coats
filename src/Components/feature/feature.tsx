@@ -3,14 +3,12 @@ import onView from '../onView/onView';
 
 const Feature = () => {
 
-  const righBtn = document.getElementById('cardBtnRight');
   const leftBtn = document.getElementById('cardBtnLeft');
   const featureContainer = document.getElementById('featureContainer');
   const featureCardContainer = document.getElementById('featureCardContainer');
-  const featureCardwrapper = document.getElementById('featureCardwrapper');
   const cardBtnsSvgRight = document.getElementById('cardBtnsSvgRight');
   const cardBtnsSvgLeft = document.getElementById('cardBtnsSvgLeft');
-  const cardImg = document.getElementById('cardImg');
+  
   let translateCount = 0;
   let translateBy = 33.3;
   let mainChild = 1;
@@ -26,7 +24,7 @@ if(screen.width < 768 ){
 
   if(featureCardContainer){
 
-    cardBtnsSvgRight!.onclick = () => {
+    cardBtnsSvgRight!.addEventListener('click', () => {
       if ((mainChild + 1) < featureCardContainer!.childNodes.length) {
         mainChild++
         translateCount = translateCount - translateBy;
@@ -42,9 +40,10 @@ if(screen.width < 768 ){
 
 
     }
+    )
   
   
-    cardBtnsSvgLeft!.onclick = () => {
+    cardBtnsSvgLeft!.addEventListener('click', () => {
       if (mainChild > 0) {
         mainChild--
         translateCount = translateCount + translateBy;
@@ -59,12 +58,12 @@ if(screen.width < 768 ){
         cardBtnsSvgLeft!.classList.remove('hideBtn')
       }
     }
+    )
   
     
   
     const mainComponent = () => {
       featureCardContainer!.childNodes.forEach((child: any, i) => {
-        const childImg = document.getElementById(`cardImg${i + 1}`);
         if (i === mainChild) {
           child.classList.add("cardMain")
           child.classList.remove("cardSecondary")
@@ -73,8 +72,6 @@ if(screen.width < 768 ){
         else {
           child.classList.remove("cardMain")
           child.classList.add("cardSecondary")
-
-  
         }
 
         

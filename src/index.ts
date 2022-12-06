@@ -1,4 +1,5 @@
 import App from "./App"
+import aboutUs from "./Components/aboutUs/aboutUs";
 import cart from "./Components/cart/cart";
 import collectionProducts from "./Components/collectionProducts/collectionProducts";
 import contact from "./Components/contact/contact";
@@ -16,7 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // App
 
   sideNav;
-  cart;
+  cart; 
+  aboutUs;
   HeroSection;
   collectionProducts;
   product;

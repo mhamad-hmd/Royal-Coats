@@ -1,24 +1,24 @@
 {%- for block in section.blocks -%}
 {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-<div id="CardsContainer" class="CardsContainer flex gap-4">
+<div id="aboutUsCardsContainer" class="CardsContainer flex gap-4">
     {% if thecycle == 'odd' %}
-    <div class="cardImgContainer flex-1 xs:m-0 md:ml-4">
+    <div class="cardImgContainer flex-1 xs:m-0 md:ml-4  displayVisible displayHidden">
         <img class="imageCard" src="{{ block.settings.aboutUsCardImage | img_url: "master" }}" alt="">
     </div>
-    <div class="aboutUsInforCardContainer xs:m-0 md:mr-4 flex-1"> 
+    <div class="aboutUsInforCardContainer xs:m-0 md:mr-4 flex-1 displayVisible displayHidden"> 
         <div class="aboutUsInforCard   / flex flex-col justify-center gap-10  items-center / w-full h-full  ">
             <h2 class="text-3xl justify-self-start">{{block.settings.aboutUsTitle}}</h2>
             {{block.settings.aboutUsDesc}}
         </div>
     </div>
     {%- else -%}
-    <div class="aboutUsInforCardContainer xs:m-0 md:ml-4   flex-1">
+    <div class="aboutUsInforCardContainer xs:m-0 md:ml-4   flex-1 displayVisible displayHidden">
         <div class="aboutUsInforCard   / flex flex-col justify-center gap-10  items-center / w-full h-full ">
             <h2 class="text-3xl justify-self-start">{{block.settings.aboutUsTitle}}</h2>
             {{block.settings.aboutUsDesc}}
         </div>
     </div>
-    <div class=" cardImgContainer flex-1 mr-4">
+    <div class=" cardImgContainer flex-1 mr-4 displayVisible displayHidden">
         <img class="imageCard" src="{{ block.settings.aboutUsCardImage | img_url: "master"}}" alt="">
     </div>
     {%- endif -%}

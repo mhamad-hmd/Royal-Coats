@@ -41,6 +41,8 @@
 }
 
 .featureCardwrapper{
+    max-width: 1440px;
+    margin: auto;
     position: relative;
     transition: all 1s ease;
     overflow: hidden;
@@ -87,34 +89,30 @@
     margin: 0em 1em;
     white-space: break-spaces;
 }
+
 .FeaturedcardBtn{
     z-index: 31;
     width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
-   
-
 }
 
 
 .cardBtnLeft{
-    left: 0;
-    margin-left: 14em;
+    margin-left: -23em;
     
 }
 
 .cardBtnRight{
-    right: 0;
-    margin-right: 14em;
+    margin-left: 23em;
 
 }
 
 .cardBtnsSvg{
-    background-color: rgba(0, 0, 0, 0.350);
+    background-color: rgba(0, 0, 0, 0.72);
     border-radius: 50px ;
     padding: .5em;
-    margin-top: 5em;
     transition: all .3s ease;
     height: 80px;
     width: 80px;
@@ -160,12 +158,8 @@
 
 
 @media(max-width: v.$md) {
-    .cardBtnLeft{
+    .cardBtnLeft,.cardBtnRight{
         margin-left: 0;
-    }
-    .cardBtnRight{
-        margin-right: 0;
-
     }
     .cardTitle{
         margin: 0 .5rem;
