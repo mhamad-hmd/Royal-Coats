@@ -3,38 +3,44 @@ import onView from '../onView/onView';
 
 const Feature = () => {
 
-  const leftBtn = document.getElementById('cardBtnLeft');
   const featureContainer = document.getElementById('featureContainer');
   const featureCardContainer = document.getElementById('featureCardContainer');
-  const cardBtnsSvgRight = document.getElementById('cardBtnsSvgRight');
-  const cardBtnsSvgLeft = document.getElementById('cardBtnsSvgLeft');
   
-  let translateCount = 0;
-  let translateBy = 33.3;
-  let mainChild = 1;
 
-  const displayFeature = onView(featureContainer, 'featureHidden', 'featureVisible')
 
-console.log(displayFeature)
-if(screen.width < 768 ){
-  translateCount = -55;
-  translateBy = 70;
-}
+ onView(featureContainer, 'featureHidden', 'featureVisible')
 
 
   if(featureCardContainer){
+    const cardWrapper = document.querySelectorAll('.cardWrapper')
+    const cardBtnsSvgRight = document.getElementById('cardBtnsSvgRight');
+    const cardBtnsSvgLeft = document.getElementById('cardBtnsSvgLeft');
+
+
+    let translateCount = -33.3;
+    let translateCountBack = 33.3;
+    let translateBy = 33.3;
+    let mainChild = 1;
+
+
+    if(screen.width < 768 ){
+      translateCount = -125;
+      translateCountBack = 15;
+      translateBy = 70;
+    }  
+
 
     cardBtnsSvgRight!.addEventListener('click', () => {
-      if ((mainChild + 1) < featureCardContainer!.childNodes.length) {
-        mainChild++
-        translateCount = translateCount - translateBy;
+      if (mainChild + 1 < featureCardContainer!.childNodes.length) {
         featureCardContainer!.style.transform = `translateX(${translateCount}%)`;
+        mainChild++
         mainComponent()
-        leftBtn!.style.visibility = "visible"
         cardBtnsSvgLeft!.classList.remove('hideBtn')   
+        translateCount = translateCount - translateBy;
+        translateCountBack = translateCountBack - translateBy;
       }
 
-      if((mainChild + 1) == featureCardContainer!.childNodes.length){
+      if(mainChild + 1 == featureCardContainer!.childNodes.length){
         cardBtnsSvgRight!.classList.add('hideBtn')   
       }
 
@@ -45,13 +51,14 @@ if(screen.width < 768 ){
   
     cardBtnsSvgLeft!.addEventListener('click', () => {
       if (mainChild > 0) {
+        featureCardContainer!.style.transform = `translateX(${translateCountBack}%)`;
         mainChild--
-        translateCount = translateCount + translateBy;
-        featureCardContainer!.style.transform = `translateX(${translateCount}%)`;
         mainComponent()
         cardBtnsSvgRight!.classList.remove('hideBtn')   
+        translateCountBack = translateCountBack + translateBy;
+        translateCount = translateCount + translateBy ;
       }
-      if(mainChild == 0){
+      if(mainChild === 0){
         cardBtnsSvgLeft!.classList.add('hideBtn')
       }
       else{
@@ -63,7 +70,7 @@ if(screen.width < 768 ){
     
   
     const mainComponent = () => {
-      featureCardContainer!.childNodes.forEach((child: any, i) => {
+      cardWrapper!.forEach((child: any, i) => {
         if (i === mainChild) {
           child.classList.add("cardMain")
           child.classList.remove("cardSecondary")

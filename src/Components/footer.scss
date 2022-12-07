@@ -2,8 +2,11 @@
 
 
 .footerContainer{
-    background-color: v.$third-color2;
     color: v.$main-second;
+}
+
+.footerWrapper{
+    background-color: v.$third-color2;
 }
 
 .subscribeFooter{
@@ -26,10 +29,6 @@
     transform: translateY(20px);
   }
 
-// .footerWrapper{
-//     flex-wrap: wrap;
-//     overflow: hidden;
-// }
 
 .titleHeaderFooter {
     color: v.$secondary-color2 !important;
