@@ -85,7 +85,8 @@
   <div
     class="similarProductsContainer relative / flex items-center flex-col justify-center gap-5 / my-5 overflow-x-hidden">
     <h1 class="similarProductsTitle">Similar Products</h1>
-    <div class="similarProductsWrapper relative md:max-w-7xl sm:max-w-3xl overflow-x-hidden w-full">
+    <div class="similarProductsWrapper relative flex flex-col md:max-w-7xl sm:max-w-3xl overflow-x-hidden w-full">
+      <div class="flex justify-end mx-4"> <span id="currentNumber">1</span> / <span id="offNumber"></span></div>
       <div id="similarProductsCardWrapper" class="similarProductsCardWrapper ">
 
         {%- render 'collectionCard' -%}

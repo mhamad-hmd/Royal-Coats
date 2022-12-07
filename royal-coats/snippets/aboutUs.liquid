@@ -19,9 +19,8 @@
         </div>
     </div>
     <div class=" cardImgContainer flex-1 mr-4 displayVisible displayHidden">
-        <img class="imageCard" src="{{ block.settings.aboutUsCardImage | img_url: "master"}}" alt="">
+        <img class="imageCard" loading="lazy" src="{{ block.settings.aboutUsCardImage | img_url: "master"}}" alt="">
     </div>
     {%- endif -%}
-
 </div>
 {%endfor%}

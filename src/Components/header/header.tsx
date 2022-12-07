@@ -12,17 +12,25 @@ const Header = () => {
     const searchBarContainer = document.getElementById('searchBarContainer');
     const itemListHeaderLinks = document.querySelectorAll('.itemListHeader')
     const headerTrans = document.querySelectorAll('.headerTrans')
-    const displayCollectionContainer = document.getElementById('displayCollectionContainer')    
-
+    const cartProductsNumber = document.getElementById('cartProductsNumber')    
 
     let delay = 100;
+
+    
+    if(cartProductsNumber!.textContent == '0'){
+        cartProductsNumber!.classList.add('cartProductsNumberHidden')
+    }else{
+        cartProductsNumber!.classList.remove('cartProductsNumberHidden')
+    }
+    
+    
     window.addEventListener('DOMContentLoaded', () => {
         headerTrans!.forEach((element:any) => {
             element!.classList.add('headerVisible')
             element!.style.transitionDelay = `${delay}ms`
             delay += 75
         })
-
+        
     })
 
     let showHeader = 0;
@@ -41,27 +49,29 @@ const Header = () => {
             
         }
 
-    
-    
-    
-    let lastScrollTop = 0
+        
+        
+        
+        let lastScrollTop = 0
 
-    window!.onscroll = () => {
+        window!.onscroll = () => {
         if (window.scrollY == 0) {
             announcement!.classList.remove('annUp');
             headerContainer!.classList.remove('headUp')
             swordPath!.style.fill = "rgb(w)"
             searchBarWrapper!.classList.add('searchTop');
+            cartProductsNumber!.classList.remove('cartProductsNumberY')
             linksColor(true)
-
+            
         }
         else {
             announcement!.classList.add('annUp')
             headerContainer!.classList.add('headUp')
             swordPath!.style.fill = "rgb(102, 104, 106)"
             searchBarWrapper!.classList.remove('searchTop');
+            cartProductsNumber!.classList.add('cartProductsNumberY')
             linksColor(false)
-
+            
         }
 
        

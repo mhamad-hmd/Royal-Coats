@@ -11,7 +11,7 @@ const Cart = () => {
         const decrementBtn = document.getElementById('decrement');
         const cartUpdate = document.getElementById('cartUpdate');
 
-        onView(cartContainer, 'displayHidden', 'displayVisible', "0px", .3)
+        onView(cartContainer, 'displayHidden', 'displayVisible', "0px", .1)
 
         if (quantityInput) {
             let inputValue = Number(quantityInput!.value)

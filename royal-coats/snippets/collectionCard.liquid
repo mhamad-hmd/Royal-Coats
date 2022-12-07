@@ -14,7 +14,7 @@
 
 <div class="productCardContainer productCardHidden">
     <a href="{{ product.url | within: collection }}" class="productCard">
-        <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
+        <img class="ProductCardImg" loading="lazy" src="{{ product.featured_image.src | img_url: 'large' }}"
             alt="{{ product.featured_image.alt | escape }}">
         <div class="productCardInfo">
             <h1 class="productCardTitle">{{ product.title }}</h1>
@@ -35,7 +35,7 @@
 
 <div class="productCardContainer productCardHidden">
     <a href="{{ product.url | within: collection }}" class="productCard">
-        <img class="ProductCardImg" src="{{ product.featured_image.src | img_url: 'large' }}"
+        <img class="ProductCardImg" loading="lazy" src="{{ product.featured_image.src | img_url: 'large' }}"
             alt="{{ product.featured_image.alt | escape }}">
         <div class="productCardInfo">
             <h1 class="productCardTitle">{{ product.title }}</h1>

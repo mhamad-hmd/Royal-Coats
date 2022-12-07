@@ -1,6 +1,5 @@
 @use "../utilities.scss" as v;
 
-
 .headerContainer {
   z-index: 999;
   position: fixed;
@@ -11,15 +10,15 @@
   transform: translateY(0);
 }
 
-.headerTrans{
+.headerTrans {
   transform: translateY(20px);
   opacity: 0;
 }
 
-.headerVisible{
+.headerVisible {
   transform: translate(0);
   opacity: 1;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .announcement {
@@ -33,12 +32,10 @@
   gap: 13px;
 }
 
-
 .secondHeader {
   flex: 3;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 .titleHeader {
@@ -48,7 +45,6 @@
   position: relative;
   z-index: 10;
   cursor: pointer;
-
 }
 
 .headerWrapper {
@@ -95,7 +91,6 @@
   fill: none !important;
 }
 
-
 .searchResult {
   width: 100%;
   display: flex;
@@ -116,14 +111,12 @@
 
 .titleHeader:hover ~ .swordSvg svg {
   transform: rotate(-50deg);
-
 }
 
 textarea:focus,
 input:focus {
   outline: none;
 }
-
 
 // -------------------SearchBar------------------------------------
 
@@ -142,17 +135,12 @@ input:focus {
   width: 100%;
   height: 10vh;
   transition: all 0.5s ease-in-out;
-  background: linear-gradient(180deg, #E2CCA5 49.48%, #815B17 172.16%);
-
+  background: linear-gradient(180deg, #e2cca5 49.48%, #815b17 172.16%);
 }
-
-
 
 .searchTop {
   background: linear-gradient(180deg, rgba(246, 243, 240, 0) 23.71%, rgba(129, 91, 23, 0) 228.35%);
-
 }
-
 
 .headerSearchBar {
   max-width: 900px;
@@ -177,17 +165,13 @@ input:focus {
 .collapseNode {
   transform: translateY(-110%);
   pointer-events: none;
-
 }
 .showNode {
   transform: translateY(0%);
   pointer-events: auto;
-
 }
 
-
 // -------------------SearchBar------------------------------------
-
 
 .itemListHeader {
   position: relative;
@@ -206,18 +190,16 @@ input:focus {
   position: absolute;
   transform: translateX(-110%);
   right: 0;
-  transition: all 0.300s ease-in-out;
-
+  transition: all 0.3s ease-in-out;
 }
 
-.itemListHeaderParent::after{
-    transition-delay: 500ms;
+.itemListHeaderParent::after {
+  transition-delay: 500ms;
 }
 
 .itemListHeaderContainer:hover > .itemListHeaderWrapper > .itemListHeader:after {
   transform: translateX(0%);
   transition-delay: 0ms !important;
-
 }
 
 .headerSubMenuContainer {
@@ -225,7 +207,6 @@ input:focus {
   top: 100%;
   overflow-y: hidden;
   visibility: collapse;
-
 }
 
 .headerSubMenuWrapper {
@@ -252,7 +233,6 @@ input:focus {
     transform: translateY(0%);
     pointer-events: auto;
     transition-delay: 300ms;
-
   }
 }
 
@@ -261,39 +241,51 @@ input:focus {
   display: block;
 }
 
-
 .cartIconPath {
   fill: v.$third-color2;
 }
 
+.cartProductsNumber {
+  display: block;
+  position: absolute;
+  background-color: v.$secondary-color2;
+  color: v.$third-color2;
+  top: -18px;
+  left: 18px;
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  font-size: 12px;
+  padding: 0 4px;
+  transition: all .3s ease;
+}
 
+.cartProductsNumberHidden{
+  font-size: 0px;
+  padding: 0px 0px;
+}
 
-
-
-
-
-
-
-
-
+.cartProductsNumberY {
+  background-color: v.$third-color2; 
+  color: v.$secondary-color2;
+}
 
 // ---------------------MEDIA---------------------------
 
-@media(max-width: v.$md){
-  .titleHeader{
+@media (max-width: v.$md) {
+  .titleHeader {
     font-size: 1.7em;
   }
-  .swordSvg{
+  .swordSvg {
     height: 45px;
     width: 11px;
   }
   .headerSearchBar {
     width: 250px;
   }
-  .headerSearchSubmitBtn{
+  .headerSearchSubmitBtn {
     padding: 0em 1em;
   }
-  
 }
 
 // ---------------------MEDIA---------------------------
